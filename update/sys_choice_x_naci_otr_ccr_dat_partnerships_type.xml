@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="type" table="x_naci_otr_ccr_dat_partnerships" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>License</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_partnerships</name>
+            <sequence>10</sequence>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-02-20 20:16:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>5c5b613cdb3b230054d8ff621f961937</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-02-20 20:17:14</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>License</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>R&amp;D Collaboration</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_partnerships</name>
+            <sequence>20</sequence>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-02-20 20:17:01</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>2f6b69f8db3b230054d8ff621f96192d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-02-20 20:17:01</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>R&amp;D Collaboration</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>CRADA</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_partnerships</name>
+            <sequence>30</sequence>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-02-20 20:17:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>b8ab6df8db3b230054d8ff621f9619dd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-02-20 20:17:37</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>CRADA</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Manufacturing</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_partnerships</name>
+            <sequence>40</sequence>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-02-20 20:18:06</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>8ebb6df8db3b230054d8ff621f9619b8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-02-20 20:18:06</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>Manufacturing</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>MTA</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_partnerships</name>
+            <sequence>45</sequence>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-06-03 22:13:47</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>2c02e4cedbf5b30054d8ff621f961928</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-06-03 22:13:47</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>MTA</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Supply</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_partnerships</name>
+            <sequence>50</sequence>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-02-20 20:18:24</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>8ddb253cdb3b230054d8ff621f961959</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-02-20 20:18:24</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>Supply</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>type</element>
+            <name>x_naci_otr_ccr_dat_partnerships</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-02-20 20:16:17</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>ee67e043db32f74054d8ff621f961928</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>type</sys_name>
+            <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+            <sys_update_name>sys_choice_x_naci_otr_ccr_dat_partnerships_type</sys_update_name>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-02-20 20:16:17</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

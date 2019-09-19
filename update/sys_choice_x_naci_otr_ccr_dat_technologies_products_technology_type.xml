@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="technology_type" table="x_naci_otr_ccr_dat_technologies_products" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>technology_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>-- New choice --</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_technologies_products</name>
+            <sequence/>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-01-29 15:50:04</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>d77b1369dbdfa34054d8ff621f9619ec</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-01-29 15:50:04</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>-- New choice --</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>technology_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Combination</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_technologies_products</name>
+            <sequence>10</sequence>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-01-29 15:50:39</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>7a8b13e9dbdfa34054d8ff621f9619a3</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-01-29 15:53:22</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>combination</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>technology_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Research Tool</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_technologies_products</name>
+            <sequence>20</sequence>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-01-29 15:51:22</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>b8bb57a9dbdfa34054d8ff621f961915</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-01-29 15:53:27</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>research_tool</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>technology_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Therapeutic - Biologic (Cell)</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_technologies_products</name>
+            <sequence>30</sequence>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-01-29 15:52:22</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>05dbd3e9dbdfa34054d8ff621f9619ec</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-01-29 15:53:32</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>therapeutic_biologic_cell</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>technology_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Therapeutic - Biologic (Gene)</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_technologies_products</name>
+            <sequence>40</sequence>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-01-29 15:53:08</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>2b0cd3a9dbdfa34054d8ff621f961998</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-01-29 15:53:35</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>therapeutic_biologic_gene</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>technology_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Therapeutic - Biologic (Other)</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_technologies_products</name>
+            <sequence>50</sequence>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-01-29 15:54:13</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>125cdfa9dbdfa34054d8ff621f9619fb</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-01-29 15:54:33</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>therapeutic_biologic_other</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>technology_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Therapeutic - Biologic (Protein)</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_technologies_products</name>
+            <sequence>60</sequence>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-01-29 15:55:13</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>eb8c17e9dbdfa34054d8ff621f96190e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-01-29 15:55:13</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>therapeutic_biologic_Protein</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>technology_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Therapeutic - Device</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_technologies_products</name>
+            <sequence>70</sequence>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-01-29 16:59:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>f04b232ddb13e34054d8ff621f9619f6</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-01-29 16:59:52</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>therapeutic_device</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>technology_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Therapeutic - Small Molecule</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_technologies_products</name>
+            <sequence>80</sequence>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-01-29 17:00:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>d48b2ba9db13e34054d8ff621f9619df</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-01-29 17:00:45</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>therapeutic_small_molecule</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>technology_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Diagnostics - Device (Imaging-related)</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_technologies_products</name>
+            <sequence>90</sequence>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-01-29 17:01:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>83bbe769db13e34054d8ff621f961965</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-01-29 17:02:08</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>diagnostics_device_imaging_related</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>technology_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Diagnostics - Device (All Other)</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_technologies_products</name>
+            <sequence>100</sequence>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-01-29 17:03:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>ee0cab2ddb13e34054d8ff621f9619cd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-01-29 17:03:03</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>diagnostics_device_all_other</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>technology_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Diagnostics - In Vitro</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_technologies_products</name>
+            <sequence>110</sequence>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-01-29 17:03:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>944c2f2ddb13e34054d8ff621f9619cc</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-01-29 17:04:19</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>diagnostics_in_vitro</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>technology_type</element>
+            <name>x_naci_otr_ccr_dat_technologies_products</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-01-29 15:50:04</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>2e67e043db32f74054d8ff621f96193a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>technology_type</sys_name>
+            <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+            <sys_update_name>sys_choice_x_naci_otr_ccr_dat_technologies_products_technology_type</sys_update_name>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-01-29 15:50:04</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

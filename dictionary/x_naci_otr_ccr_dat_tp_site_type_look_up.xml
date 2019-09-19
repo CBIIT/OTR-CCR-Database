@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="T&amp;P Site Type Look Up" max_length="40" name="x_naci_otr_ccr_dat_tp_site_type_look_up" type="collection">
+        <element label="Site" max_length="100" name="site" type="string"/>
+        <element label="Type" max_length="100" name="type" type="string"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '[' + current.site.toString()  + '] ' + current.type.toString();&#13;&#10;})(current);" display="true" label="Value" max_length="200" name="value" type="string" virtual="true"/>
+    </element>
+</database>

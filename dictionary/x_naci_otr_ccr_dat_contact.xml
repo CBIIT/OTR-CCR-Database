@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Contacts" max_length="40" name="x_naci_otr_ccr_dat_contact" type="collection">
+        <element display="true" label="Full Name" max_length="200" name="full_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Name" max_length="32" name="name" reference="sys_user" type="reference"/>
+        <element label="Notes" max_length="2000" name="notes" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Organization" mandatory="true" max_length="32" name="organization" reference="x_naci_otr_ccr_dat_organization" type="reference"/>
+        <element label="Suffix" max_length="50" name="suffix" type="string"/>
+        <index name="index">
+            <element name="organization"/>
+        </index>
+        <index name="index2">
+            <element name="name"/>
+        </index>
+    </element>
+</database>

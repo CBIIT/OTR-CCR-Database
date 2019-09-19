@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Partnerships" max_length="40" name="x_naci_otr_ccr_dat_partnerships" type="collection">
+        <element label="Comments" max_length="2000" name="comments" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Contact Additional 2" max_length="32" name="contact_additional" reference="x_naci_otr_ccr_dat_contact" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Contact Primary" max_length="32" name="contact_primary" reference="x_naci_otr_ccr_dat_contact" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Contact Additional 1" max_length="32" name="contact_secondary" reference="x_naci_otr_ccr_dat_contact" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Date Entered" max_length="40" name="date_entered" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Date of Event" max_length="40" name="date_of_event" type="glide_date"/>
+        <element label="Other Organization Contact" max_length="200" name="other_contact" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Other Organization" mandatory="true" max_length="100" name="other_partnership" reference="x_naci_otr_ccr_dat_organization" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Project" max_length="32" name="project" reference="x_naci_otr_ccr_dat_project" type="reference"/>
+        <element label="Source of Information" max_length="200" name="source_of_information" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Technologies &amp; Products" max_length="32" name="technology_product" reference="x_naci_otr_ccr_dat_technologies_products" type="reference"/>
+        <element label="Title of Partnership" mandatory="true" max_length="300" name="title_of_partnership" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Type" mandatory="true" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="License" sequence="10" value="License"/>
+                <element inactive_on_update="false" label="R&amp;D Collaboration" sequence="20" value="R&amp;D Collaboration"/>
+                <element inactive_on_update="false" label="CRADA" sequence="30" value="CRADA"/>
+                <element inactive_on_update="false" label="Manufacturing" sequence="40" value="Manufacturing"/>
+                <element inactive_on_update="false" label="MTA" sequence="45" value="MTA"/>
+                <element inactive_on_update="false" label="Supply" sequence="50" value="Supply"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="contact_secondary"/>
+        </index>
+        <index name="index2">
+            <element name="contact_additional"/>
+        </index>
+        <index name="index3">
+            <element name="project"/>
+        </index>
+        <index name="index4">
+            <element name="technology_product"/>
+        </index>
+        <index name="index5">
+            <element name="other_partnership"/>
+        </index>
+        <index name="index6">
+            <element name="contact_primary"/>
+        </index>
+    </element>
+</database>

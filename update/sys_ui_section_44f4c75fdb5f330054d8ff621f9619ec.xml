@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="44f4c75fdb5f330054d8ff621f9619ec" sys_domain="global" table="x_naci_otr_ccr_dat_partnerships" version="3" view="create">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>title_of_partnership</element>
+            <position>0</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>74ec36e3dbd3b300b86770c08c9619bf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>type</element>
+            <position>1</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>f8ec36e3dbd3b300b86770c08c9619bf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>technology_product</element>
+            <position>2</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>70ec36e3dbd3b300b86770c08c9619c0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>3</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>f4ec36e3dbd3b300b86770c08c9619c0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>project</element>
+            <position>4</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>7cec36e3dbd3b300b86770c08c9619c0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>other_partnership</element>
+            <position>5</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>f0ec36e3dbd3b300b86770c08c9619c1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>source_of_information</element>
+            <position>6</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>78ec36e3dbd3b300b86770c08c9619c1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>7</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>fcec36e3dbd3b300b86770c08c9619c1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>8</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>74ec36e3dbd3b300b86770c08c9619c2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>contact_primary</element>
+            <position>9</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>f8ec36e3dbd3b300b86770c08c9619c2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>contact_additional</element>
+            <position>10</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>70ec36e3dbd3b300b86770c08c9619c3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>date_of_event</element>
+            <position>11</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>f4ec36e3dbd3b300b86770c08c9619c3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>12</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>7cec36e3dbd3b300b86770c08c9619c3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>contact_secondary</element>
+            <position>13</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>b8ec36e3dbd3b300b86770c08c9619d0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>other_contact</element>
+            <position>14</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>30ec36e3dbd3b300b86770c08c9619d1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>date_entered</element>
+            <position>15</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>b4ec36e3dbd3b300b86770c08c9619d1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>16</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>3cec36e3dbd3b300b86770c08c9619d1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>comments</element>
+            <position>17</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-22 14:55:21</sys_created_on>
+            <sys_id>b0ec36e3dbd3b300b86770c08c9619d2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_partnerships" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">44f4c75fdb5f330054d8ff621f9619ec</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-22 14:55:21</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_naci_otr_ccr_dat_partnerships</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-08-21 20:52:03</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_id>44f4c75fdb5f330054d8ff621f9619ec</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_naci_otr_ccr_dat_partnerships</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+            <sys_update_name>sys_ui_section_44f4c75fdb5f330054d8ff621f9619ec</sys_update_name>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-08-21 20:52:03</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Create" name="create">1cb532579f2013001e0abde8132e70e4</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

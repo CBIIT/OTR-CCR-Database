@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Drug Development Collaborative" max_length="40" name="x_naci_otr_ccr_dat_drug_development_collaborative" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="DDC Funding" max_length="20" name="ddc_funding" type="integer"/>
+        <element display="true" label="DDC Meeting Date" max_length="40" name="ddc_meeting_date" type="glide_date"/>
+        <element label="DDC Meeting Outcomes &amp; Recommendations" max_length="2000" name="ddc_meeting_outcomes_recommendations" type="string"/>
+        <element label="DDC Meeting Updates" max_length="2000" name="ddc_meeting_updates" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Contact Primary" max_length="32" name="primary_contact" reference="x_naci_otr_ccr_dat_contact" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Project" mandatory="true" max_length="32" name="project" reference="x_naci_otr_ccr_dat_project" type="reference"/>
+        <index name="index">
+            <element name="project"/>
+        </index>
+        <index name="index2">
+            <element name="primary_contact"/>
+        </index>
+    </element>
+</database>

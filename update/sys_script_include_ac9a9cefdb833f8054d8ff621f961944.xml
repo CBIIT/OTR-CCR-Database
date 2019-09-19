@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_naci_otr_ccr_dat.TableUtils</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>TableUtils</name>
+        <script><![CDATA[var TableUtils = {
+	getLabel: getLabel,
+	getRecords: getRecords,
+	getTables: getTables,
+	getColumns: getColumns,
+};
+
+function getTables() {
+	var grObject = new GlideRecord('sys_db_object');
+	grObject.addQuery('sys_package.name', 'OTR-CCR Database');
+	grObject.query();
+	return asList(grObject);
+}
+
+function getLabel(tableName) {
+	var grObject = new GlideRecord('sys_db_object');
+	grObject.query('name', tableName);
+	grObject.next();
+	return grObject.getValue('label');
+}
+
+function getRecords(tableName, columns) {
+	var gr = new GlideRecord(tableName);
+	gr.query();
+	var records = [];
+	while(gr.next()){
+		var record = {};
+		for (var col in columns) {
+			if (columns[col].reference) {
+				var query;
+				if (columns[col].reference == 'x_naci_otr_ccr_dat_project') {
+					query = columns[col].name + '.title';					
+				} else if (columns[col].reference == 'x_naci_otr_ccr_dat_contact') {
+					query = columns[col].name + '.full_name';
+				} else if (columns[col].reference == 'x_naci_otr_ccr_dat_organization') {
+					query = columns[col].name + '.organization_name';
+				} else if (columns[col].reference == 'x_naci_otr_ccr_dat_technologies_products') {
+					query = columns[col].name + '.technology_product_name';
+				} else if (columns[col].reference == 'x_naci_otr_ccr_dat_tp_site_type_look_up') {
+					query = columns[col].name + '.site';
+				} else if (columns[col].reference == 'x_naci_otr_ccr_dat_outcome_type') {
+					query = columns[col].name + '.type';
+				} else if (columns[col].reference == 'x_naci_otr_ccr_dat_outcome_subtype') {
+					query = columns[col].name + '.type';
+				} else if (columns[col].reference == 'x_naci_otr_ccr_dat_tp_indication') {
+					query = columns[col].name + '.tp_site';
+				} else if (columns[col].reference == 'x_naci_otr_ccr_dat_inventions_patents') {
+					query = columns[col].name + '.title_of_inventions_patents';
+				}
+				record[columns[col].name] = gr.getDisplayValue(query);
+			} else {
+				record[columns[col].name] = gr.getDisplayValue(columns[col].name); 
+			}
+		}
+		//obj1.organization = gr.getDisplayValue('organization.organization_name');
+		records.push(record);
+	}
+	return records;
+}
+
+// returns the column label, id, and reference if it exists
+function getColumns(tableName, headers) {
+	var columns = [];
+	var grDictionary = new GlideRecord('sys_dictionary');
+	grDictionary.addQuery('name', tableName);
+	grDictionary.query();
+
+	while (grDictionary.next()) {
+		var element = grDictionary.getValue('element');
+		var label = grDictionary.getValue('column_label');
+		var reference = grDictionary.getValue('reference');
+
+		if (headers) {
+			if (element && label && headers.indexOf(element) > -1) {
+				columns.push({
+					name: element,
+					label: label,
+					reference: reference
+				});
+			}	
+		} else {
+			if (element && label ){//&& !/^sys_/.test(element)) {
+				columns.push({
+					name: element,
+					label: label,
+					reference: reference
+				});
+			}	
+		}
+	}
+
+	return columns;
+}
+
+function asList(glideRecord) {
+	var records = [];
+	while (glideRecord.next()) {
+		var record = {};
+		for (var key in glideRecord) {
+			record[key] = glideRecord.getValue(key);
+		}
+		records.push(record);
+	}
+	return records;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>parkbw@nih.gov</sys_created_by>
+        <sys_created_on>2019-08-09 16:56:46</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>ac9a9cefdb833f8054d8ff621f961944</sys_id>
+        <sys_mod_count>77</sys_mod_count>
+        <sys_name>TableUtils</sys_name>
+        <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+        <sys_update_name>sys_script_include_ac9a9cefdb833f8054d8ff621f961944</sys_update_name>
+        <sys_updated_by>chop2@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-09-06 20:21:15</sys_updated_on>
+    </sys_script_include>
+</record_update>

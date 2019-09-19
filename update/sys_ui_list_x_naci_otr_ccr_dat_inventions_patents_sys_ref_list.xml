@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_naci_otr_ccr_dat_inventions_patents" version="2" view="sys_ref_list">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>title_of_inventions_patents</element>
+            <list_id display_value="x_naci_otr_ccr_dat_inventions_patents" element="NULL" name="x_naci_otr_ccr_dat_inventions_patents" parent="NULL" relationship="NULL" sys_domain="global" view="bad6c1036f022100250e6bbeae3ee49e">a4be9d80db393f0054d8ff621f9619df</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-05-28 21:30:55</sys_created_on>
+            <sys_id>2cbe9d80db393f0054d8ff621f9619df</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-05-28 21:30:55</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>issued_patent_number</element>
+            <list_id display_value="x_naci_otr_ccr_dat_inventions_patents" element="NULL" name="x_naci_otr_ccr_dat_inventions_patents" parent="NULL" relationship="NULL" sys_domain="global" view="bad6c1036f022100250e6bbeae3ee49e">a4be9d80db393f0054d8ff621f9619df</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-05-28 21:30:55</sys_created_on>
+            <sys_id>acbe9d80db393f0054d8ff621f9619df</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-05-28 21:30:55</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>nih_invention_number</element>
+            <list_id display_value="x_naci_otr_ccr_dat_inventions_patents" element="NULL" name="x_naci_otr_ccr_dat_inventions_patents" parent="NULL" relationship="NULL" sys_domain="global" view="bad6c1036f022100250e6bbeae3ee49e">a4be9d80db393f0054d8ff621f9619df</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-05-28 21:30:55</sys_created_on>
+            <sys_id>20be9d80db393f0054d8ff621f9619e0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-05-28 21:30:55</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>patent_appliaction_number</element>
+            <list_id display_value="x_naci_otr_ccr_dat_inventions_patents" element="NULL" name="x_naci_otr_ccr_dat_inventions_patents" parent="NULL" relationship="NULL" sys_domain="global" view="bad6c1036f022100250e6bbeae3ee49e">a4be9d80db393f0054d8ff621f9619df</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-05-28 21:30:55</sys_created_on>
+            <sys_id>a0be9d80db393f0054d8ff621f9619e0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-05-28 21:30:55</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>contact_primary.name.first_name</element>
+            <list_id display_value="x_naci_otr_ccr_dat_inventions_patents" element="NULL" name="x_naci_otr_ccr_dat_inventions_patents" parent="NULL" relationship="NULL" sys_domain="global" view="bad6c1036f022100250e6bbeae3ee49e">a4be9d80db393f0054d8ff621f9619df</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-05-28 21:30:55</sys_created_on>
+            <sys_id>24be9d80db393f0054d8ff621f9619e0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-05-28 21:30:55</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>contact_primary.name.last_name</element>
+            <list_id display_value="x_naci_otr_ccr_dat_inventions_patents" element="NULL" name="x_naci_otr_ccr_dat_inventions_patents" parent="NULL" relationship="NULL" sys_domain="global" view="bad6c1036f022100250e6bbeae3ee49e">a4be9d80db393f0054d8ff621f9619df</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-05-28 21:30:55</sys_created_on>
+            <sys_id>a4be9d80db393f0054d8ff621f9619e0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-05-28 21:30:55</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_naci_otr_ccr_dat_inventions_patents</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-05-28 21:30:55</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_id>a4be9d80db393f0054d8ff621f9619df</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_naci_otr_ccr_dat_inventions_patents</sys_name>
+            <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+            <sys_update_name>sys_ui_list_x_naci_otr_ccr_dat_inventions_patents_sys_ref_list</sys_update_name>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-05-28 21:30:55</sys_updated_on>
+            <sys_user/>
+            <view display_value="Reference List" name="sys_ref_list">bad6c1036f022100250e6bbeae3ee49e</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

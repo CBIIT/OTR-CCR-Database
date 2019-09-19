@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Technologies  &amp; Products (T&amp;P)" max_length="40" name="x_naci_otr_ccr_dat_technologies_products" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Contact Additional 2" max_length="32" name="contact_additional" reference="x_naci_otr_ccr_dat_contact" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Contact Primary" mandatory="true" max_length="32" name="contact_primary" reference="x_naci_otr_ccr_dat_contact" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Contact Additional 1" max_length="32" name="contact_secondary" reference="x_naci_otr_ccr_dat_contact" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Invention or Patent" max_length="32" name="invention_patent" reference="x_naci_otr_ccr_dat_inventions_patents" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Organization" mandatory="true" max_length="32" name="organization" reference="x_naci_otr_ccr_dat_organization" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Regulatory Pathway" max_length="40" name="regulatory_pathway" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="NDA" sequence="10" value="nda"/>
+                <element inactive_on_update="false" label="BLA" sequence="20" value="bla"/>
+                <element inactive_on_update="false" label="510(K)" sequence="30" value="510k"/>
+                <element inactive_on_update="false" label="PMA" sequence="40" value="pma"/>
+                <element inactive_on_update="false" label="Not Applicable" sequence="50" value="not_applicable"/>
+            </choice>
+        </element>
+        <element display="true" label="Name" mandatory="true" max_length="300" name="technology_product_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Technology Type" max_length="40" name="technology_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="-- New choice --" value="-- New choice --"/>
+                <element inactive_on_update="false" label="Combination" sequence="10" value="combination"/>
+                <element inactive_on_update="false" label="Research Tool" sequence="20" value="research_tool"/>
+                <element inactive_on_update="false" label="Therapeutic - Biologic (Cell)" sequence="30" value="therapeutic_biologic_cell"/>
+                <element inactive_on_update="false" label="Therapeutic - Biologic (Gene)" sequence="40" value="therapeutic_biologic_gene"/>
+                <element inactive_on_update="false" label="Therapeutic - Biologic (Other)" sequence="50" value="therapeutic_biologic_other"/>
+                <element inactive_on_update="false" label="Therapeutic - Biologic (Protein)" sequence="60" value="therapeutic_biologic_Protein"/>
+                <element inactive_on_update="false" label="Therapeutic - Device" sequence="70" value="therapeutic_device"/>
+                <element inactive_on_update="false" label="Therapeutic - Small Molecule" sequence="80" value="therapeutic_small_molecule"/>
+                <element inactive_on_update="false" label="Diagnostics - Device (Imaging-related)" sequence="90" value="diagnostics_device_imaging_related"/>
+                <element inactive_on_update="false" label="Diagnostics - Device (All Other)" sequence="100" value="diagnostics_device_all_other"/>
+                <element inactive_on_update="false" label="Diagnostics - In Vitro" sequence="110" value="diagnostics_in_vitro"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="contact_secondary"/>
+        </index>
+        <index name="index2">
+            <element name="organization"/>
+        </index>
+        <index name="index3">
+            <element name="contact_additional"/>
+        </index>
+        <index name="index4">
+            <element name="contact_primary"/>
+        </index>
+        <index name="index5">
+            <element name="invention_patent"/>
+        </index>
+    </element>
+</database>

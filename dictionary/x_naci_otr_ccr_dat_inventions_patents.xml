@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Inventions &amp; Patents" max_length="40" name="x_naci_otr_ccr_dat_inventions_patents" type="collection">
+        <element label="Comments" max_length="2000" name="comments" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Contact Additional 2" max_length="32" name="contact_additional" reference="x_naci_otr_ccr_dat_contact" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Contact Primary" mandatory="true" max_length="32" name="contact_primary" reference="x_naci_otr_ccr_dat_contact" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Contact Additional 1" max_length="32" name="contact_secondary" reference="x_naci_otr_ccr_dat_contact" type="reference"/>
+        <element label="Issued Patent Number" max_length="50" name="issued_patent_number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Issue Date" max_length="40" name="issue_date" type="glide_date"/>
+        <element label="NIH Invention Number" max_length="100" name="nih_invention_number" type="string"/>
+        <element label="Patent Application Number" max_length="100" name="patent_appliaction_number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Patent Priority Date" max_length="40" name="patent_priority_date" type="glide_date"/>
+        <element display="true" label="Title" mandatory="true" max_length="200" name="title_of_inventions_patents" type="string"/>
+        <index name="index">
+            <element name="contact_secondary"/>
+        </index>
+        <index name="index2">
+            <element name="contact_additional"/>
+        </index>
+        <index name="index3">
+            <element name="contact_primary"/>
+        </index>
+    </element>
+</database>

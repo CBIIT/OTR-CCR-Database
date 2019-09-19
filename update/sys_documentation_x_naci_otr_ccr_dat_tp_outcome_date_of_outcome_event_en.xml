@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="date_of_outcome_event" label="Date of Outcome Event" language="en" table="x_naci_otr_ccr_dat_tp_outcome">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>date_of_outcome_event</element>
+            <help/>
+            <hint/>
+            <label>Date of Outcome Event</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_tp_outcome</name>
+            <plural>Date of Outcome Events</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-03-13 22:32:49</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>1a04d62fdbcc330054d8ff621f961934</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Date of Outcome Event</sys_name>
+            <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+            <sys_update_name>sys_documentation_x_naci_otr_ccr_dat_tp_outcome_date_of_outcome_event_en</sys_update_name>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-03-13 22:32:49</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="7e7e8461dbe17700b86770c08c9619c5" sys_domain="global" table="x_naci_otr_ccr_dat_drug_development_collaborative" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>project</element>
+            <position>0</position>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-06-04 17:41:07</sys_created_on>
+            <sys_id>ea3dac5adbb9b300b86770c08c9619fa</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="Default view">7e7e8461dbe17700b86770c08c9619c5</sys_ui_section>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-06-04 17:41:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>primary_contact</element>
+            <position>1</position>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-06-04 17:41:07</sys_created_on>
+            <sys_id>6e3dac5adbb9b300b86770c08c9619fa</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="Default view">7e7e8461dbe17700b86770c08c9619c5</sys_ui_section>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-06-04 17:41:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>ddc_meeting_date</element>
+            <position>2</position>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-06-04 17:41:07</sys_created_on>
+            <sys_id>ee3dac5adbb9b300b86770c08c9619fa</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="Default view">7e7e8461dbe17700b86770c08c9619c5</sys_ui_section>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-06-04 17:41:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>ddc_meeting_outcomes_recommendations</element>
+            <position>3</position>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-06-04 17:41:07</sys_created_on>
+            <sys_id>623dac5adbb9b300b86770c08c9619fb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="Default view">7e7e8461dbe17700b86770c08c9619c5</sys_ui_section>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-06-04 17:41:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>ddc_funding</element>
+            <position>4</position>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-06-04 17:41:07</sys_created_on>
+            <sys_id>e23dac5adbb9b300b86770c08c9619fb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="Default view">7e7e8461dbe17700b86770c08c9619c5</sys_ui_section>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-06-04 17:41:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>ddc_meeting_updates</element>
+            <position>5</position>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-06-04 17:41:07</sys_created_on>
+            <sys_id>663dac5adbb9b300b86770c08c9619fb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="Default view">7e7e8461dbe17700b86770c08c9619c5</sys_ui_section>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-06-04 17:41:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>primary_contact.full_name</element>
+            <position>6</position>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-06-04 17:41:07</sys_created_on>
+            <sys_id>e63dac5adbb9b300b86770c08c9619fb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="Default view">7e7e8461dbe17700b86770c08c9619c5</sys_ui_section>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-06-04 17:41:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_naci_otr_ccr_dat_drug_development_collaborative</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-05-20 21:15:39</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_id>7e7e8461dbe17700b86770c08c9619c5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_naci_otr_ccr_dat_drug_development_collaborative</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+            <sys_update_name>sys_ui_section_7e7e8461dbe17700b86770c08c9619c5</sys_update_name>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-05-20 21:15:39</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

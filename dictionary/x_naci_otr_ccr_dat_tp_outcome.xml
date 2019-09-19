@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="T&amp;P Outcome" max_length="40" name="x_naci_otr_ccr_dat_tp_outcome" type="collection">
+        <element label="Comments" max_length="1000" name="comments" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Date Entered" max_length="40" name="date_entered" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Date of Outcome Event" max_length="40" name="date_of_outcome_event" type="glide_date"/>
+        <element label="Outcome Name" mandatory="true" max_length="200" name="outcome_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Outcome Subtype" mandatory="true" max_length="32" name="outcome_subtype" reference="x_naci_otr_ccr_dat_tp_outcome_subtype" reference_qual="javascript: &quot;type=&quot;+current.outcome_type.toString()" type="reference" use_reference_qualifier="advanced"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Outcome Type" mandatory="true" max_length="40" name="outcome_type" reference="x_naci_otr_ccr_dat_outcome_type" type="reference">
+            <choice/>
+        </element>
+        <element label="Source of Information" max_length="200" name="source_of_information" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Technologies &amp; Products" mandatory="true" max_length="32" name="technologies_product" reference="x_naci_otr_ccr_dat_technologies_products" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="T&amp;P Indication" max_length="32" name="t_p_indication" reference="x_naci_otr_ccr_dat_tp_indication" type="reference"/>
+        <index name="index">
+            <element name="outcome_subtype"/>
+        </index>
+        <index name="index2">
+            <element name="outcome_type"/>
+        </index>
+        <index name="index3">
+            <element name="t_p_indication"/>
+        </index>
+        <index name="index4">
+            <element name="technologies_product"/>
+        </index>
+    </element>
+</database>

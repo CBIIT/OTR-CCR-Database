@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="T&amp;P Indication" max_length="40" name="x_naci_otr_ccr_dat_tp_indication" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Technologies Product" mandatory="true" max_length="32" name="technologies_product" reference="x_naci_otr_ccr_dat_technologies_products" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" display="true" label="T&amp;P Indication" mandatory="true" max_length="40" name="tp_site" reference="x_naci_otr_ccr_dat_tp_site_type_look_up" type="reference">
+            <choice/>
+        </element>
+        <index name="index">
+            <element name="tp_site"/>
+        </index>
+        <index name="index2">
+            <element name="technologies_product"/>
+        </index>
+    </element>
+</database>

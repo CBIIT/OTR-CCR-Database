@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_row">
+    <sp_row action="INSERT_OR_UPDATE">
+        <class_name/>
+        <order>1</order>
+        <sp_column/>
+        <sp_container display_value="[ccr-db] view record - Container 1">63f254c1db2ff700b86770c08c961988</sp_container>
+        <sys_class_name>sp_row</sys_class_name>
+        <sys_created_by>chop2@nih.gov</sys_created_by>
+        <sys_created_on>2019-08-26 18:24:46</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>6f23dc05db2ff700b86770c08c96194c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>1</sys_name>
+        <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+        <sys_update_name>sp_row_6f23dc05db2ff700b86770c08c96194c</sys_update_name>
+        <sys_updated_by>chop2@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-08-26 18:24:46</sys_updated_on>
+    </sp_row>
+</record_update>

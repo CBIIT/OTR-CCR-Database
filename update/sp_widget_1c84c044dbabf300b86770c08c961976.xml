@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function(spModal, $location) {
+  /* widget controller */
+  var c = this;
+
+	setTimeout(hideButtons, 0);
+	
+	function hideButtons() {
+		$('#table-form .panel-footer button:not(:last)').hide()
+		$('#table-form .panel-footer button:last')[0].onclick = function() {
+			spModal.open({
+				title: 'Success',
+				message: 'Data has been saved'
+			}).then(hideButtons, hideButtons);
+		}
+	}
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>_ccr_db__table_add</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>[ccr-db] table add</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	var tableName = $sp.getParameter('table');
+
+	data.formOptions = {
+		"title": "Adding Record",
+		"widget": "widget-form",
+		"widgetInput": {
+			"sys_id": "-1",
+			"table": tableName,
+			"view": "Create"
+		}
+	//	,
+	//	"buttons": [],
+	};
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>chop2@nih.gov</sys_created_by>
+        <sys_created_on>2019-08-23 14:46:44</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>1c84c044dbabf300b86770c08c961976</sys_id>
+        <sys_mod_count>59</sys_mod_count>
+        <sys_name>[ccr-db] table add</sys_name>
+        <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+        <sys_update_name>sp_widget_1c84c044dbabf300b86770c08c961976</sys_update_name>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-09-09 19:48:26</sys_updated_on>
+        <template><![CDATA[<div id="table-form">
+  <widget id="widget-form">
+  </widget>
+</div>]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, spModal) {
+	var c = this;
+	$scope.mandatory = [];
+	c.debug = false;
+	if (c.debug) {
+		console.log('debugging readonly page', $scope, c);
+	}
+
+	setTimeout(addPrompt, 0);
+	
+	// add save success prompt and hide attachment button if not admin
+	function addPrompt() {
+		if (!c.data.admin) {
+			$('div.pull-right.attachment-button.ng-scope').remove()//css('display', 'none');
+		}
+		$('button.btn.btn-primary.action-btn.pull-right.ng-scope')[0].onclick = function() {
+			spModal.open({
+				title: 'Success',
+				message: 'Data has been saved'
+			}).then(addPrompt, addPrompt);
+		}
+	}
+
+
+}
+
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>// hide insert buttons
+button.btn.action-btn.ng-binding.ng-scope.btn-default {
+  display: none;
+}
+
+// hide edit attachments button
+button.btn.btn-link.m-l.ng-binding {
+  display: none;
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>ccr_db_readonly_page</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>[ccr-db] readonly page</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	var admin = gs.getUser().isMemberOf('CCR_Database_Admin');
+	var tableName = $sp.getParameter('table');
+	var sys_id = $sp.getParameter('sys_id');
+	var view = $sp.getParameter('view');
+	var widgetOptions = optionBuilder();
+
+
+	data.admin = admin;
+	data.tableLabel = TableUtils.getLabel(tableName);
+	data.tableName = tableName;
+	data.form = $sp.getForm(tableName, sys_id, null, view);
+
+	function setReadonly() {
+		var fields = data.form._fields;
+		for (var name in fields) {
+			if(!admin){
+				fields[name].readonly = true;
+			}
+		}
+	}
+
+	data.columns = getColumns(tableName, null);
+
+	function optionBuilder() {
+		var options = [];
+		var relations = {
+			x_naci_otr_ccr_dat_contact: {
+				x_naci_otr_ccr_dat_inventions_patents: 'contact_primary',
+				x_naci_otr_ccr_dat_technologies_products: 'contact_primary',
+				x_naci_otr_ccr_dat_project: 'contact_primary'
+			},
+			x_naci_otr_ccr_dat_inventions_patents: {
+				x_naci_otr_ccr_dat_technologies_products: 'invention_patent'
+			},
+			x_naci_otr_ccr_dat_organization: {
+				x_naci_otr_ccr_dat_contact: 'organization',
+				x_naci_otr_ccr_dat_partnerships: 'other_partnership',
+				x_naci_otr_ccr_dat_technologies_products: 'organization'
+			},
+			x_naci_otr_ccr_dat_outcome_type: {
+				x_naci_otr_ccr_dat_tp_outcome: 'outcome_type',
+				x_naci_otr_ccr_dat_tp_outcome_subtype: 'type'
+			},
+			x_naci_otr_ccr_dat_project: {
+				x_naci_otr_ccr_dat_drug_development_collaborative: 'project',
+				x_naci_otr_ccr_dat_partnerships: 'project'
+			},
+			x_naci_otr_ccr_dat_tp_indication: {
+				x_naci_otr_ccr_dat_tp_outcome: 't_p_indication',
+				x_naci_otr_ccr_dat_tp_status: 'tp_indication'
+			},
+			x_naci_otr_ccr_dat_tp_outcome_subtype: {
+				x_naci_otr_ccr_dat_tp_outcome: 'outcome_subtype'
+			},
+			x_naci_otr_ccr_dat_tp_site_type_look_up: {
+				x_naci_otr_ccr_dat_tp_indication: 'tp_site'
+			},
+			x_naci_otr_ccr_dat_technologies_products: {
+				x_naci_otr_ccr_dat_partnerships: 'technology_product',
+				x_naci_otr_ccr_dat_project: 'technologies_products',
+				x_naci_otr_ccr_dat_tp_indication: 'technologies_product',
+				x_naci_otr_ccr_dat_tp_outcome: 'technologies_product',
+				x_naci_otr_ccr_dat_tp_status: 'technologies_product'
+			}
+		}
+		var tables = {
+			x_naci_otr_ccr_dat_contact: {
+				"x_naci_otr_ccr_dat_inventions_patents": [
+					"title_of_inventions_patents", 
+					"issued_patent_number",
+					"issue_date",
+					"nih_invention_number",
+					"patent_priority_date",
+					"contact_primary"
+				],
+				"x_naci_otr_ccr_dat_technologies_products": [
+					"technology_product_name",
+					"invention_patent",
+					"organization",
+					"regulatory_pathway",
+					"technology_type",
+					"contact_primary",
+					"contact_secondary",
+					"contact_additional"
+				],
+				"x_naci_otr_ccr_dat_project": [
+					"title",
+					"project_status",
+					"contact_primary",
+					"technologies_products"
+				]
+			},
+			x_naci_otr_ccr_dat_inventions_patents: {
+				"x_naci_otr_ccr_dat_technologies_products": [
+					"technology_product_name",
+					"invention_patent",
+					"organization",
+					"regulatory_pathway",
+					"technology_type",
+					"contact_primary",
+					"contact_secondary",
+					"contact_additional"
+				]
+			},
+			x_naci_otr_ccr_dat_organization: {
+				"x_naci_otr_ccr_dat_contact": [
+					"full_name",
+					"suffix",
+					"organization"
+				],
+				"x_naci_otr_ccr_dat_partnerships": [
+					"title_of_partnership",
+					"type"
+				],
+				"x_naci_otr_ccr_dat_technologies_products": [
+					"technology_product_name",
+					"invention_patent",
+					"organization",
+					"regulatory_pathway",
+					"technology_type",
+					"contact_primary",
+					"contact_secondary",
+					"contact_additional"
+				]
+			},
+			x_naci_otr_ccr_dat_outcome_type: {
+				"x_naci_otr_ccr_dat_tp_outcome": [
+					"outcome_name",
+					"outcome_type",
+					"outcome_subtype",
+					"technologies_product",
+					"t_p_indication",
+					"date_entered",
+					"date_of_outcome_event",
+					"source_of_information",
+					"comments"
+				],
+				"x_naci_otr_ccr_dat_tp_outcome_subtype": [
+					"type",
+					"subtype",
+					"value"
+				]
+			},
+			x_naci_otr_ccr_dat_project: {
+				"x_naci_otr_ccr_dat_drug_development_collaborative": [
+					"ddc_meeting_date",
+					"project",
+					"primary_contact",
+					"ddc_funding"
+				],
+				"x_naci_otr_ccr_dat_partnerships": [
+					"type",
+					"project",
+					"technology_product",
+					"contact_primary",
+					"source_of_information"
+				]
+			},
+			x_naci_otr_ccr_dat_tp_indication: {
+				"x_naci_otr_ccr_dat_tp_outcome": [
+					"outcome_name",
+					"outcome_type",
+					"outcome_subtype",
+					"technologies_product",
+					"t_p_indication",
+					"date_entered",
+					"date_of_outcome_event",
+					"source_of_information",
+					"comments"
+				],
+				"x_naci_otr_ccr_dat_tp_status": [
+					"technologies_product",
+					"tp_indication",
+					"status",
+					"source_information",
+					"date_entered"
+				]
+			}, 
+			x_naci_otr_ccr_dat_tp_outcome_subtype: {
+				"x_naci_otr_ccr_dat_tp_outcome": [
+					"outcome_name",
+					"outcome_type",
+					"outcome_subtype",
+					"technologies_product",
+					"t_p_indication",
+					"date_entered",
+					"date_of_outcome_event",
+					"source_of_information",
+					"comments"
+				]
+			},
+			x_naci_otr_ccr_dat_tp_site_type_look_up: {
+				"x_naci_otr_ccr_dat_tp_indication": [
+					"technologies_product",
+					"tp_site"
+				]
+			}, 
+			x_naci_otr_ccr_dat_technologies_products: {
+				"x_naci_otr_ccr_dat_partnerships": [
+					"type",
+					"project",
+					"technology_product",
+					"contact_primary",
+					"source_of_information"
+				],
+				"x_naci_otr_ccr_dat_project": [
+					"title",
+					"project_status",
+					"contact_primary",
+					"technologies_products"
+				],
+				"x_naci_otr_ccr_dat_tp_indication": [
+					"technologies_product",
+					"tp_site"
+				],
+				"x_naci_otr_ccr_dat_tp_outcome": [
+					"outcome_name",
+					"outcome_type",
+					"outcome_subtype",
+					"technologies_product",
+					"t_p_indication",
+					"date_entered",
+					"date_of_outcome_event",
+					"source_of_information",
+					"comments"
+				],
+				"x_naci_otr_ccr_dat_tp_status": [
+					"technologies_product",
+					"tp_indication",
+					"status",
+					"source_information",
+					"date_entered"
+				]
+			}
+		};
+		var assocTables = tables[tableName];
+
+		for (var table in assocTables) {
+			var label = TableUtils.getLabel(table);
+			var relatedColumn = relations[tableName][table];
+			var filter = {};
+			filter[relatedColumn] = sys_id;
+
+			var option = {"title" : label,
+										"table" : table,
+										"filter": getQueryString(filter),
+
+										/*
+										"filter": getQueryString({
+											contact_primary: sys_id,
+											project: sys_id,
+											invention_patent: sys_id,
+											organization: sys_id,
+											title_of_partnership: sys_id,
+											outcome_type: sys_id,
+											type: sys_id
+										}),
+										*/
+
+										"window_size": "5",
+										"fields": assocTables[table].join(',')
+									 }; 
+			options.push(option);
+		}
+		return options;
+	}
+
+	function getQueryString(obj) {
+		var conditions = [];
+		for (var key in obj) {
+			conditions.push([key, obj[key]].join('='));
+		}
+		return conditions.join('^OR');
+	}
+
+	data.tables = [];
+	for (var i in widgetOptions) {
+		data.tables.push($sp.getWidget("widget-data-table", widgetOptions[i]));
+	}
+
+	setReadonly();
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>chop2@nih.gov</sys_created_by>
+        <sys_created_on>2019-08-26 21:22:04</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>2ccbf885db233b00b86770c08c9619fa</sys_id>
+        <sys_mod_count>352</sys_mod_count>
+        <sys_name>[ccr-db] readonly page</sys_name>
+        <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+        <sys_update_name>sp_widget_2ccbf885db233b00b86770c08c9619fa</sys_update_name>
+        <sys_updated_by>chop2@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-09-13 14:37:05</sys_updated_on>
+        <template><![CDATA[<div ng-if="c.data.admin">
+  <widget id="widget-form"></widget>
+</div> 
+
+<div ng-if="!c.data.admin" class="panel panel-default">
+  <div class="panel-heading">
+    <span class="panel-title">
+      {{ c.data.tableLabel }}
+    </span>
+  </div>
+  <div class="panel-body">
+    <sp-model form_model="data.form" mandatory="mandatory"></sp-model>  
+  </div>
+  <div class="panel-footer">
+    <div class="d-flex">
+      <a href="?id=ccr_db_table_view&table={{c.data.tableName}}">
+        <button class="btn btn-default mr-auto">
+          Return
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div ng-repeat="table in c.data.tables">
+  <sp-widget widget="table"></sp-widget>
+</div>
+
+<!--
+<pre ng-if="c.debug">{{ c.data.columns | json}}</pre>
+-->]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>DELETE</http_method>
+        <name>Record</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	var table = request.queryParams.table.toString();
+	var id = request.queryParams.id.toString();
+
+	if (!gs.getUser().isMemberOf('CCR_Database_Admin') || 
+		!/^x_naci_otr_ccr_dat_/.test(table))
+		return false;
+		
+	var record = new GlideRecord(table);
+	record.get(id);
+	
+	if (record.isValidRecord()) {
+		record.deleteRecord();
+		return true;
+	}
+	
+	return false;
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_naci_otr_ccr_dat/data/record</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/record</relative_path>
+        <request_example/>
+        <requires_acl_authorization>false</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>false</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>chop2@nih.gov</sys_created_by>
+        <sys_created_on>2019-09-03 18:25:43</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>fabfdde3db23374054d8ff621f9619c2</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Record</sys_name>
+        <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+        <sys_update_name>sys_ws_operation_fabfdde3db23374054d8ff621f9619c2</sys_update_name>
+        <sys_updated_by>chop2@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-09-03 18:29:35</sys_updated_on>
+        <web_service_definition display_value="Data">48bf9de3db23374054d8ff621f961918</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

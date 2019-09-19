@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Organization" max_length="40" name="x_naci_otr_ccr_dat_organization" type="collection">
+        <element label="Address" max_length="200" name="address" type="string"/>
+        <element display="true" label="Organization Name" mandatory="true" max_length="200" name="organization_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Phone Number" max_length="20" name="phone_number" type="phone_number_e164"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Organization Type" mandatory="true" max_length="100" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Academic Institution" sequence="10" value="Academic Institution"/>
+                <element inactive_on_update="false" label="Economic Development Authority" sequence="20" value="Economic Development Authority"/>
+                <element inactive_on_update="false" label="Federal Government" sequence="30" value="Federal Government"/>
+                <element inactive_on_update="false" label="Healthcare Product Company" sequence="40" value="Healthcare Product Company"/>
+                <element inactive_on_update="false" label="Healthcare Service Company" sequence="45" value="Healthcare Service Company"/>
+                <element inactive_on_update="false" label="Investor (Angel, Venture, Corporate)" sequence="50" value="Investor (Angel, Venture, Corporate)"/>
+                <element inactive_on_update="false" label="Other Company" sequence="60" value="Other Company"/>
+                <element inactive_on_update="false" label="Philanthropic Organization" sequence="70" value="Philanthropic Organization"/>
+                <element inactive_on_update="false" label="Research Institution (non-academic)" sequence="80" value="Research Institution (non-academic)"/>
+                <element inactive_on_update="false" label="State or Regional Government" sequence="90" value="State or Regional Government"/>
+            </choice>
+        </element>
+        <element label="Website" max_length="1024" name="website" type="url"/>
+    </element>
+</database>

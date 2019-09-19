@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="status" table="x_naci_otr_ccr_dat_tp_status" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Approved</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_tp_status</name>
+            <sequence/>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-05-20 21:08:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>e2ec0061dbe17700b86770c08c961975</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-05-20 21:08:56</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>Approved</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Phase I</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_tp_status</name>
+            <sequence/>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-03-13 22:10:30</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>b4eecae7dbcc330054d8ff621f9619f1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-03-13 22:10:30</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>Phase I</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Phase II</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_tp_status</name>
+            <sequence/>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-03-13 22:10:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>1cfe06e7dbcc330054d8ff621f961947</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-03-13 22:10:45</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>Phase II</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Phase III</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_tp_status</name>
+            <sequence/>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-03-13 22:10:58</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>8c0f8ee7dbcc330054d8ff621f96198b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-03-13 22:10:58</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>Phase III</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Preclinical</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_tp_status</name>
+            <sequence/>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-03-13 22:10:11</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>e0cecae7dbcc330054d8ff621f9619e9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-03-13 22:10:11</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>Preclinical</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Regulatory Review</label>
+            <language>en</language>
+            <name>x_naci_otr_ccr_dat_tp_status</name>
+            <sequence/>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-03-13 22:11:24</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>c51f8ee7dbcc330054d8ff621f96198e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-03-13 22:11:24</sys_updated_on>
+            <u_dependent_value_2/>
+            <value>Regulatory Review</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>status</element>
+            <name>x_naci_otr_ccr_dat_tp_status</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>zhoujim@nih.gov</sys_created_by>
+            <sys_created_on>2019-03-13 22:10:11</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>aa67e043db32f74054d8ff621f961953</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>status</sys_name>
+            <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+            <sys_update_name>sys_choice_x_naci_otr_ccr_dat_tp_status_status</sys_update_name>
+            <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-03-13 22:10:11</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

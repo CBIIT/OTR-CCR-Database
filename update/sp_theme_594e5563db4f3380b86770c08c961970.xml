@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_theme">
+    <sp_theme action="INSERT_OR_UPDATE">
+        <css_variables>$welcome-h1:	#fff;&#13;
+$nci-blue: 		#12416f;&#13;
+$nci-teal: 		#14819b;&#13;
+$nci-red:		#bb0e3d;&#13;
+$nci-dk-gray:  	#5f5f5f;&#13;
+$nci-yel:  		#fdb81e;&#13;
+$nci-grn: 		#719500;&#13;
+&#13;
+$nci-cat: 		#736eb4; /*plum */&#13;
+&#13;
+$nci-black: #212121;&#13;
+$nci-gray: #757575;&#13;
+&#13;
+$link-color: #428bca;&#13;
+&#13;
+._b-blue {&#13;
+border-left: 10px solid $nci-blue;&#13;
+}&#13;
+&#13;
+._b-cat {&#13;
+border-left: 10px solid $nci-cat;&#13;
+}&#13;
+&#13;
+._b-teal {&#13;
+border-left: 10px solid $nci-teal;&#13;
+}&#13;
+&#13;
+._b-red {&#13;
+border-left: 10px solid $nci-red;&#13;
+}&#13;
+&#13;
+._bg-red {&#13;
+background-color: $nci-red;&#13;
+}&#13;
+&#13;
+._bg-blu {&#13;
+background-color: $nci-blue;&#13;
+}&#13;
+&#13;
+._bg-grn {&#13;
+background-color: $nci-grn !important;&#13;
+color: #fff !important;&#13;
+}&#13;
+&#13;
+._blu {&#13;
+color: $nci-blue;&#13;
+}&#13;
+&#13;
+._cat {&#13;
+color: $nci-cat;&#13;
+}&#13;
+&#13;
+._teal {&#13;
+color: $nci-teal;&#13;
+}&#13;
+&#13;
+._red {&#13;
+color: $nci-red;&#13;
+}&#13;
+&#13;
+._wht {&#13;
+color: #fff;&#13;
+}&#13;
+&#13;
+._blk {&#13;
+color: $nci-black;&#13;
+}&#13;
+&#13;
+._gry {&#13;
+color: $nci-gray;&#13;
+}&#13;
+&#13;
+._yel {&#13;
+color: $nci-yel;&#13;
+}&#13;
+&#13;
+._grn {&#13;
+color: $nci-grn;&#13;
+}&#13;
+&#13;
+.mandatory {&#13;
+color: $nci-red;&#13;
+}&#13;
+md-backdrop.md-menu-backdrop {&#13;
+background: #383942 !important;&#13;
+opacity: 0.7;&#13;
+}&#13;
+&#13;
+nci-dd-header .md-button.md-default-theme:not([disabled]).md-focused, &#13;
+nci-dd-header .md-button:not([disabled]).md-focused, &#13;
+nci-dd-header .md-button.md-default-theme:not([disabled]):hover, &#13;
+nci-dd-header .md-button:not([disabled]):hover {&#13;
+color: $nci-red;&#13;
+font-weight: 700;&#13;
+}&#13;
+&#13;
+.subcat &gt; span {&#13;
+font-size: 20px;&#13;
+color: $nci-red;&#13;
+}&#13;
+&#13;
+&#13;
+.bg-white {&#13;
+  background-color: white !important;&#13;
+}&#13;
+&#13;
+</css_variables>
+        <footer display_value="NCI2 Footer">e2cd7e84db71d38054d8ff621f9619fd</footer>
+        <footer_fixed>false</footer_fixed>
+        <header display_value="NCI Header">9e4e6d73dbe1938054d8ff621f9619c6</header>
+        <name>[ccr-db] nci theme</name>
+        <navbar_fixed>false</navbar_fixed>
+        <sys_class_name>sp_theme</sys_class_name>
+        <sys_created_by>chop2@nih.gov</sys_created_by>
+        <sys_created_on>2019-08-09 21:46:16</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>594e5563db4f3380b86770c08c961970</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>[ccr-db] nci theme</sys_name>
+        <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+        <sys_update_name>sp_theme_594e5563db4f3380b86770c08c961970</sys_update_name>
+        <sys_updated_by>chop2@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-08-09 21:58:30</sys_updated_on>
+    </sp_theme>
+</record_update>

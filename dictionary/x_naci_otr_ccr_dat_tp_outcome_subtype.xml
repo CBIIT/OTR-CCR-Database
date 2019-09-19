@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="T&amp;P Outcome subtype" max_length="40" name="x_naci_otr_ccr_dat_tp_outcome_subtype" type="collection">
+        <element label="Subtype" max_length="100" name="subtype" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Type" max_length="100" name="type" reference="x_naci_otr_ccr_dat_outcome_type" type="reference"/>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '[' + current.type.type + '] ' + current.subtype;&#13;&#10;&#13;&#10;})(current);" display="true" label="Value" max_length="200" name="value" type="string" virtual="true"/>
+        <index name="index">
+            <element name="type"/>
+        </index>
+    </element>
+</database>

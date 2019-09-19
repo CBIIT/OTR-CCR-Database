@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_portal">
+    <sp_portal action="INSERT_OR_UPDATE">
+        <css_variables/>
+        <default>false</default>
+        <homepage display_value="ccr_db_home">7a46c0abdb873380b86770c08c961929</homepage>
+        <icon/>
+        <kb_knowledge_base/>
+        <kb_knowledge_page/>
+        <login_page/>
+        <logo>b4355927db0f3380b86770c08c96195e</logo>
+        <notfound_page/>
+        <quick_start_config/>
+        <sc_catalog/>
+        <sc_catalog_page/>
+        <sc_category_page/>
+        <sp_chat_queue/>
+        <sp_rectangle_menu/>
+        <sqanda_knowledge_base/>
+        <sys_class_name>sp_portal</sys_class_name>
+        <sys_created_by>chop2@nih.gov</sys_created_by>
+        <sys_created_on>2019-08-09 15:21:10</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>33e048a7db873380b86770c08c96193c</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>OTR-CCR Database</sys_name>
+        <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+        <sys_update_name>sp_portal_33e048a7db873380b86770c08c96193c</sys_update_name>
+        <sys_updated_by>chop2@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-08-09 21:46:58</sys_updated_on>
+        <theme display_value="[ccr-db] nci theme">594e5563db4f3380b86770c08c961970</theme>
+        <title>OTR-CCR Database</title>
+        <url_suffix>ccr-db</url_suffix>
+    </sp_portal>
+    <sys_translated_text action="delete_multiple" query="documentkey=33e048a7db873380b86770c08c96193c"/>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>734003</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/svg+xml</content_type>
+        <encryption_context/>
+        <file_name>logo</file_name>
+        <image_height/>
+        <image_width/>
+        <size_bytes>9504</size_bytes>
+        <size_compressed>3177</size_compressed>
+        <state/>
+        <sys_created_by>chop2@nih.gov</sys_created_by>
+        <sys_created_on>2019-08-09 21:06:39</sys_created_on>
+        <sys_id>b4355927db0f3380b86770c08c96195e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>chop2@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-08-09 21:06:39</sys_updated_on>
+        <table_name>ZZ_YYsp_portal</table_name>
+        <table_sys_id>33e048a7db873380b86770c08c96193c</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="logo" sys_id="b4355927db0f3380b86770c08c96195e">b4355927db0f3380b86770c08c96195e</sys_attachment>
+        <sys_created_by>chop2@nih.gov</sys_created_by>
+        <sys_created_on>2019-08-09 21:06:39</sys_created_on>
+        <sys_id>f4355927db0f3380b86770c08c96195e</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>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</data>
+        <length>4224</length>
+        <position>1</position>
+        <sys_attachment display_value="logo" sys_id="b4355927db0f3380b86770c08c96195e">b4355927db0f3380b86770c08c96195e</sys_attachment>
+        <sys_created_by>chop2@nih.gov</sys_created_by>
+        <sys_created_on>2019-08-09 21:06:39</sys_created_on>
+        <sys_id>78355927db0f3380b86770c08c96195e</sys_id>
+    </sys_attachment_doc>
+</record_update>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_column">
+    <sp_column action="INSERT_OR_UPDATE">
+        <class_name/>
+        <order>3</order>
+        <size>2</size>
+        <size_lg/>
+        <size_sm/>
+        <size_xs/>
+        <sp_row display_value="1">1021b6c2db3f3300b86770c08c96191c</sp_row>
+        <sys_class_name>sp_column</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2019-09-11 18:44:30</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>1c21b6c2db3f3300b86770c08c961920</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>3</sys_name>
+        <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+        <sys_update_name>sp_column_1c21b6c2db3f3300b86770c08c961920</sys_update_name>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-09-11 18:44:51</sys_updated_on>
+    </sp_column>
+</record_update>

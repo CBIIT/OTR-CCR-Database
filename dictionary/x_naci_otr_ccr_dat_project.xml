@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Projects" max_length="40" name="x_naci_otr_ccr_dat_project" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Contact Additional 2" max_length="32" name="contact_additional" reference="x_naci_otr_ccr_dat_contact" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Contact Primary" mandatory="true" max_length="32" name="contact_primary" reference="x_naci_otr_ccr_dat_contact" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Contact Additional 1" max_length="32" name="contact_secondary" reference="x_naci_otr_ccr_dat_contact" type="reference"/>
+        <element label="Project Background/Objectives" max_length="2000" name="project_background_objectives" type="string"/>
+        <element label="Project Notes" max_length="2000" name="project_notes" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" label="Project Status" mandatory="true" max_length="40" name="project_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Completed" sequence="5" value="Completed"/>
+                <element inactive_on_update="false" label="Not Yet Started" sequence="10" value="Not Yet Started"/>
+                <element inactive_on_update="false" label="Ongoing" sequence="20" value="Ongoing"/>
+                <element inactive_on_update="false" label="On Hold" sequence="30" value="On Hold"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Technologies &amp; Products" max_length="32" name="technologies_products" reference="x_naci_otr_ccr_dat_technologies_products" type="reference"/>
+        <element display="true" label="Title" mandatory="true" max_length="500" name="title" type="string"/>
+        <index name="index">
+            <element name="contact_secondary"/>
+        </index>
+        <index name="index2">
+            <element name="contact_additional"/>
+        </index>
+        <index name="index3">
+            <element name="contact_primary"/>
+        </index>
+        <index name="index4">
+            <element name="technologies_products"/>
+        </index>
+    </element>
+</database>

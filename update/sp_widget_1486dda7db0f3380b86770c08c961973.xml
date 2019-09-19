@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $location, $http, spModal, spUtil) {
+
+
+	var c = this;
+	c.debug = false;
+	c.deleteRecord = deleteRecord;
+
+	$scope.mandatory = [];
+	$scope.pagination = [5, 10, 15, 20, 25];
+	$scope.sortKey = null;
+	$scope.reverse = null;
+
+	$scope.sort = function(keyname){
+		$scope.sortKey = keyname;   //set the sortKey to the param passed
+		$scope.reverse = !$scope.reverse; //if true make it false and vice versa
+	}
+
+	$scope.exclude = function(key, value) {
+		return function(record) {
+			return record[key] != value;
+		};
+	}
+
+	$scope.delRecord = function(table, record) {
+		spModal.confirm("Delete this Record?").then(function(confirmed) {
+			if (confirmed) {
+				var ga = new GlideAjax('TableUtils');
+				ga.addParam('sysparmname', 'deleteRecord')
+				ga.addParam('sysparm_my_name', 'table,record')
+				ga.getXML(callDelete);
+			}
+		})
+	}
+	
+	function callDelete(res) {
+		var answer = res.responseXML.documentElement.getAttribute("answer"); 
+		alert(answer);
+	}
+
+	function getByIndex(record, index) {
+		return record[Object.keys(record)[index]];
+	}
+	
+	function deleteRecord(table, id) {
+		spModal.confirm("Delete this Record?").then(function(confirmed) {
+			if (!confirmed) return;
+			
+			$http.delete(
+				'/api/x_naci_otr_ccr_dat/data/record', 
+				{ params: {id: id, table: table} }
+			).then(function(response) {
+				var status = response.data.result;
+				if (status)
+					$scope.server.refresh();
+				console.log(response);
+			})
+		})
+	}
+
+
+/*
+	function addRecord() {
+		spModal.open({
+			title: 'Adding Record',
+			widget: 'widget-form',
+			widgetInput: {
+				sys_id: '-1',
+				table: c.data.tableName,
+				view: 'Create'
+			},
+			size: 'lg',
+			buttons: [],
+			backdrop: 'static'
+		}).then(function(){
+			alert('closed');
+		});
+	}	
+
+	function viewRecord(id) {
+		spModal.open({
+			title: 'Viewing Record',
+			//widget: c.data.admin ? 'widget-form' : 'ccr_db_readonly_form',
+			widget: 'ccr_db_readonly_form',
+			widgetInput: {
+				sys_id: id,
+				table: c.data.tableName,
+				view: 'Create'//c.data.admin ? '' : 'Create'
+			},
+			size: 'lg',
+			buttons: c.data.admin ? [] : [{label: 'OK', primary: true}],
+			backdrop: 'static'
+		});
+	}	
+	*/
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>#container {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+
+.table td, .table th {
+  vertical-align: middle;
+}
+
+.table td, .table th {
+  text-align: center;
+}
+
+label {
+  vertical-align: middle;
+}
+
+ul.pagination.ng-scope {
+  margin: 0;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>ccr_db_table_view</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>[ccr-db] table view</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	
+	data.admin = gs.getUser().isMemberOf('CCR_Database_Admin');
+	//data.admin = false;
+	
+	var tableName = $sp.getParameter('table');
+	
+
+	
+	var headers = {
+		'x_naci_otr_ccr_dat_contact': [
+			'sys_id',
+			'full_name',
+			'suffix',
+			'organization'
+		],
+		'x_naci_otr_ccr_dat_drug_development_collaborative': [
+			'sys_id',
+			'project',
+			'ddc_meeting_date',
+			'primary_contact',
+			'ddc_funding'
+		],
+		'x_naci_otr_ccr_dat_inventions_patents': [
+			'sys_id',
+			'title_of_inventions_patents', 
+			'issued_patent_number',
+			'issue_date',
+			'nih_invention_number',
+			'patent_priority_date',
+			'contact_primary'
+		],
+		'x_naci_otr_ccr_dat_organization': [
+			'sys_id',
+			'organization_name', 
+			'type',
+			'phone_number'
+		],
+		'x_naci_otr_ccr_dat_outcome_type': [
+			'sys_id',
+			'type'	
+		],
+		'x_naci_otr_ccr_dat_partnerships': [
+			'sys_id',
+			'type',
+			'project',
+			'technology_product',
+			'contact_primary',
+			'source_of_information'
+		],
+		'x_naci_otr_ccr_dat_project': [
+			'sys_id',
+			'title',
+			'project_status',
+			'contact_primary',
+			'technologies_products'
+		],
+		'x_naci_otr_ccr_dat_tp_indication': [
+			'sys_id',
+			'technologies_product',
+			'tp_site'
+		],
+		'x_naci_otr_ccr_dat_tp_outcome': [
+			'sys_id',
+			'outcome_name',
+			'outcome_type',
+			'outcome_subtype',
+			'technologies_product',
+			't_p_indication',
+			'date_entered',
+			'date_of_outcome_event',
+			'source_of_information',
+			'comments'
+		],
+		'x_naci_otr_ccr_dat_tp_outcome_subtype': [
+			'sys_id',
+			'type',
+			'subtype',
+			'value'
+		],
+		'x_naci_otr_ccr_dat_tp_site_type_look_up': [
+			'sys_id',
+			'site',
+			'type',
+			'value'
+		],
+		'x_naci_otr_ccr_dat_tp_status': [
+			'sys_id',
+			'technologies_product',
+			'tp_indication',
+			'status',
+			'source_information',
+			'date_entered'
+		],
+		'x_naci_otr_ccr_dat_technologies_products': [
+			'sys_id',
+			'technology_product_name',
+			
+			'organization',
+			'technology_type',
+			'regulatory_pathway',
+			'contact_primary',
+			'contact_secondary'
+		]
+	};
+	
+	data.tableName = tableName;
+  data.label = TableUtils.getLabel(tableName);
+	data.columns = TableUtils.getColumns(tableName, headers[tableName]).sort(function(a, b) {
+		return headers[tableName].indexOf(a.name) - headers[tableName].indexOf(b.name);
+	});
+	data.records = TableUtils.getRecords(tableName, data.columns);
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>chop2@nih.gov</sys_created_by>
+        <sys_created_on>2019-08-09 21:12:21</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>1486dda7db0f3380b86770c08c961973</sys_id>
+        <sys_mod_count>578</sys_mod_count>
+        <sys_name>[ccr-db] table view</sys_name>
+        <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+        <sys_update_name>sp_widget_1486dda7db0f3380b86770c08c961973</sys_update_name>
+        <sys_updated_by>chop2@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-09-16 21:48:31</sys_updated_on>
+        <template><![CDATA[<div id="container" class="panel my-4 p-3 text-black">
+
+  <h1>{{ c.data.label }}</h1>
+
+  <div class="d-flex mb-2">
+    <div class="d-flex mr-auto">
+      <label class="pr-3 pt-2">Search:</label> 
+      <input type="text" 
+             class="form-control" 
+             placeholder="{{c.data.label}} Records" 
+             aria-describedby="search record"
+             ng-model="search" 
+             style="width: 300px;"/>  
+    </div>
+    <div class="ml-auto">
+      <a href="?id=_ccr_db_table_add&table={{ c.data.tableName }}&sys_id=-1&view=Create"
+         ng-show="c.data.admin">
+        <button class="btn btn-sm btn-primary"
+                style="width:100px;">
+          ADD
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered table-hover table-condensed table-striped mb-2">
+        <thead class="bg-primary text-white">
+          <tr>
+            <th ng-repeat="col in c.data.columns.filter(exclude('name', 'sys_id'))"
+                ng-click="sort(col)">
+              {{ col.label }}
+              <span class="glyphicon sort-icon" ng-show="sortKey==col" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+            </th>
+            <th style="width: 120px;">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr dir-paginate="record in c.data.records | filter:search | orderBy:sortKey:reverse | itemsPerPage:pageSize">
+            <td ng-repeat="col in c.data.columns.filter(exclude('name', 'sys_id'))">
+              {{ record[col.name] || 'N/A' }}  
+            </td>
+            <td>
+              <a href="?id=_ccr_db_view_record&table={{ c.data.tableName }}&sys_id={{ record.sys_id }}&view=Create">
+                <button class="btn btn-sm btn-primary">
+                  View
+                </button>
+              </a>
+              <button class="btn btn-default btn-sm" 
+                      ng-show="c.data.admin == true"
+                      ng-click="c.deleteRecord(c.data.tableName, record.sys_id)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>  
+      <div class="d-flex">
+        <span class="mr-auto">Total: {{ c.data.records.length }}</span>
+        <div class="ml-auto">
+          <label class="">Results per Page:</label> 
+          <select class="from-control"
+                  ng-init="pageSize = pagination[0]"
+                  ng-options="num for num in pagination"
+                  ng-model="pageSize">
+          </select>
+        </div>
+        <div class="ml-5">
+          <dir-pagination-controls></dir-pagination-controls>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div ng-if="c.debug" class="mb-5">
+    <!-- <pre>{{ c.data.columns | json }}</pre> -->
+    <pre>{{ c.data.records | json }}</pre> 
+  </div>
+
+</div>
+
+]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Outcome Type" max_length="40" name="x_naci_otr_ccr_dat_outcome_type" type="collection">
+        <element display="true" label="Type" max_length="100" name="type" type="string"/>
+    </element>
+</database>

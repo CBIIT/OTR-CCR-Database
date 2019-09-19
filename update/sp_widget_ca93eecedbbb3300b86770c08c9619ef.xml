@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {
+  /* widget controller */
+  var c = this;
+	c.debug = false;
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.badge {
+  color: white;
+  background-color: #428bca;
+}
+
+a.list-group-item {
+  background-color: white;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>ccr_db_search</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>[ccr-db] search</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+
+	data.results = {};
+	var query = $sp.getParameter('query');
+	var tables = [
+		'x_naci_otr_ccr_dat_contact',
+		'x_naci_otr_ccr_dat_drug_development_collaborative',
+		'x_naci_otr_ccr_dat_inventions_patents',
+		'x_naci_otr_ccr_dat_organization',
+		'x_naci_otr_ccr_dat_outcome_type',
+		'x_naci_otr_ccr_dat_partnerships',
+		'x_naci_otr_ccr_dat_project',
+		'x_naci_otr_ccr_dat_tp_indication',
+		'x_naci_otr_ccr_dat_tp_outcome',
+		'x_naci_otr_ccr_dat_tp_outcome_subtype',
+		'x_naci_otr_ccr_dat_tp_site_type_look_up',
+		'x_naci_otr_ccr_dat_tp_status',
+		'x_naci_otr_ccr_dat_technologies_products'
+	];
+
+	var searchFields = {
+		'x_naci_otr_ccr_dat_contact': [
+			'full_name',
+			'suffix',
+			'organization'
+		],
+		'x_naci_otr_ccr_dat_drug_development_collaborative': [
+			'project',
+			'ddc_meeting_date',
+			'primary_contact',
+			'ddc_funding'
+		],
+		'x_naci_otr_ccr_dat_inventions_patents': [
+			'title_of_inventions_patents', 
+			'issued_patent_number',
+			'issue_date',
+			'nih_invention_number',
+			'patent_priority_date',
+			'contact_primary'
+		],
+		'x_naci_otr_ccr_dat_organization': [
+			'organization_name',
+			'address',
+			'type',
+			'phone_number',
+			'website'
+		],
+		'x_naci_otr_ccr_dat_outcome_type': [
+			'type'	
+		],
+		'x_naci_otr_ccr_dat_partnerships': [
+			'type',
+			'project',
+			'technology_product',
+			'contact_primary',
+			'source_of_information'
+		],
+		'x_naci_otr_ccr_dat_project': [
+			'title',
+			'project_status',
+			'contact_primary',
+			'technologies_products'
+		],
+		'x_naci_otr_ccr_dat_tp_indication': [
+			'technologies_product',
+			'tp_site'
+		],
+		'x_naci_otr_ccr_dat_tp_outcome': [
+			'outcome_name',
+			'outcome_type',
+			'outcome_subtype',
+			'technologies_product',
+			't_p_indication',
+			'date_entered',
+			'date_of_outcome_event',
+			'source_of_information',
+			'comments'
+		],
+		'x_naci_otr_ccr_dat_tp_outcome_subtype': [
+			'type',
+			'subtype',
+			'value'
+		],
+		'x_naci_otr_ccr_dat_tp_site_type_look_up': [
+			'site',
+			'type',
+			'value'
+		],
+		'x_naci_otr_ccr_dat_tp_status': [
+			'technologies_product',
+			'tp_indication',
+			'status',
+			'source_information',
+			'date_entered'
+		],
+		'x_naci_otr_ccr_dat_technologies_products': [
+			'technology_product_name',
+			'organization',
+			'technology_type',
+			'regulatory_pathway',
+			'contact_primary',
+			'contact_secondary'
+		]
+	}
+
+	tables.forEach(function(table) {
+		var tableLabel = TableUtils.getLabel(table)
+		data.results[tableLabel] = {
+			label: tableLabel,
+			results: []
+		};
+		var gr = new GlideRecord(table);
+		var fields = searchFields[table];
+		var grQuery = gr.addQuery(fields[0], 'CONTAINS', query);
+		for (var i = 1; i < fields.length; i ++) {
+			grQuery.addOrCondition(fields[i], 'CONTAINS', query);
+		}
+
+		gr.query();
+		while (gr.next()) {
+			var result = {
+				table: table,
+				tableLabel: tableLabel,
+				id: gr.getDisplayValue('sys_id'),
+				displayLabel: TableUtils.getColumns(table,fields[0])[0].label,
+				displayValue: gr.getDisplayValue(fields[0])
+			}
+			data.results[tableLabel].results.push(result)
+		}
+	})
+
+
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2019-09-11 17:45:21</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>ca93eecedbbb3300b86770c08c9619ef</sys_id>
+        <sys_mod_count>76</sys_mod_count>
+        <sys_name>[ccr-db] search</sys_name>
+        <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+        <sys_update_name>sp_widget_ca93eecedbbb3300b86770c08c9619ef</sys_update_name>
+        <sys_updated_by>chop2@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-09-13 15:10:01</sys_updated_on>
+        <template><![CDATA[<div id="container" class="text-black">
+  <h1 >OTR CCR Database Search Results</h1>
+
+  <div ng-repeat="table in c.data.results"
+       ng-if="table.results.length > 0">
+    <div class="list-group">
+      <div class="list-group-item d-flex justify-content-between align-items-center bg-light">
+        <strong>{{ table.label }}</strong>
+        <span class="badge">{{ table.results.length }}</span>
+      </div>
+      <a ng-repeat="result in table.results"
+         class="list-group-item"
+         href="ccr-db?id=_ccr_db_view_record&table={{result.table}}&sys_id={{result.id}}&view=Create">
+        {{ result.displayLabel }} | {{ result.displayValue }} 
+      </a>
+    </div>
+  </div>
+
+
+  <div ng-if="c.debug"
+       class="mb-5">
+    <pre>{{ c.data.results | json }}</pre>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

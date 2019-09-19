@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>sys_created_on</field>
+        <global>true</global>
+        <isolate_script>false</isolate_script>
+        <messages/>
+        <name>Contact Form Script</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+	g_form.setReadOnly('name.u_personal_title', true);
+	g_form.setReadOnly('name.title', true);
+    g_form.setReadOnly('name.email', true);
+	g_form.setReadOnly('name.u_long_org_division', true);
+	//g_form.setReadOnly('name.department.name',true);
+	g_form.setReadOnly('name.phone', true);
+	g_form.setReadOnly('name.u_nihipd', true);
+	//g_form.setLabelOf('name.department.name', 'Department');
+	g_form.setLabelOf('name.u_long_org_division', "Division");
+	g_form.setLabelOf('name.title', 'Professional Designation');
+	g_form.setLabelOf('name.u_nihipd', 'Position Description');
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>zhoujim@nih.gov</sys_created_by>
+        <sys_created_on>2019-04-16 15:02:37</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>fce2775adb387b0054d8ff621f961969</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Contact Form Script</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+        <sys_update_name>sys_script_client_fce2775adb387b0054d8ff621f961969</sys_update_name>
+        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-05-28 14:43:51</sys_updated_on>
+        <table>x_naci_otr_ccr_dat_contact</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
