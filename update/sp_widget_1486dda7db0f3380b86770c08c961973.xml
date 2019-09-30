@@ -5,7 +5,7 @@
 
 
 	var c = this;
-	c.debug = true;
+	c.debug = false;
 	c.deleteRecord = deleteRecord;
 
 	$scope.mandatory = [];
@@ -267,7 +267,7 @@ ul.pagination.ng-scope {
         <sys_created_on>2019-08-09 21:12:21</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>1486dda7db0f3380b86770c08c961973</sys_id>
-        <sys_mod_count>595</sys_mod_count>
+        <sys_mod_count>596</sys_mod_count>
         <sys_name>[ccr-db] table view</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -275,7 +275,7 @@ ul.pagination.ng-scope {
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_widget_1486dda7db0f3380b86770c08c961973</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-09-30 20:06:15</sys_updated_on>
+        <sys_updated_on>2019-09-30 22:12:49</sys_updated_on>
         <template><![CDATA[<div id="container" class="panel my-4 p-3 text-black">
 
   <h1>{{ c.data.label }}</h1>
