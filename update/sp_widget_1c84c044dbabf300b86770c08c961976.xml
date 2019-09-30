@@ -1,12 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function(spModal, $location) {
-  /* widget controller */
-  var c = this;
+        <client_script><![CDATA[function($scope, spModal, $location, $http, $timeout, $uibModal, spUtil) {
+	$.fn.tooltip = angular.noop;
 
-	setTimeout(hideButtons, 0);
+	/* widget controller */
+	var c = this;
+
+	var sessionId = c.data.session;
+
+	$timeout(hideButtons);
 	
+	if (c.data.table == 'x_naci_otr_ccr_dat_contact') {
+		// ned search link and hide user_id field
+		$scope.$on('spModel.fields.rendered', function(event) {
+			c.g_form = event.targetScope.getGlideForm();
+			console.log(c.g_form);
+			c.g_form.setVisible('user_id', false);
+			$timeout(addSearch);
+		});
+	}
+
+	// validate non-NED user
+	function validateCustom() {
+		var name = c.g_form.getValue('name');
+		var org = c.g_form.getValue('organization');
+		$http.get('/api/x_naci_otr_ccr_dat/data/validateContactCustom', {
+			params: { name: name, org: org }
+		}).then(function(response) {
+			if (+response.data.result === 1) {
+				alert('valid')
+			} else {
+				alert('Error: ' + name + '[' + org + '] already exists');
+			}
+		})
+	}
+
+	function openModal() {
+		$('#error').addClass('d-none').removeClass('d-block')
+		$uibModal.open({
+			template: $('#ned-modal').prop('innerHTML'),
+			controller: function($scope, $http) {
+				$scope.userSearch = null;
+
+				$scope.addName = function() {
+					c.g_form.setValue('name', $scope.userSearch.label);
+					c.g_form.setValue('user_id', $scope.userSearch.id);
+					$scope.$close();
+				}
+
+				// reject add user if already exists
+				$scope.checkExists = function() {
+					$http.get('/api/x_naci_otr_ccr_dat/data/validateContactNed', {
+						params: { id: $scope.userSearch.id }
+					}).then(function(response) {
+						if (response.data.result) {
+							$('#error').addClass('d-none').removeClass('d-block')
+							$scope.addName();
+						} else {
+							$('#error').removeClass('d-none').addClass('d-block')
+						}
+					})
+				}
+
+				$scope.search = function(term) {
+					var temp = "";
+					if (term.indexOf(",") >= 0) {
+						temp = term.split(",");
+						var length = temp.length;
+						if (length > 1) {
+							term = temp[1].trim() + " " + temp[0].trim();
+						} else {
+							term = temp[0];
+						}
+					}
+					return $http.get('/api/x_naci_otr_ccr_dat/data/fetchUserList', {
+						params: { term: term, limit: 10 }
+					}).then(function(response) {
+						return response.data.result;
+					});
+				}
+			}
+		})		
+	}
+
+	// hide "insert" buttons
 	function hideButtons() {
 		$('#table-form .panel-footer button:not(:last)').hide()
 		$('#table-form .panel-footer button:last')[0].onclick = function() {
@@ -16,7 +94,17 @@
 			}).then(hideButtons, hideButtons);
 		}
 	}
-	
+
+	// add NED search button
+	function addSearch() {
+		$('<button>')
+			.addClass('btn btn-link ml-4 p-0')
+			.text('Add From NED Directory')
+			.click(openModal)
+			.appendTo(
+			$('label.field-label.ng-binding.ng-scope:first')
+		);
+	}
 }]]></client_script>
         <controller_as>c</controller_as>
         <css/>
@@ -35,7 +123,10 @@
         <roles/>
         <script><![CDATA[(function() {
 	var tableName = $sp.getParameter('table');
-
+	data.table = tableName;
+	
+	data.session = gs.getSessionID();
+	
 	data.formOptions = {
 		"title": "Adding Record",
 		"widget": "widget-form",
@@ -54,18 +145,46 @@
         <sys_created_on>2019-08-23 14:46:44</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>1c84c044dbabf300b86770c08c961976</sys_id>
-        <sys_mod_count>59</sys_mod_count>
+        <sys_mod_count>270</sys_mod_count>
         <sys_name>[ccr-db] table add</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_widget_1c84c044dbabf300b86770c08c961976</sys_update_name>
-        <sys_updated_by>zhoujim@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-09-09 19:48:26</sys_updated_on>
+        <sys_updated_by>chop2@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-09-25 21:45:49</sys_updated_on>
         <template><![CDATA[<div id="table-form">
   <widget id="widget-form">
   </widget>
-</div>]]></template>
+</div>
+
+<div id="ned-modal" class="d-none" ng-non-bindable>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-title">
+      NED Directory Search
+    </h4>
+  </div>
+  <div class="modal-body" id="modal-body">
+    <div class="form-group">
+      <label id="error" class="d-none text-danger">Contact already exists</label>
+      <label class="control-label" for="nedSearch">Name</label>
+      <input id="nedSearch" 
+             class="form-control"
+             ng-model="userSearch" 
+             ng-model-options="{debounce: 100}"
+             typeahead-append-to="body"
+             uib-typeahead="item as item.label for item in search($viewValue)">
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" ng-click="$close()">Cancel</button>
+    <button ng-disabled="!userSearch"
+            ng-click="checkExists()" type="button" class="btn btn-primary">Add</button>
+  </div>  
+</div>
+
+
+]]></template>
     </sp_widget>
 </record_update>

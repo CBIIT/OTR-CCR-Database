@@ -159,7 +159,7 @@ button.btn.btn-link.m-l.ng-binding {
 			},
 			x_naci_otr_ccr_dat_organization: {
 				"x_naci_otr_ccr_dat_contact": [
-					"full_name",
+					"name",
 					"suffix",
 					"organization"
 				],
@@ -341,7 +341,7 @@ button.btn.btn-link.m-l.ng-binding {
         <sys_created_on>2019-08-26 21:22:04</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>2ccbf885db233b00b86770c08c9619fa</sys_id>
-        <sys_mod_count>352</sys_mod_count>
+        <sys_mod_count>353</sys_mod_count>
         <sys_name>[ccr-db] readonly page</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -349,7 +349,7 @@ button.btn.btn-link.m-l.ng-binding {
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_widget_2ccbf885db233b00b86770c08c9619fa</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-09-13 14:37:05</sys_updated_on>
+        <sys_updated_on>2019-09-24 17:53:00</sys_updated_on>
         <template><![CDATA[<div ng-if="c.data.admin">
   <widget id="widget-form"></widget>
 </div> 

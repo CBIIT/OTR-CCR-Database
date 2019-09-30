@@ -5,7 +5,7 @@
 
 
 	var c = this;
-	c.debug = false;
+	c.debug = true;
 	c.deleteRecord = deleteRecord;
 
 	$scope.mandatory = [];
@@ -149,7 +149,7 @@ ul.pagination.ng-scope {
 	var headers = {
 		'x_naci_otr_ccr_dat_contact': [
 			'sys_id',
-			'full_name',
+			'name',
 			'suffix',
 			'organization'
 		],
@@ -234,7 +234,8 @@ ul.pagination.ng-scope {
 		'x_naci_otr_ccr_dat_technologies_products': [
 			'sys_id',
 			'technology_product_name',
-			
+			'tp_status',
+			'tp_indication',
 			'organization',
 			'technology_type',
 			'regulatory_pathway',
@@ -249,7 +250,16 @@ ul.pagination.ng-scope {
 		return headers[tableName].indexOf(a.name) - headers[tableName].indexOf(b.name);
 	});
 	data.records = TableUtils.getRecords(tableName, data.columns);
-	
+
+	if (tableName == 'x_naci_otr_ccr_dat_technologies_products') {
+		data.records = TableUtils.tpExtend(data.records);
+		data.columns.push({"name": "tp_status", "label":"TP Status"});
+		data.columns.push({"name": "tp_indication", "label":"TP Indication"});
+		data.columns.sort(function(a, b) {
+			return headers[tableName].indexOf(a.name) - headers[tableName].indexOf(b.name);
+		});
+	}
+
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
@@ -257,7 +267,7 @@ ul.pagination.ng-scope {
         <sys_created_on>2019-08-09 21:12:21</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>1486dda7db0f3380b86770c08c961973</sys_id>
-        <sys_mod_count>578</sys_mod_count>
+        <sys_mod_count>595</sys_mod_count>
         <sys_name>[ccr-db] table view</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -265,7 +275,7 @@ ul.pagination.ng-scope {
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_widget_1486dda7db0f3380b86770c08c961973</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-09-16 21:48:31</sys_updated_on>
+        <sys_updated_on>2019-09-30 20:06:15</sys_updated_on>
         <template><![CDATA[<div id="container" class="panel my-4 p-3 text-black">
 
   <h1>{{ c.data.label }}</h1>
@@ -344,7 +354,7 @@ ul.pagination.ng-scope {
 
   <div ng-if="c.debug" class="mb-5">
     <!-- <pre>{{ c.data.columns | json }}</pre> -->
-    <pre>{{ c.data.records | json }}</pre> 
+    <pre>{{ c.data.columns | json }}</pre> 
   </div>
 
 </div>

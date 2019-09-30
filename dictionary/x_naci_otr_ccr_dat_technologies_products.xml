@@ -3,7 +3,6 @@
         <element attributes="edge_encryption_enabled=true" label="Contact Additional 2" max_length="32" name="contact_additional" reference="x_naci_otr_ccr_dat_contact" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="Contact Primary" mandatory="true" max_length="32" name="contact_primary" reference="x_naci_otr_ccr_dat_contact" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="Contact Additional 1" max_length="32" name="contact_secondary" reference="x_naci_otr_ccr_dat_contact" type="reference"/>
-        <element attributes="edge_encryption_enabled=true" label="Invention or Patent" max_length="32" name="invention_patent" reference="x_naci_otr_ccr_dat_inventions_patents" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="Organization" mandatory="true" max_length="32" name="organization" reference="x_naci_otr_ccr_dat_organization" type="reference"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Regulatory Pathway" max_length="40" name="regulatory_pathway" type="choice">
             <choice>
@@ -42,9 +41,6 @@
         </index>
         <index name="index4">
             <element name="contact_primary"/>
-        </index>
-        <index name="index5">
-            <element name="invention_patent"/>
         </index>
     </element>
 </database>
