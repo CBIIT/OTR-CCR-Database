@@ -4,13 +4,13 @@
             <element>title_of_inventions_patents</element>
             <position>0</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-09-06 17:26:15</sys_created_on>
-            <sys_id>4d4f2068dbf73b4054d8ff621f961996</sys_id>
+            <sys_created_on>2019-10-23 16:54:00</sys_created_on>
+            <sys_id>4b9a2a63db200c1054d8ff621f9619ec</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_inventions_patents" sys_domain="global" view="Default view">1522f917dbff670054d8ff621f961926</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-09-06 17:26:15</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:54:00</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>nih_invention_number</element>
             <position>1</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-09-06 17:26:15</sys_created_on>
-            <sys_id>c54f2068dbf73b4054d8ff621f961997</sys_id>
+            <sys_created_on>2019-10-23 16:54:00</sys_created_on>
+            <sys_id>cf9a2a63db200c1054d8ff621f9619ec</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_inventions_patents" sys_domain="global" view="Default view">1522f917dbff670054d8ff621f961926</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-09-06 17:26:15</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:54:00</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -32,13 +32,13 @@
             <element>patent_appliaction_number</element>
             <position>2</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-09-06 17:26:15</sys_created_on>
-            <sys_id>4d4f2068dbf73b4054d8ff621f961997</sys_id>
+            <sys_created_on>2019-10-23 16:54:00</sys_created_on>
+            <sys_id>479a2a63db200c1054d8ff621f9619ed</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_inventions_patents" sys_domain="global" view="Default view">1522f917dbff670054d8ff621f961926</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-09-06 17:26:15</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:54:00</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -46,13 +46,13 @@
             <element>.begin_split</element>
             <position>3</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-09-06 17:26:15</sys_created_on>
-            <sys_id>c14f2068dbf73b4054d8ff621f961998</sys_id>
+            <sys_created_on>2019-10-23 16:54:00</sys_created_on>
+            <sys_id>cb9a2a63db200c1054d8ff621f9619ed</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_inventions_patents" sys_domain="global" view="Default view">1522f917dbff670054d8ff621f961926</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-09-06 17:26:15</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:54:00</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
@@ -60,13 +60,13 @@
             <element>patent_priority_date</element>
             <position>4</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-09-06 17:26:15</sys_created_on>
-            <sys_id>494f2068dbf73b4054d8ff621f961998</sys_id>
+            <sys_created_on>2019-10-23 16:54:00</sys_created_on>
+            <sys_id>439a2a63db200c1054d8ff621f9619ee</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_inventions_patents" sys_domain="global" view="Default view">1522f917dbff670054d8ff621f961926</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-09-06 17:26:15</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:54:00</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -74,55 +74,55 @@
             <element>issued_patent_number</element>
             <position>5</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-09-06 17:26:15</sys_created_on>
-            <sys_id>cd4f2068dbf73b4054d8ff621f961998</sys_id>
+            <sys_created_on>2019-10-23 16:54:00</sys_created_on>
+            <sys_id>c79a2a63db200c1054d8ff621f9619ee</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_inventions_patents" sys_domain="global" view="Default view">1522f917dbff670054d8ff621f961926</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-09-06 17:26:15</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:54:00</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>issue_date</element>
+            <position>6</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-10-23 16:54:00</sys_created_on>
+            <sys_id>4f9a2a63db200c1054d8ff621f9619ee</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_inventions_patents" sys_domain="global" view="Default view">1522f917dbff670054d8ff621f961926</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-10-23 16:54:00</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>6</position>
-            <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-09-06 17:26:15</sys_created_on>
-            <sys_id>454f2068dbf73b4054d8ff621f961999</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_inventions_patents" sys_domain="global" view="Default view">1522f917dbff670054d8ff621f961926</sys_ui_section>
-            <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-09-06 17:26:15</sys_updated_on>
-            <sys_user/>
-            <type>.split</type>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>issue_date</element>
             <position>7</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-09-06 17:26:15</sys_created_on>
-            <sys_id>c94f2068dbf73b4054d8ff621f961999</sys_id>
+            <sys_created_on>2019-10-23 16:54:00</sys_created_on>
+            <sys_id>c39a2a63db200c1054d8ff621f9619ef</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_inventions_patents" sys_domain="global" view="Default view">1522f917dbff670054d8ff621f961926</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-09-06 17:26:15</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:54:00</sys_updated_on>
             <sys_user/>
-            <type/>
+            <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
             <position>8</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-09-06 17:26:15</sys_created_on>
-            <sys_id>414f2068dbf73b4054d8ff621f96199a</sys_id>
+            <sys_created_on>2019-10-23 16:54:00</sys_created_on>
+            <sys_id>4b9a2a63db200c1054d8ff621f9619ef</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_inventions_patents" sys_domain="global" view="Default view">1522f917dbff670054d8ff621f961926</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-09-06 17:26:15</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:54:00</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
@@ -130,13 +130,13 @@
             <element>comments</element>
             <position>9</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-09-06 17:26:15</sys_created_on>
-            <sys_id>c54f2068dbf73b4054d8ff621f96199a</sys_id>
+            <sys_created_on>2019-10-23 16:54:00</sys_created_on>
+            <sys_id>cf9a2a63db200c1054d8ff621f9619ef</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_inventions_patents" sys_domain="global" view="Default view">1522f917dbff670054d8ff621f961926</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-09-06 17:26:15</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:54:00</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -144,13 +144,13 @@
             <element>contact_primary</element>
             <position>10</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-09-06 17:26:15</sys_created_on>
-            <sys_id>4d4f2068dbf73b4054d8ff621f96199a</sys_id>
+            <sys_created_on>2019-10-23 16:54:00</sys_created_on>
+            <sys_id>479a2a63db200c1054d8ff621f9619f0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_inventions_patents" sys_domain="global" view="Default view">1522f917dbff670054d8ff621f961926</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-09-06 17:26:15</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:54:00</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -158,13 +158,13 @@
             <element>contact_secondary</element>
             <position>11</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-09-06 17:26:15</sys_created_on>
-            <sys_id>c14f2068dbf73b4054d8ff621f96199b</sys_id>
+            <sys_created_on>2019-10-23 16:54:00</sys_created_on>
+            <sys_id>cb9a2a63db200c1054d8ff621f9619f0</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_inventions_patents" sys_domain="global" view="Default view">1522f917dbff670054d8ff621f961926</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-09-06 17:26:15</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:54:00</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -172,13 +172,13 @@
             <element>contact_additional</element>
             <position>12</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-09-06 17:26:15</sys_created_on>
-            <sys_id>494f2068dbf73b4054d8ff621f96199b</sys_id>
+            <sys_created_on>2019-10-23 16:54:00</sys_created_on>
+            <sys_id>439a2a63db200c1054d8ff621f9619f1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_inventions_patents" sys_domain="global" view="Default view">1522f917dbff670054d8ff621f961926</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-09-06 17:26:15</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:54:00</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

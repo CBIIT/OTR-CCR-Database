@@ -4,41 +4,41 @@
             <element>technology_product_name</element>
             <position>0</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-29 21:50:57</sys_created_on>
-            <sys_id>fc2fd04adb2b3f00b86770c08c96199b</sys_id>
+            <sys_created_on>2019-10-23 16:48:51</sys_created_on>
+            <sys_id>e369e6afdbecc81054d8ff621f961969</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_technologies_products" sys_domain="global" view="Default view">f9981f50db172340b86770c08c961939</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-29 21:50:57</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>technology_type</element>
-            <position>1</position>
-            <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-29 21:50:57</sys_created_on>
-            <sys_id>742fd04adb2b3f00b86770c08c96199c</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_technologies_products" sys_domain="global" view="Default view">f9981f50db172340b86770c08c961939</sys_ui_section>
-            <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-29 21:50:57</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:48:51</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>organization</element>
-            <position>2</position>
+            <position>1</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-29 21:50:57</sys_created_on>
-            <sys_id>f82fd04adb2b3f00b86770c08c96199c</sys_id>
+            <sys_created_on>2019-10-23 16:48:51</sys_created_on>
+            <sys_id>6b69e6afdbecc81054d8ff621f961969</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_technologies_products" sys_domain="global" view="Default view">f9981f50db172340b86770c08c961939</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-29 21:50:57</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:48:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>technology_type</element>
+            <position>2</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-10-23 16:48:51</sys_created_on>
+            <sys_id>ef69e6afdbecc81054d8ff621f961969</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_technologies_products" sys_domain="global" view="Default view">f9981f50db172340b86770c08c961939</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-10-23 16:48:51</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -46,13 +46,13 @@
             <element>invention_patent</element>
             <position>3</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-29 21:50:57</sys_created_on>
-            <sys_id>702fd04adb2b3f00b86770c08c96199d</sys_id>
+            <sys_created_on>2019-10-23 16:48:51</sys_created_on>
+            <sys_id>6769e6afdbecc81054d8ff621f96196a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_technologies_products" sys_domain="global" view="Default view">f9981f50db172340b86770c08c961939</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-29 21:50:57</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:48:51</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -60,13 +60,13 @@
             <element>regulatory_pathway</element>
             <position>4</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-29 21:50:57</sys_created_on>
-            <sys_id>f42fd04adb2b3f00b86770c08c96199d</sys_id>
+            <sys_created_on>2019-10-23 16:48:51</sys_created_on>
+            <sys_id>eb69e6afdbecc81054d8ff621f96196a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_technologies_products" sys_domain="global" view="Default view">f9981f50db172340b86770c08c961939</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-29 21:50:57</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:48:51</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -74,13 +74,13 @@
             <element>contact_primary</element>
             <position>5</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-29 21:50:57</sys_created_on>
-            <sys_id>7c2fd04adb2b3f00b86770c08c96199d</sys_id>
+            <sys_created_on>2019-10-23 16:48:51</sys_created_on>
+            <sys_id>6369e6afdbecc81054d8ff621f96196b</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_technologies_products" sys_domain="global" view="Default view">f9981f50db172340b86770c08c961939</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-29 21:50:57</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:48:51</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -88,13 +88,13 @@
             <element>contact_secondary</element>
             <position>6</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-29 21:50:57</sys_created_on>
-            <sys_id>f02fd04adb2b3f00b86770c08c96199e</sys_id>
+            <sys_created_on>2019-10-23 16:48:51</sys_created_on>
+            <sys_id>e769e6afdbecc81054d8ff621f96196b</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_technologies_products" sys_domain="global" view="Default view">f9981f50db172340b86770c08c961939</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-29 21:50:57</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:48:51</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -102,13 +102,13 @@
             <element>contact_additional</element>
             <position>7</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-29 21:50:57</sys_created_on>
-            <sys_id>782fd04adb2b3f00b86770c08c96199e</sys_id>
+            <sys_created_on>2019-10-23 16:48:51</sys_created_on>
+            <sys_id>6f69e6afdbecc81054d8ff621f96196b</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_technologies_products" sys_domain="global" view="Default view">f9981f50db172340b86770c08c961939</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-29 21:50:57</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:48:51</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -116,13 +116,13 @@
             <element>12M.x_naci_otr_ccr_dat_technologies_products.x_naci_otr_ccr_dat_partnerships.technology_product</element>
             <position>8</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-29 21:50:57</sys_created_on>
-            <sys_id>fc2fd04adb2b3f00b86770c08c96199e</sys_id>
+            <sys_created_on>2019-10-23 16:48:51</sys_created_on>
+            <sys_id>e369e6afdbecc81054d8ff621f96196c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_technologies_products" sys_domain="global" view="Default view">f9981f50db172340b86770c08c961939</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-29 21:50:57</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:48:51</sys_updated_on>
             <sys_user/>
             <type>list</type>
         </sys_ui_element>
@@ -130,13 +130,13 @@
             <element>12M.x_naci_otr_ccr_dat_technologies_products.x_naci_otr_ccr_dat_project.technologies_products</element>
             <position>9</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-29 21:50:57</sys_created_on>
-            <sys_id>742fd04adb2b3f00b86770c08c96199f</sys_id>
+            <sys_created_on>2019-10-23 16:48:51</sys_created_on>
+            <sys_id>6b69e6afdbecc81054d8ff621f96196c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_technologies_products" sys_domain="global" view="Default view">f9981f50db172340b86770c08c961939</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-29 21:50:57</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:48:51</sys_updated_on>
             <sys_user/>
             <type>list</type>
         </sys_ui_element>
@@ -144,13 +144,13 @@
             <element>12M.x_naci_otr_ccr_dat_technologies_products.x_naci_otr_ccr_dat_tp_indication.technologies_product</element>
             <position>10</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-29 21:50:57</sys_created_on>
-            <sys_id>f82fd04adb2b3f00b86770c08c96199f</sys_id>
+            <sys_created_on>2019-10-23 16:48:51</sys_created_on>
+            <sys_id>ef69e6afdbecc81054d8ff621f96196c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_technologies_products" sys_domain="global" view="Default view">f9981f50db172340b86770c08c961939</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-29 21:50:57</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:48:51</sys_updated_on>
             <sys_user/>
             <type>list</type>
         </sys_ui_element>
@@ -158,13 +158,13 @@
             <element>12M.x_naci_otr_ccr_dat_technologies_products.x_naci_otr_ccr_dat_tp_outcome.technologies_product</element>
             <position>11</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-29 21:50:57</sys_created_on>
-            <sys_id>702fd04adb2b3f00b86770c08c9619a0</sys_id>
+            <sys_created_on>2019-10-23 16:48:51</sys_created_on>
+            <sys_id>6769e6afdbecc81054d8ff621f96196d</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_technologies_products" sys_domain="global" view="Default view">f9981f50db172340b86770c08c961939</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-29 21:50:57</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:48:51</sys_updated_on>
             <sys_user/>
             <type>list</type>
         </sys_ui_element>
@@ -172,43 +172,15 @@
             <element>12M.x_naci_otr_ccr_dat_technologies_products.x_naci_otr_ccr_dat_tp_status.technologies_product</element>
             <position>12</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-29 21:50:57</sys_created_on>
-            <sys_id>f42fd04adb2b3f00b86770c08c9619a0</sys_id>
+            <sys_created_on>2019-10-23 16:48:51</sys_created_on>
+            <sys_id>eb69e6afdbecc81054d8ff621f96196d</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_technologies_products" sys_domain="global" view="Default view">f9981f50db172340b86770c08c961939</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-29 21:50:57</sys_updated_on>
+            <sys_updated_on>2019-10-23 16:48:51</sys_updated_on>
             <sys_user/>
             <type>list</type>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>t_p_indication</element>
-            <position>13</position>
-            <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-09-27 14:55:17</sys_created_on>
-            <sys_id>6216d0d7db04445054d8ff621f9619be</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_technologies_products" sys_domain="global" view="Default view">f9981f50db172340b86770c08c961939</sys_ui_section>
-            <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-09-27 14:55:17</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>t_p_status</element>
-            <position>14</position>
-            <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-09-27 14:55:52</sys_created_on>
-            <sys_id>4336d4d7db04445054d8ff621f961927</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_technologies_products" sys_domain="global" view="Default view">f9981f50db172340b86770c08c961939</sys_ui_section>
-            <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-09-27 14:55:52</sys_updated_on>
-            <sys_user/>
-            <type/>
         </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>

@@ -8,16 +8,53 @@
 	var c = this;
 
 	var sessionId = c.data.session;
+	var flag = true;
 
-	$timeout(hideButtons);
-	
+	$timeout(removeButtons);
+	$timeout(returnButton);
+
+	$scope.$on("sp.form.record.updated", function(ev, params) {
+		if (flag) {
+			flag = false;
+			spModal.open({
+				title: 'Success',
+				message: 'Data has been saved'
+			}).then(removeButtons);
+		}
+	});
+
+
 	if (c.data.table == 'x_naci_otr_ccr_dat_contact') {
 		// ned search link and hide user_id field
 		$scope.$on('spModel.fields.rendered', function(event) {
 			c.g_form = event.targetScope.getGlideForm();
-			console.log(c.g_form);
+			//console.log(c.g_form);
 			c.g_form.setVisible('user_id', false);
 			$timeout(addSearch);
+		});
+	}
+
+	// automatically select project reference
+	if (c.data.table == 'x_naci_otr_ccr_dat_project_notes' && c.data.sys_id == '-1') {
+		$scope.$on('spModel.fields.rendered', function(event) {
+			c.g_form = event.targetScope.getGlideForm();
+			c.g_form.setValue('project_id', c.data.project_id);
+			c.g_form.setVisible('project_id', false);
+		});
+	}
+
+	var tpTables = [
+		'x_naci_otr_ccr_dat_tp_status',
+		'x_naci_otr_ccr_dat_tp_outcome',
+		'x_naci_otr_ccr_dat_tp_indication'
+	];
+
+	if (tpTables.indexOf(c.data.table) > -1) {
+		$scope.$on('spModel.fields.rendered', function(event) {
+			c.g_form = event.targetScope.getGlideForm();
+			c.g_form.setValue('technologies_product', c.data.tp_id);
+			c.g_form.setReadOnly('technologies_product', true);
+			// c.g_form.setVisible('technologies_product', false);
 		});
 	}
 
@@ -43,22 +80,33 @@
 			controller: function($scope, $http) {
 				$scope.userSearch = null;
 
+
 				$scope.addName = function() {
-					c.g_form.setValue('name', $scope.userSearch.label);
-					c.g_form.setValue('user_id', $scope.userSearch.id);
+					var search_keys = Object.keys($scope.userSearch);
+					search_keys.forEach(function(key) {
+						if ($scope.userSearch[key] && $scope.userSearch[key].length > 0) {
+							c.g_form.setValue(key, $scope.userSearch[key])
+							c.g_form.setReadOnly(key, true);
+						}
+					})
+					// set organization to NCI
+					if ($scope.userSearch.department == 'NCI') {
+						c.g_form.setValue('organization', 'e604d3dedba17b00fdd2ff621f96193a')
+						c.g_form.setReadOnly('organization', true);
+					}
 					$scope.$close();
 				}
 
 				// reject add user if already exists
 				$scope.checkExists = function() {
 					$http.get('/api/x_naci_otr_ccr_dat/data/validateContactNed', {
-						params: { id: $scope.userSearch.id }
+						params: { id: $scope.userSearch.user_id }
 					}).then(function(response) {
 						if (response.data.result) {
+							$('#error').removeClass('d-none').addClass('d-block')
+						} else {
 							$('#error').addClass('d-none').removeClass('d-block')
 							$scope.addName();
-						} else {
-							$('#error').removeClass('d-none').addClass('d-block')
 						}
 					})
 				}
@@ -85,14 +133,23 @@
 	}
 
 	// hide "insert" buttons
-	function hideButtons() {
-		$('#table-form .panel-footer button:not(:last)').hide()
-		$('#table-form .panel-footer button:last')[0].onclick = function() {
-			spModal.open({
-				title: 'Success',
-				message: 'Data has been saved'
-			}).then(hideButtons, hideButtons);
-		}
+	function removeButtons() {
+		flag = true;
+		$('#table-form .panel-footer button:not(:last)').hide();
+	}
+
+	// add return button
+	function returnButton() {
+		$scope.$on('spModel.fields.rendered', function(event) {
+			$('<button>')
+				.text('Return')
+				.click(function() {window.history.back()})
+				.css('margin-left', 'auto')
+				.css('margin-right', '.5rem')
+				.css('width', '100px')
+				.addClass('btn btn-default')
+				.insertBefore($('button:contains("Save "):first'))
+		});
 	}
 
 	// add NED search button
@@ -123,10 +180,18 @@
         <roles/>
         <script><![CDATA[(function() {
 	var tableName = $sp.getParameter('table');
+	var sys_id = $sp.getParameter('sys_id');
 	data.table = tableName;
+	data.sys_id = sys_id;
+
+	// associative sys ids 
+	data.project_id = $sp.getParameter('project_id');
+	data.tp_id = $sp.getParameter('tp_id');
 	
 	data.session = gs.getSessionID();
 	
+	
+	/*
 	data.formOptions = {
 		"title": "Adding Record",
 		"widget": "widget-form",
@@ -135,9 +200,10 @@
 			"table": tableName,
 			"view": "Create"
 		}
-	//	,
-	//	"buttons": [],
+		,
+		"buttons": [],
 	};
+		*/
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
@@ -145,7 +211,7 @@
         <sys_created_on>2019-08-23 14:46:44</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>1c84c044dbabf300b86770c08c961976</sys_id>
-        <sys_mod_count>270</sys_mod_count>
+        <sys_mod_count>372</sys_mod_count>
         <sys_name>[ccr-db] table add</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -153,7 +219,7 @@
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_widget_1c84c044dbabf300b86770c08c961976</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-09-25 21:45:49</sys_updated_on>
+        <sys_updated_on>2019-10-23 14:33:41</sys_updated_on>
         <template><![CDATA[<div id="table-form">
   <widget id="widget-form">
   </widget>
@@ -174,7 +240,7 @@
              ng-model="userSearch" 
              ng-model-options="{debounce: 100}"
              typeahead-append-to="body"
-             uib-typeahead="item as item.label for item in search($viewValue)">
+             uib-typeahead="item as item.name for item in search($viewValue)">
     </div>
   </div>
   <div class="modal-footer">

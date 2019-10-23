@@ -10,8 +10,8 @@
 
 	$scope.mandatory = [];
 	$scope.pagination = [5, 10, 15, 20, 25];
-	$scope.sortKey = null;
-	$scope.reverse = null;
+//	$scope.sortKey = null;
+//	$scope.reverse = null;
 
 	$scope.sort = function(keyname){
 		$scope.sortKey = keyname;   //set the sortKey to the param passed
@@ -22,26 +22,6 @@
 		return function(record) {
 			return record[key] != value;
 		};
-	}
-
-	$scope.delRecord = function(table, record) {
-		spModal.confirm("Delete this Record?").then(function(confirmed) {
-			if (confirmed) {
-				var ga = new GlideAjax('TableUtils');
-				ga.addParam('sysparmname', 'deleteRecord')
-				ga.addParam('sysparm_my_name', 'table,record')
-				ga.getXML(callDelete);
-			}
-		})
-	}
-	
-	function callDelete(res) {
-		var answer = res.responseXML.documentElement.getAttribute("answer"); 
-		alert(answer);
-	}
-
-	function getByIndex(record, index) {
-		return record[Object.keys(record)[index]];
 	}
 	
 	function deleteRecord(table, id) {
@@ -59,42 +39,6 @@
 			})
 		})
 	}
-
-
-/*
-	function addRecord() {
-		spModal.open({
-			title: 'Adding Record',
-			widget: 'widget-form',
-			widgetInput: {
-				sys_id: '-1',
-				table: c.data.tableName,
-				view: 'Create'
-			},
-			size: 'lg',
-			buttons: [],
-			backdrop: 'static'
-		}).then(function(){
-			alert('closed');
-		});
-	}	
-
-	function viewRecord(id) {
-		spModal.open({
-			title: 'Viewing Record',
-			//widget: c.data.admin ? 'widget-form' : 'ccr_db_readonly_form',
-			widget: 'ccr_db_readonly_form',
-			widgetInput: {
-				sys_id: id,
-				table: c.data.tableName,
-				view: 'Create'//c.data.admin ? '' : 'Create'
-			},
-			size: 'lg',
-			buttons: c.data.admin ? [] : [{label: 'OK', primary: true}],
-			backdrop: 'static'
-		});
-	}	
-	*/
 }]]></client_script>
         <controller_as>c</controller_as>
         <css>#container {
@@ -144,14 +88,15 @@ ul.pagination.ng-scope {
 	
 	var tableName = $sp.getParameter('table');
 	
-
-	
 	var headers = {
 		'x_naci_otr_ccr_dat_contact': [
 			'sys_id',
 			'name',
-			'suffix',
-			'organization'
+			'organization',
+			'department',
+			'email',
+			'phone',
+			'job_title'
 		],
 		'x_naci_otr_ccr_dat_drug_development_collaborative': [
 			'sys_id',
@@ -175,10 +120,10 @@ ul.pagination.ng-scope {
 			'type',
 			'phone_number'
 		],
-		'x_naci_otr_ccr_dat_outcome_type': [
+		/* 'x_naci_otr_ccr_dat_outcome_type': [
 			'sys_id',
 			'type'	
-		],
+		], */
 		'x_naci_otr_ccr_dat_partnerships': [
 			'sys_id',
 			'type',
@@ -194,11 +139,12 @@ ul.pagination.ng-scope {
 			'contact_primary',
 			'technologies_products'
 		],
+		
 		'x_naci_otr_ccr_dat_tp_indication': [
 			'sys_id',
 			'technologies_product',
 			'tp_site'
-		],
+		], 
 		'x_naci_otr_ccr_dat_tp_outcome': [
 			'sys_id',
 			'outcome_name',
@@ -222,7 +168,7 @@ ul.pagination.ng-scope {
 			'site',
 			'type',
 			'value'
-		],
+		], 
 		'x_naci_otr_ccr_dat_tp_status': [
 			'sys_id',
 			'technologies_product',
@@ -230,7 +176,8 @@ ul.pagination.ng-scope {
 			'status',
 			'source_information',
 			'date_entered'
-		],
+		], 
+		
 		'x_naci_otr_ccr_dat_technologies_products': [
 			'sys_id',
 			'technology_product_name',
@@ -258,6 +205,13 @@ ul.pagination.ng-scope {
 		data.columns.sort(function(a, b) {
 			return headers[tableName].indexOf(a.name) - headers[tableName].indexOf(b.name);
 		});
+		
+		var tpTableData = [];
+		var tpTableNames = [
+			'x_naci_otr_ccr_dat_tp_indication',
+			'x_naci_otr_ccr_dat_tp_outcome',
+			'x_naci_otr_ccr_dat_tp_status'
+		];
 	}
 
 })();]]></script>
@@ -267,7 +221,7 @@ ul.pagination.ng-scope {
         <sys_created_on>2019-08-09 21:12:21</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>1486dda7db0f3380b86770c08c961973</sys_id>
-        <sys_mod_count>596</sys_mod_count>
+        <sys_mod_count>666</sys_mod_count>
         <sys_name>[ccr-db] table view</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -275,9 +229,8 @@ ul.pagination.ng-scope {
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_widget_1486dda7db0f3380b86770c08c961973</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-09-30 22:12:49</sys_updated_on>
+        <sys_updated_on>2019-10-23 15:23:37</sys_updated_on>
         <template><![CDATA[<div id="container" class="panel my-4 p-3 text-black">
-
   <h1>{{ c.data.label }}</h1>
 
   <div class="d-flex mb-2">
@@ -303,37 +256,39 @@ ul.pagination.ng-scope {
 
   <div class="row">
     <div class="col-md-12">
-      <table class="table table-bordered table-hover table-condensed table-striped mb-2">
-        <thead class="bg-primary text-white">
-          <tr>
-            <th ng-repeat="col in c.data.columns.filter(exclude('name', 'sys_id'))"
-                ng-click="sort(col)">
-              {{ col.label }}
-              <span class="glyphicon sort-icon" ng-show="sortKey==col" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
-            </th>
-            <th style="width: 120px;">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr dir-paginate="record in c.data.records | filter:search | orderBy:sortKey:reverse | itemsPerPage:pageSize">
-            <td ng-repeat="col in c.data.columns.filter(exclude('name', 'sys_id'))">
-              {{ record[col.name] || 'N/A' }}  
-            </td>
-            <td>
-              <a href="?id=_ccr_db_view_record&table={{ c.data.tableName }}&sys_id={{ record.sys_id }}&view=Create">
-                <button class="btn btn-sm btn-primary">
-                  View
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover table-condensed table-striped mb-2">
+          <thead class="bg-primary text-white">
+            <tr>
+              <th ng-repeat="col in c.data.columns.filter(exclude('name', 'sys_id'))"
+                  ng-click="sort(col.name)">
+                {{ col.label }}
+                <span class="glyphicon sort-icon" ng-show="sortKey==col.name" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+              </th>
+              <th style="width: 120px;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr dir-paginate="record in c.data.records | filter:search | orderBy:sortKey:reverse | itemsPerPage:pageSize" pagination-id="main">
+              <td ng-repeat="col in c.data.columns.filter(exclude('name', 'sys_id'))">
+                {{ record[col.name] || 'N/A' }}  
+              </td>
+              <td>
+                <a href="?id=_ccr_db_view_record&table={{ c.data.tableName }}&sys_id={{ record.sys_id }}&view=Create">
+                  <button class="btn btn-sm btn-primary">
+                    View
+                  </button>
+                </a>
+                <button class="btn btn-default btn-sm" 
+                        ng-show="c.data.admin == true"
+                        ng-click="c.deleteRecord(c.data.tableName, record.sys_id)">
+                  Delete
                 </button>
-              </a>
-              <button class="btn btn-default btn-sm" 
-                      ng-show="c.data.admin == true"
-                      ng-click="c.deleteRecord(c.data.tableName, record.sys_id)">
-                Delete
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>  
+              </td>
+            </tr>
+          </tbody>
+        </table>  
+      </div>
       <div class="d-flex">
         <span class="mr-auto">Total: {{ c.data.records.length }}</span>
         <div class="ml-auto">
@@ -345,18 +300,15 @@ ul.pagination.ng-scope {
           </select>
         </div>
         <div class="ml-5">
-          <dir-pagination-controls></dir-pagination-controls>
+          <dir-pagination-controls pagination-id="main"></dir-pagination-controls>
         </div>
       </div>
-
     </div>
   </div>
+</div>
 
-  <div ng-if="c.debug" class="mb-5">
-    <!-- <pre>{{ c.data.columns | json }}</pre> -->
-    <pre>{{ c.data.columns | json }}</pre> 
-  </div>
-
+<div ng-if="c.debug" class="mb-5">
+  <pre>{{ c.data.columns | json }}</pre> 
 </div>
 
 ]]></template>

@@ -1,29 +1,216 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function($scope, spModal) {
+        <client_script><![CDATA[function($rootScope, $scope, spModal, $http, $timeout, spUtil, $uibModal) {
 	var c = this;
-	$scope.mandatory = [];
 	c.debug = false;
+	$scope.mandatory = [];
+	$scope.pagination = [5, 10, 15, 20, 25];
+	$scope.sortKey = 'Date';
+	$scope.reverse = null;
+
+	$scope.sort = function(keyname){
+		$scope.sortKey = keyname;   //set the sortKey to the param passed
+		$scope.reverse = !$scope.reverse; //if true make it false and vice versa
+	}
+
+	var flag = true;	// flag to prevent extra prompts
+
+	$scope.$on("sp.form.record.updated", function(ev, params) {
+		savePrompt();
+	});
+
+	$timeout(removeButtons);
+	if (c.data.admin) {
+		$timeout(addInstruction);
+		$timeout(returnButton);
+	}
+	
+
 	if (c.debug) {
 		console.log('debugging readonly page', $scope, c);
 	}
 
-	setTimeout(addPrompt, 0);
-	
-	// add save success prompt and hide attachment button if not admin
-	function addPrompt() {
-		if (!c.data.admin) {
-			$('div.pull-right.attachment-button.ng-scope').remove()//css('display', 'none');
-		}
-		$('button.btn.btn-primary.action-btn.pull-right.ng-scope')[0].onclick = function() {
+	if (c.data.tableName == 'x_naci_otr_ccr_dat_contact') {
+		$scope.$on('spModel.fields.rendered', function(event) {
+			c.g_form = event.targetScope.getGlideForm();
+			c.g_form.setVisible('user_id', false);
+		});
+	} else if (c.data.tableName == 'x_naci_otr_ccr_dat_project') {
+		$scope.$on('spModel.fields.rendered', function(event) {
+			noteAddButton();
+		});
+		
+		/*
+		c.data.notes = null;
+		$http.get('/api/x_naci_otr_ccr_dat/data/getNotes', {
+			params: { project_id: c.data.sys_id }
+		}).then(function(response) {
+			// console.log(response.data.result);
+			c.data.notes = response.data.result;
+		});
+
+		c.deleteRecord = function(table, id) {
+			spModal.confirm("Delete this Record?").then(function(confirmed) {
+				if (!confirmed) return;
+				$http.delete(
+					'/api/x_naci_otr_ccr_dat/data/record', 
+					{ params: {id: id, table: table} }
+				).then(function(response) {
+					var status = response.data.result;
+					if (status)
+						$timeout($scope.server.refresh(), 800);
+					console.log(status);
+				})
+			})
+		} */
+	} else if (c.data.tableName == 'x_naci_otr_ccr_dat_technologies_products') {
+		$scope.$on('spModel.fields.rendered', function(event) {
+			tpAddButton();
+		});
+	}
+
+	function savePrompt() {
+		if (flag) {
+			flag=false;
 			spModal.open({
 				title: 'Success',
 				message: 'Data has been saved'
-			}).then(addPrompt, addPrompt);
+			}).then(
+				function(p) {
+					removeButtons();
+					flag = true;
+					$scope.server.refresh();
+				}
+			);
 		}
 	}
 
+	// add return button
+	function returnButton() {
+		//$scope.$on('spModel.fields.rendered', function(event) {
+			$('<button>')
+				.text('Return')
+				.click(function() {window.history.back()})
+				.css('margin-left', 'auto')
+				.css('margin-right', '.5rem')
+				.css('width', '100px')
+				.addClass('btn btn-default')
+				.insertBefore($('button:contains("Save "):first'))
+		//});
+	}
+
+	// hide attachment button if not admin
+	// restore flag
+	function removeButtons(){
+		if (!c.data.admin) {
+			$('div.pull-right.attachment-button.ng-scope').remove()//css('display', 'none');
+		}
+	}
+
+	$scope.$on('data_table.click', function(ev, params) {
+		//console.log('data table clicked', ev, params);
+		//console.log(params.sys_id, params.table); 
+		spUtil.get('widget-form', {
+			sys_id: params.sys_id,
+			table: params.table,
+			view: 'Create'
+		}).then(function(widget) {
+			c.record = widget;
+			$scope.deleteRecord = function() {
+				spModal.confirm("Delete this Record?").then(function(confirmed) {
+					if (!confirmed) return;
+					$http.delete(
+						'/api/x_naci_otr_ccr_dat/data/record', 
+						{ params: {id: params.sys_id, table: params.table} }
+					).then(function(response) {
+						var status = response.data.result;
+						if (status) {
+							$scope.server.refresh();
+							c.modal.close();
+						}
+					})
+				})
+			}
+			openModal();
+		});
+	});
+
+	function openModal() {
+		c.modal = $uibModal.open({
+			template: $('#record-modal').prop('innerHTML'),
+			scope: $scope,
+			windowClass: 'record-modal',
+			size: 'lg',
+			controller: function($scope) {
+				$scope.$on('spModel.fields.rendered', function(event) {
+					$scope.form = event.targetScope.getGlideForm();
+					$('.record-modal .panel-footer button:not(:last)').hide();
+					$('.record-modal .panel-footer button:last').appendTo(
+						$('.record-modal .modal-footer')
+					)
+				});
+			}
+		});
+	}
+
+	function addInstruction() {
+		$('div.panel-heading.form-inline').each(function() {
+			if ($(this).find('p').length == 0) {
+				$(this)				
+					.append(
+					$('<p>')
+					.text('Click on rows to view, edit, or delete record.')
+					.addClass('ml-auto')
+					.css('color', 'steelblue')
+					.css('font-weight', 'bold')
+				)
+			}
+		});
+	}
+
+	function noteAddButton() {
+		$('span.panel-title:contains("Project Notes"):not(:has(a))')
+			.css('display', 'contents')
+			.append(
+			$('<a>')
+			.text('Add')
+			.addClass('btn btn-sm btn-primary')
+			.attr('href', '?id=_ccr_db_table_add&table=' 
+						+ 'x_naci_otr_ccr_dat_project_notes' 
+						+ '&sys_id=-1&view=Create&'
+						+ '&project_id=' + c.data.sys_id)
+			.css('color', 'white')
+			.css('width', '100px')
+			.css('float', 'right')
+		)
+	}
+
+	function tpAddButton() {
+		var tables = {
+			'T&P Indication': 'x_naci_otr_ccr_dat_tp_indication',
+			'T&P Outcome': 'x_naci_otr_ccr_dat_tp_outcome',
+			'T&P Status': 'x_naci_otr_ccr_dat_tp_status'
+		};
+
+		$('span.panel-title:contains("T&P"):not(:has(a)):not(:first)').each(function() {
+			var currentTable = $(this).text();
+			$(this)
+				.css('display', 'contents')
+				.append(
+				$('<a>')
+				.text('Add')
+				.addClass('btn btn-sm btn-primary')
+				.attr('href', '?id=_ccr_db_table_add&table=' 
+							+ tables[currentTable] 
+							+ '&sys_id=-1&view=Create&tp_id='
+							+ c.data.sys_id)
+				.css('color', 'white')
+				.css('width', '100px')
+				.css('float', 'right')
+			)		
+		});
+	}
 
 }
 
@@ -38,7 +225,26 @@ button.btn.action-btn.ng-binding.ng-scope.btn-default {
 button.btn.btn-link.m-l.ng-binding {
   display: none;
 }
-</css>
+
+.record-modal .panel-footer button {
+  display: none;
+}
+
+.table td, .table th {
+  vertical-align: middle;
+}
+
+.table td, .table th {
+  text-align: center;
+}
+
+label {
+  vertical-align: middle;
+}
+
+ul.pagination.ng-scope {
+  margin: 0;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -63,8 +269,10 @@ button.btn.btn-link.m-l.ng-binding {
 	data.admin = admin;
 	data.tableLabel = TableUtils.getLabel(tableName);
 	data.tableName = tableName;
+	data.sys_id = sys_id;
 	data.form = $sp.getForm(tableName, sys_id, null, view);
-
+	
+	
 	function setReadonly() {
 		var fields = data.form._fields;
 		for (var name in fields) {
@@ -97,6 +305,7 @@ button.btn.btn-link.m-l.ng-binding {
 				x_naci_otr_ccr_dat_tp_outcome_subtype: 'type'
 			},
 			x_naci_otr_ccr_dat_project: {
+				x_naci_otr_ccr_dat_project_notes: 'project_id',
 				x_naci_otr_ccr_dat_drug_development_collaborative: 'project',
 				x_naci_otr_ccr_dat_partnerships: 'project'
 			},
@@ -159,9 +368,12 @@ button.btn.btn-link.m-l.ng-binding {
 			},
 			x_naci_otr_ccr_dat_organization: {
 				"x_naci_otr_ccr_dat_contact": [
-					"name",
-					"suffix",
-					"organization"
+					'name',
+					'organization',
+					'department',
+					'email',
+					'phone',
+					'job_title'
 				],
 				"x_naci_otr_ccr_dat_partnerships": [
 					"title_of_partnership",
@@ -181,7 +393,7 @@ button.btn.btn-link.m-l.ng-binding {
 			x_naci_otr_ccr_dat_outcome_type: {
 				"x_naci_otr_ccr_dat_tp_outcome": [
 					"outcome_name",
-					"outcome_type",
+					//"outcome_type",
 					"outcome_subtype",
 					"technologies_product",
 					"t_p_indication",
@@ -197,6 +409,10 @@ button.btn.btn-link.m-l.ng-binding {
 				]
 			},
 			x_naci_otr_ccr_dat_project: {
+				"x_naci_otr_ccr_dat_project_notes": [
+					"notes",
+					"sys_updated_on"
+				],
 				"x_naci_otr_ccr_dat_drug_development_collaborative": [
 					"ddc_meeting_date",
 					"project",
@@ -214,7 +430,7 @@ button.btn.btn-link.m-l.ng-binding {
 			x_naci_otr_ccr_dat_tp_indication: {
 				"x_naci_otr_ccr_dat_tp_outcome": [
 					"outcome_name",
-					"outcome_type",
+					//"outcome_type",
 					"outcome_subtype",
 					"technologies_product",
 					"t_p_indication",
@@ -234,7 +450,7 @@ button.btn.btn-link.m-l.ng-binding {
 			x_naci_otr_ccr_dat_tp_outcome_subtype: {
 				"x_naci_otr_ccr_dat_tp_outcome": [
 					"outcome_name",
-					"outcome_type",
+					//"outcome_type",
 					"outcome_subtype",
 					"technologies_product",
 					"t_p_indication",
@@ -270,14 +486,14 @@ button.btn.btn-link.m-l.ng-binding {
 				],
 				"x_naci_otr_ccr_dat_tp_outcome": [
 					"outcome_name",
-					"outcome_type",
+					//"outcome_type",
 					"outcome_subtype",
 					"technologies_product",
 					"t_p_indication",
 					"date_entered",
 					"date_of_outcome_event",
-					"source_of_information",
-					"comments"
+					"source_of_information"
+					//"comments"
 				],
 				"x_naci_otr_ccr_dat_tp_status": [
 					"technologies_product",
@@ -299,21 +515,9 @@ button.btn.btn-link.m-l.ng-binding {
 			var option = {"title" : label,
 										"table" : table,
 										"filter": getQueryString(filter),
-
-										/*
-										"filter": getQueryString({
-											contact_primary: sys_id,
-											project: sys_id,
-											invention_patent: sys_id,
-											organization: sys_id,
-											title_of_partnership: sys_id,
-											outcome_type: sys_id,
-											type: sys_id
-										}),
-										*/
-
 										"window_size": "5",
 										"fields": assocTables[table].join(',')
+										
 									 }; 
 			options.push(option);
 		}
@@ -341,7 +545,7 @@ button.btn.btn-link.m-l.ng-binding {
         <sys_created_on>2019-08-26 21:22:04</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>2ccbf885db233b00b86770c08c9619fa</sys_id>
-        <sys_mod_count>353</sys_mod_count>
+        <sys_mod_count>821</sys_mod_count>
         <sys_name>[ccr-db] readonly page</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -349,10 +553,10 @@ button.btn.btn-link.m-l.ng-binding {
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_widget_2ccbf885db233b00b86770c08c9619fa</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-09-24 17:53:00</sys_updated_on>
+        <sys_updated_on>2019-10-23 15:31:06</sys_updated_on>
         <template><![CDATA[<div ng-if="c.data.admin">
   <widget id="widget-form"></widget>
-</div> 
+</div>
 
 <div ng-if="!c.data.admin" class="panel panel-default">
   <div class="panel-heading">
@@ -361,7 +565,8 @@ button.btn.btn-link.m-l.ng-binding {
     </span>
   </div>
   <div class="panel-body">
-    <sp-model form_model="data.form" mandatory="mandatory"></sp-model>  
+    <sp-model form_model="data.form" 
+              mandatory="mandatory"></sp-model>
   </div>
   <div class="panel-footer">
     <div class="d-flex">
@@ -374,12 +579,96 @@ button.btn.btn-link.m-l.ng-binding {
   </div>
 </div>
 
+<!--
+<div ng-if="c.data.tableName=='x_naci_otr_ccr_dat_project'" 
+     class="panel panel-default">
+  <div class="panel-heading">
+    <span class="panel-title d-flex">
+      Project Notes
+      <a ng-if="c.data.admin"
+         class="ml-auto btn btn-sm btn-primary"
+         style="color: white; width: 80px;"
+         href="ccr-db?id=_ccr_db_table_add&table=x_naci_otr_ccr_dat_project_notes&sys_id=-1&project_id={{c.data.sys_id}}&view=Create">
+        Add
+      </a>
+    </span>
+  </div>
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-condensed table-striped mb-2">
+        <thead class="bg-primary text-white">
+          <tr>
+            <th ng-click="sort('Date')">
+              Note
+              <span class="glyphicon sort-icon" 
+                    ng-show="sortKey==col"
+                    ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+            </th>
+            <th ng-click="sort('Note')">
+              Date
+              <span class="glyphicon sort-icon" 
+                    ng-show="sortKey==col"
+                    ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+            </th>
+            <th style="width: 120px;">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr dir-paginate="note in c.data.notes | orderBy:['date']:sortKey:reverse | itemsPerPage:pageSize">
+            <td>{{ note.note }}</td>
+            <td style="width: 165px;">
+              {{ note.date }}
+            </td>
+            <td>
+              <a
+                 href="?id=_ccr_db_view_record&table=x_naci_otr_ccr_dat_project_notes&sys_id={{ note.note_id }}&view=Create">
+                <button class="btn btn-sm btn-primary">
+                  View
+                </button>
+              </a>
+              <button ng-if="c.data.admin"
+                      class="btn btn-default btn-sm" 
+                      ng-show="c.data.admin == true"
+                      ng-click="c.deleteRecord('x_naci_otr_ccr_dat_project_notes', note.note_id)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="d-flex">
+      <span class="mr-auto">Total: {{ c.data.notes.length }}</span>
+      <div class="ml-auto">
+        <label class="">Results per Page:</label>
+        <select class="from-control" 
+                ng-init="pageSize = pagination[0]" 
+                ng-options="num for num in pagination"
+                ng-model="pageSize">
+        </select>
+      </div>
+      <div class="ml-5">
+        <dir-pagination-controls></dir-pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
 <div ng-repeat="table in c.data.tables">
   <sp-widget widget="table"></sp-widget>
 </div>
 
-<!--
-<pre ng-if="c.debug">{{ c.data.columns | json}}</pre>
--->]]></template>
+<div id="record-modal" class="d-none" ng-non-bindable>
+  <div class="modal-body" id="modal-body">
+    <sp-widget widget="c.record"></sp-widget>
+  </div>
+  <div class="modal-footer d-flex">
+    <button type="button" class="btn btn-danger ml-auto" ng-if="c.data.admin" ng-click="deleteRecord()">Delete</button>
+    <button type="button" class="btn btn-default ml-2" ng-click="$close()">Cancel</button>
+  </div>  
+</div>
+
+<pre ng-if="c.debug">{{ c.data.notes | json}}</pre>]]></template>
     </sp_widget>
 </record_update>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Project Notes" max_length="40" name="x_naci_otr_ccr_dat_project_notes" type="collection">
+        <element label="Notes" mandatory="true" max_length="5000" name="notes" type="string"/>
+        <element label="Project" mandatory="true" max_length="32" name="project_id" reference="x_naci_otr_ccr_dat_project" type="reference"/>
+        <index name="index">
+            <element name="project_id"/>
+        </index>
+    </element>
+</database>

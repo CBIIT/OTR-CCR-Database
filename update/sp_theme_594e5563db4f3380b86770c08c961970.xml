@@ -116,6 +116,18 @@ color: $nci-red;&#13;
     background-color: steelblue !important;&#13;
     color: white !important;&#13;
 }&#13;
+&#13;
+.btn {&#13;
+  font-size: 16px;&#13;
+}&#13;
+&#13;
+.btn.btn-sm {&#13;
+  font-size: 14px;&#13;
+}&#13;
+&#13;
+.btn.btn-xs {&#13;
+  font-size: 12px;&#13;
+}&#13;
 </css_variables>
         <footer display_value="NCI2 Footer">e2cd7e84db71d38054d8ff621f9619fd</footer>
         <footer_fixed>false</footer_fixed>
@@ -127,14 +139,14 @@ color: $nci-red;&#13;
         <sys_created_on>2019-08-09 21:46:16</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>594e5563db4f3380b86770c08c961970</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>[ccr-db] nci theme</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_theme_594e5563db4f3380b86770c08c961970</sys_update_name>
-        <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-09-24 16:57:05</sys_updated_on>
+        <sys_updated_by>parkbw@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-10-23 14:53:02</sys_updated_on>
     </sp_theme>
 </record_update>

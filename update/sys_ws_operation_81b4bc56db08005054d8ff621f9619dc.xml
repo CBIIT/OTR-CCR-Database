@@ -25,13 +25,20 @@
 	user_item.query();
 	//var index = 0;
 	while(user_item.next()){
-		var value = user_item.getDisplayValue('first_name') + " " + user_item.getDisplayValue('last_name');
-		var label = value;
-		var id = user_item.getDisplayValue('sys_id');
-		var org = user_item.getDisplayValue('sys_id')
-		users.push({label: label, value: value, id: id});
-
-		//		 users.push({'list':{label: label, value: value}, 'fistName': user_item.getDisplayValue('first_name'), 'lastName':user_item.getDisplayValue('last_name'), 'id': user_item.getDisplayValue('sys_id')});
+		var name = user_item.getValue('name');
+		var id = user_item.getValue('sys_id');
+		var phone = user_item.getValue('phone');
+		var email = user_item.getValue('u_ad_email');
+		var department = user_item.getDisplayValue('department');
+		var title = user_item.getValue('u_nihipd');
+		users.push({
+			name: name, 
+			user_id: id,
+			phone: phone,
+			email: email,
+			department: department,
+			job_title: title,
+		});
 	}
 
 	return users;
@@ -50,7 +57,7 @@
         <sys_created_on>2019-09-24 14:36:18</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>81b4bc56db08005054d8ff621f9619dc</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>fetchUserList</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -58,7 +65,7 @@
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sys_ws_operation_81b4bc56db08005054d8ff621f9619dc</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-09-25 15:59:09</sys_updated_on>
+        <sys_updated_on>2019-10-08 15:47:15</sys_updated_on>
         <web_service_definition display_value="Data">48bf9de3db23374054d8ff621f961918</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

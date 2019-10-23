@@ -50,7 +50,7 @@ a.list-group-item {
 
 	var searchFields = {
 		'x_naci_otr_ccr_dat_contact': [
-			'full_name',
+			'name',
 			'suffix',
 			'organization'
 		],
@@ -168,7 +168,7 @@ a.list-group-item {
         <sys_created_on>2019-09-11 17:45:21</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>ca93eecedbbb3300b86770c08c9619ef</sys_id>
-        <sys_mod_count>76</sys_mod_count>
+        <sys_mod_count>77</sys_mod_count>
         <sys_name>[ccr-db] search</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -176,7 +176,7 @@ a.list-group-item {
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_widget_ca93eecedbbb3300b86770c08c9619ef</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-09-13 15:10:01</sys_updated_on>
+        <sys_updated_on>2019-10-01 21:25:45</sys_updated_on>
         <template><![CDATA[<div id="container" class="text-black">
   <h1 >OTR CCR Database Search Results</h1>
 

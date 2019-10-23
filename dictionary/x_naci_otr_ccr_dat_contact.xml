@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element label="Contacts" max_length="40" name="x_naci_otr_ccr_dat_contact" type="collection">
+        <element label="Department" max_length="200" name="department" type="string"/>
+        <element label="Email #1" max_length="200" name="email" type="string"/>
+        <element label="Email #2" max_length="200" name="email_2" type="string"/>
         <element label="Full Name" max_length="200" name="full_name" type="string"/>
-        <element display="true" label="Name" max_length="200" name="name" type="string"/>
+        <element label="Job Title" max_length="200" name="job_title" type="string"/>
+        <element label="Phone number (mobile)" max_length="20" name="mobile" type="string"/>
+        <element display="true" label="Name" mandatory="true" max_length="200" name="name" type="string"/>
         <element label="Notes" max_length="2000" name="notes" type="string"/>
         <element label="Organization" mandatory="true" max_length="32" name="organization" reference="x_naci_otr_ccr_dat_organization" type="reference"/>
+        <element label="Phone number (office)" max_length="20" name="phone" type="string"/>
         <element label="Suffix" max_length="50" name="suffix" type="string"/>
         <element label="User ID" max_length="100" name="user_id" type="string"/>
         <index name="index">
