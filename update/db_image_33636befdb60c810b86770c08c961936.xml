@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="db_image">
+    <db_image action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category/>
+        <format/>
+        <height/>
+        <image>8d0427efdb60c810b86770c08c961943</image>
+        <name>ccr-db-favicon.ico</name>
+        <size_bytes>15086</size_bytes>
+        <sys_class_name>db_image</sys_class_name>
+        <sys_created_by>parkbw@nih.gov</sys_created_by>
+        <sys_created_on>2019-10-23 21:04:35</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>33636befdb60c810b86770c08c961936</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>ccr-db-favicon.ico</sys_name>
+        <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+        <sys_update_name>db_image_33636befdb60c810b86770c08c961936</sys_update_name>
+        <sys_updated_by>parkbw@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-10-23 21:04:48</sys_updated_on>
+        <thumbnail/>
+        <width/>
+    </db_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>734003</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/x-icon</content_type>
+        <encryption_context/>
+        <file_name>image</file_name>
+        <image_height/>
+        <image_width/>
+        <size_bytes>15086</size_bytes>
+        <size_compressed>1307</size_compressed>
+        <state/>
+        <sys_created_by>parkbw@nih.gov</sys_created_by>
+        <sys_created_on>2019-10-23 21:04:48</sys_created_on>
+        <sys_id>8d0427efdb60c810b86770c08c961943</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>parkbw@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-10-23 21:04:48</sys_updated_on>
+        <table_name>ZZ_YYdb_image</table_name>
+        <table_sys_id>33636befdb60c810b86770c08c961936</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="8d0427efdb60c810b86770c08c961943">8d0427efdb60c810b86770c08c961943</sys_attachment>
+        <sys_created_by>parkbw@nih.gov</sys_created_by>
+        <sys_created_on>2019-10-23 21:04:48</sys_created_on>
+        <sys_id>cd0427efdb60c810b86770c08c961943</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>7Vq/axxHFH7HGQ6ToBV2mgTjuyKBEIIx2ESJLaQr3AYckUqFiZQoifGFJESFAzE6Y0i6CBdWYa50kUa9wSrOMsYCCfQHCMRZLtQY7NJIzq3f25053s3t7M7O7dxucQMfb7W7M9/33vx4s3MCKEEZzp8HtDX47xOALwCgVhN/TwLs473JyfDvn08A/I0vfIrvYBX4DsL7QfkYxmVcnJWr0/cmlhYXGohNxG7GuKJyTX/Q3kDsC9D1Mt230U7tIw4QfsZ4K+ymykl6ET7iSFjCxlx99ayF9reMzwV8TR/sMx+kHxum2sWYOVBi5aoPdiP6YE7pA2nnDGPfcKxd9aER4cNGxDjaN5kLS+FcHYV+iQNVF+sDX/FjuWD6U/dB0lzOIf4Bl6oLtZ5TtMvrtQT9uyPWL3laEX2wFtEHdH2uQPq5H33rKfWJpg+062lO+tPmNO16mnP8fbUPlJyW2AcF0D9UTstRP+eMW085BnJazvolrHNaAfQPldMKoL/nh01OK4h+65xWEP3cD9Octib057H/ieuDVDmtQPq5hqSc1vvWLJj+QIfBPJZYK5B+q3W0QPoJqfNYQfRb7yMKoH+ofVyB9Fvto3PWP/R3TAHiPxB7kXONvmFy1J/Jd3ze42fYc5Sc9MfFPipXHenOsXKMfybniDnoz/Qcd8T6Mz9Hz0m/8f44TrvQ3xqR/szO3BT9V0Y8/q1zVYwPrsdQ2lzlR+UqXRHfAfw3MCeIyVVHiv7E3100PrQc9EGaXHVkoz3Cj0bWUNdwseYsM8zZ/nY9LuNiW/ygDNo3ADNVtB2AagVtG20ZbRPAuyPsbT9oovJY2HZoy52VwJakfT0bcr2Rthrav6T1QjsjbSW01XJoPWlvgyAUtt1v5XPvTn/9aqW/XckjeW9W+3UJvaXXK33+lDv9fgZ+yziQLYs4VcK4nfUi4qpa+j+tGqIO7P+0JmFcNAXX0nnEngVeIm7JdnC9rSMOBda/mbn7mQG33Ot1U+Yw+f4x5yFeRFfgME4DaZdtCHRT4ljNo8TH+AnrMfx7lr4PxEGJwaqioe6QX8bgkRKDQ8a/7ZCfa5hnMbiuxOC6Q35Zf0+2/fXU/VNJMciQn8eAz8fYGGTML9t4Sb4zDdt8PvJnGfPrYlBXYrDqkN9kTerKZw74eQxaMTFYd8jfay9pTXLIb7QmjYA/tg8c8ffmYVJedDz+EuegA/7eOmyyBjngT5WHMuZPnYMc8XPfY/chGfKbzPeBfViG/FZ7sIz4jdf7CP5HShu2fR631nR1e/Cl8LtDtnNsCapvlO81Gm4pvqT2PWat2ebPdEWsxS1LzPN2ROxXo/a749JffFE6cNNvwpcrTTgzCwEmqgAeouIhcPyU/0E8ASgh4LnAbwJ4XXoePis/C98N6nlhO4Qzs02Ynm0jRwf+lLQ+nVPQsUQN2DnFCb3ehcXf39NBPo+qd+OXbz/HcbKFeKHBFr13+dRmg9bMS97Tq7y+qEtj/f+IeRDc+/GHa3/Qu/L7f2pi5yNW/xV7Nwr07BXpJ24xd/7V1I+ai+H9hcUHQsMOtSE1GNdHS7H6amLrItdgUD9Kw0Nqg9oyrN97ThpIu9CwY1Of+fDQUv9OCv2xfWhaXxlDuv7TjZ8XbAx3yaYdv6Rd7hH5XArmD8ZFtDMIGbPTj7+nuFHM9LM4faEzzeavePET4gLiNOJDxEnE+wInxT16PhW+S3Wo7jtetMwb7joAAA==</data>
+        <length>1732</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="8d0427efdb60c810b86770c08c961943">8d0427efdb60c810b86770c08c961943</sys_attachment>
+        <sys_created_by>parkbw@nih.gov</sys_created_by>
+        <sys_created_on>2019-10-23 21:04:48</sys_created_on>
+        <sys_id>410427efdb60c810b86770c08c961944</sys_id>
+    </sys_attachment_doc>
+</record_update>

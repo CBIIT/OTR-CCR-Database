@@ -4,13 +4,13 @@
             <element>project</element>
             <position>0</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-22 17:40:24</sys_created_on>
-            <sys_id>a6a227abdb97b300b86770c08c961959</sys_id>
+            <sys_created_on>2019-10-23 20:14:48</sys_created_on>
+            <sys_id>2898d3e3db640c1054d8ff621f9619fe</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">2f2143d7db5f330054d8ff621f961982</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-22 17:40:24</sys_updated_on>
+            <sys_updated_on>2019-10-23 20:14:48</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>ddc_meeting_date</element>
             <position>1</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-22 17:40:24</sys_created_on>
-            <sys_id>2ea227abdb97b300b86770c08c961959</sys_id>
+            <sys_created_on>2019-10-23 20:14:48</sys_created_on>
+            <sys_id>a098d3e3db640c1054d8ff621f9619ff</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">2f2143d7db5f330054d8ff621f961982</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-22 17:40:24</sys_updated_on>
+            <sys_updated_on>2019-10-23 20:14:48</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -32,13 +32,13 @@
             <element>ddc_funding</element>
             <position>2</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-22 17:40:24</sys_created_on>
-            <sys_id>a2a227abdb97b300b86770c08c96195a</sys_id>
+            <sys_created_on>2019-10-23 20:14:48</sys_created_on>
+            <sys_id>2898d3e3db640c1054d8ff621f9619ff</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">2f2143d7db5f330054d8ff621f961982</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-22 17:40:24</sys_updated_on>
+            <sys_updated_on>2019-10-23 20:14:48</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -46,13 +46,13 @@
             <element>.split</element>
             <position>3</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-22 17:40:24</sys_created_on>
-            <sys_id>2aa227abdb97b300b86770c08c96195a</sys_id>
+            <sys_created_on>2019-10-23 20:14:48</sys_created_on>
+            <sys_id>ac98d3e3db640c1054d8ff621f9619ff</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">2f2143d7db5f330054d8ff621f961982</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-22 17:40:24</sys_updated_on>
+            <sys_updated_on>2019-10-23 20:14:48</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
@@ -60,97 +60,83 @@
             <element>primary_contact</element>
             <position>4</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-22 17:40:24</sys_created_on>
-            <sys_id>aea227abdb97b300b86770c08c96195a</sys_id>
+            <sys_created_on>2019-10-23 20:14:48</sys_created_on>
+            <sys_id>249817e3db640c1054d8ff621f961900</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">2f2143d7db5f330054d8ff621f961982</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-22 17:40:24</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>primary_contact.full_name</element>
-            <position>5</position>
-            <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-22 17:40:24</sys_created_on>
-            <sys_id>26a227abdb97b300b86770c08c96195b</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">2f2143d7db5f330054d8ff621f961982</sys_ui_section>
-            <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-22 17:40:24</sys_updated_on>
+            <sys_updated_on>2019-10-23 20:14:48</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
-            <position>6</position>
+            <position>5</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-22 17:40:24</sys_created_on>
-            <sys_id>aaa227abdb97b300b86770c08c96195b</sys_id>
+            <sys_created_on>2019-10-23 20:14:48</sys_created_on>
+            <sys_id>a89817e3db640c1054d8ff621f961900</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">2f2143d7db5f330054d8ff621f961982</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-22 17:40:24</sys_updated_on>
+            <sys_updated_on>2019-10-23 20:14:48</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.begin_split</element>
-            <position>7</position>
+            <position>6</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-22 17:40:24</sys_created_on>
-            <sys_id>22a227abdb97b300b86770c08c96195c</sys_id>
+            <sys_created_on>2019-10-23 20:14:48</sys_created_on>
+            <sys_id>209817e3db640c1054d8ff621f961901</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">2f2143d7db5f330054d8ff621f961982</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-22 17:40:24</sys_updated_on>
+            <sys_updated_on>2019-10-23 20:14:48</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>ddc_meeting_outcomes_recommendations</element>
-            <position>8</position>
+            <position>7</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-22 17:40:24</sys_created_on>
-            <sys_id>a6a227abdb97b300b86770c08c96195c</sys_id>
+            <sys_created_on>2019-10-23 20:14:48</sys_created_on>
+            <sys_id>a49817e3db640c1054d8ff621f961901</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">2f2143d7db5f330054d8ff621f961982</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-22 17:40:24</sys_updated_on>
+            <sys_updated_on>2019-10-23 20:14:48</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>9</position>
+            <position>8</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-22 17:40:24</sys_created_on>
-            <sys_id>2ea227abdb97b300b86770c08c96195c</sys_id>
+            <sys_created_on>2019-10-23 20:14:48</sys_created_on>
+            <sys_id>6c9817e3db640c1054d8ff621f961958</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">2f2143d7db5f330054d8ff621f961982</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-22 17:40:24</sys_updated_on>
+            <sys_updated_on>2019-10-23 20:14:48</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>ddc_meeting_updates</element>
-            <position>10</position>
+            <position>9</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-08-22 17:40:24</sys_created_on>
-            <sys_id>a2a227abdb97b300b86770c08c96195d</sys_id>
+            <sys_created_on>2019-10-23 20:14:48</sys_created_on>
+            <sys_id>e09817e3db640c1054d8ff621f961959</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_drug_development_collaborative" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">2f2143d7db5f330054d8ff621f961982</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-08-22 17:40:24</sys_updated_on>
+            <sys_updated_on>2019-10-23 20:14:48</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
