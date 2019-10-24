@@ -6,43 +6,50 @@
         <default_operation_uri/>
         <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
         <http_method>GET</http_method>
-        <name>validateContactCustom</name>
+        <name>addContact</name>
         <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
-	
 	var name = request.queryParams.name;
-	var org_id = request.queryParams.org;
-	var gr = new GlideRecord('x_naci_otr_ccr_dat_contact');
-	gr.addQuery('name', name);
-	gr.addQuery('organization', org_id);
-	gr.query();
-	gr.next();
-	return Object.keys(gr).length
-	// if length is 1 then name/org combo doesn't exist and contact is valid
+	var organization = request.queryParams.organization;
+	
+	if (name.toString().length == 0 || organization.toString().length == 0) {
+		return "incomplete";
+	}
+		
+	var record = new GlideRecord('x_naci_otr_ccr_dat_contact');
+	
+	record.addQuery('name', name);
+	record.addQuery('organization', organization);
+	record.query();
+	record.next();
+	if (record.isValidRecord()) {
+		return false;
+	} 
+	return true;
 
 })(request, response);]]></operation_script>
-        <operation_uri>/api/x_naci_otr_ccr_dat/data/validateContactCustom</operation_uri>
+        <operation_uri>/api/x_naci_otr_ccr_dat/data/addContact</operation_uri>
         <produces>application/json,application/xml,text/xml</produces>
         <produces_customized>false</produces_customized>
-        <relative_path>/validateContactCustom</relative_path>
+        <relative_path>/addContact</relative_path>
         <request_example/>
-        <requires_acl_authorization>false</requires_acl_authorization>
+        <requires_acl_authorization>true</requires_acl_authorization>
         <requires_authentication>true</requires_authentication>
         <requires_snc_internal_role>true</requires_snc_internal_role>
         <short_description/>
         <sys_class_name>sys_ws_operation</sys_class_name>
         <sys_created_by>chop2@nih.gov</sys_created_by>
-        <sys_created_on>2019-09-25 18:59:25</sys_created_on>
+        <sys_created_on>2019-10-24 14:50:12</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
-        <sys_id>212536eadb84805054d8ff621f96190f</sys_id>
-        <sys_mod_count>35</sys_mod_count>
-        <sys_name>validateContactCustom</sys_name>
+        <sys_id>d776d3f7dba84c1054d8ff621f9619a1</sys_id>
+        <sys_mod_count>30</sys_mod_count>
+        <sys_name>addContact</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
-        <sys_update_name>sys_ws_operation_212536eadb84805054d8ff621f96190f</sys_update_name>
+        <sys_update_name>sys_ws_operation_d776d3f7dba84c1054d8ff621f9619a1</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-09-25 19:29:45</sys_updated_on>
+        <sys_updated_on>2019-10-24 18:35:53</sys_updated_on>
         <web_service_definition display_value="Data">48bf9de3db23374054d8ff621f961918</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>

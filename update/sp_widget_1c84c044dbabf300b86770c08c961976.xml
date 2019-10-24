@@ -19,7 +19,11 @@
 			spModal.open({
 				title: 'Success',
 				message: 'Data has been saved'
-			}).then(removeButtons);
+			})
+				.then(function() {
+				removeButtons();
+				returnButton();
+			});
 		}
 	});
 
@@ -31,8 +35,50 @@
 			//console.log(c.g_form);
 			c.g_form.setVisible('user_id', false);
 			$timeout(addSearch);
+			if (c.data.sys_id == "-1") {
+				$timeout(addSave);
+				$timeout($('button:contains("Save ")')
+								 .hide())
+			}
 		});
+
 	}
+
+	// custom save with validation
+	saveContact = function() {
+		$http.get('/api/x_naci_otr_ccr_dat/data/addContact', {
+			params: { 
+				name: c.g_form.getValue('name'),
+				user_id: c.g_form.getValue('user_id'),
+				organization: c.g_form.getValue('organization'),
+				phone: c.g_form.getValue('phone'),
+				notes: c.g_form.getValue('notes'),
+				department: c.g_form.getValue('department'),
+				suffix: c.g_form.getValue('suffix'),
+				mobile: c.g_form.getValue('mobile'),
+				email: c.g_form.getValue('email'),
+				email_2: c.g_form.getValue('email_2'),
+				job_title: c.g_form.getValue('job_title')
+			}
+		}).then(function(response) {
+			if (response.data.result.toString() == "incomplete") {
+				spModal.open({
+					title: 'Error',
+					message: 'Name and Organization fields are required'
+				})
+			} else if (response.data.result) {
+				c.g_form.save();
+			} else {
+				spModal.open({
+					title: 'Error',
+					message: c.g_form.getValue('name') 
+					+ ' of ' + c.g_form.getDisplayValue('organization')
+					+ ' already exists'
+				})
+			}
+		})
+	}
+
 
 	// automatically select project reference
 	if (c.data.table == 'x_naci_otr_ccr_dat_project_notes' && c.data.sys_id == '-1') {
@@ -56,21 +102,6 @@
 			c.g_form.setReadOnly('technologies_product', true);
 			// c.g_form.setVisible('technologies_product', false);
 		});
-	}
-
-	// validate non-NED user
-	function validateCustom() {
-		var name = c.g_form.getValue('name');
-		var org = c.g_form.getValue('organization');
-		$http.get('/api/x_naci_otr_ccr_dat/data/validateContactCustom', {
-			params: { name: name, org: org }
-		}).then(function(response) {
-			if (+response.data.result === 1) {
-				alert('valid')
-			} else {
-				alert('Error: ' + name + '[' + org + '] already exists');
-			}
-		})
 	}
 
 	function openModal() {
@@ -138,18 +169,28 @@
 		$('#table-form .panel-footer button:not(:last)').hide();
 	}
 
+	// add save button
+	function addSave() {
+		$('<button>')
+			.text('Save')
+			.click(saveContact)
+			.css('float', 'right')
+			.css('width', '100px')
+			.addClass('btn btn-primary')
+			.insertAfter($('button:contains("Save ")'))
+	}
+
 	// add return button
 	function returnButton() {
-		$scope.$on('spModel.fields.rendered', function(event) {
-			$('<button>')
-				.text('Return')
-				.click(function() {window.history.back()})
-				.css('margin-left', 'auto')
-				.css('margin-right', '.5rem')
-				.css('width', '100px')
-				.addClass('btn btn-default')
-				.insertBefore($('button:contains("Save "):first'))
-		});
+		//	$scope.$on('spModel.fields.rendered', function(event) {
+		$('<button>')
+			.text('Return')
+			.click(function() {window.history.back()})
+			.css('float', 'left')
+			.css('width', '100px')
+			.addClass('btn btn-default')
+			.insertBefore($('button:contains("Save "):first'))
+		//	});
 	}
 
 	// add NED search button
@@ -211,7 +252,7 @@
         <sys_created_on>2019-08-23 14:46:44</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>1c84c044dbabf300b86770c08c961976</sys_id>
-        <sys_mod_count>372</sys_mod_count>
+        <sys_mod_count>431</sys_mod_count>
         <sys_name>[ccr-db] table add</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -219,7 +260,7 @@
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_widget_1c84c044dbabf300b86770c08c961976</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-10-23 14:33:41</sys_updated_on>
+        <sys_updated_on>2019-10-24 18:33:24</sys_updated_on>
         <template><![CDATA[<div id="table-form">
   <widget id="widget-form">
   </widget>

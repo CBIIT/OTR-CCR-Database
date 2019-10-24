@@ -3,7 +3,6 @@
         <element label="Department" max_length="200" name="department" type="string"/>
         <element label="Email #1" max_length="200" name="email" type="string"/>
         <element label="Email #2" max_length="200" name="email_2" type="string"/>
-        <element label="Full Name" max_length="200" name="full_name" type="string"/>
         <element label="Job Title" max_length="200" name="job_title" type="string"/>
         <element label="Phone number (mobile)" max_length="20" name="mobile" type="string"/>
         <element display="true" label="Name" mandatory="true" max_length="200" name="name" type="string"/>
