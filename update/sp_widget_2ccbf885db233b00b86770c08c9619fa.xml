@@ -40,30 +40,6 @@
 		$scope.$on('spModel.fields.rendered', function(event) {
 			noteAddButton();
 		});
-		
-		/*
-		c.data.notes = null;
-		$http.get('/api/x_naci_otr_ccr_dat/data/getNotes', {
-			params: { project_id: c.data.sys_id }
-		}).then(function(response) {
-			// console.log(response.data.result);
-			c.data.notes = response.data.result;
-		});
-
-		c.deleteRecord = function(table, id) {
-			spModal.confirm("Delete this Record?").then(function(confirmed) {
-				if (!confirmed) return;
-				$http.delete(
-					'/api/x_naci_otr_ccr_dat/data/record', 
-					{ params: {id: id, table: table} }
-				).then(function(response) {
-					var status = response.data.result;
-					if (status)
-						$timeout($scope.server.refresh(), 800);
-					console.log(status);
-				})
-			})
-		} */
 	} else if (c.data.tableName == 'x_naci_otr_ccr_dat_technologies_products') {
 		$scope.$on('spModel.fields.rendered', function(event) {
 			tpAddButton();
@@ -194,7 +170,7 @@
 			'T&P Status': 'x_naci_otr_ccr_dat_tp_status'
 		};
 
-		$('span.panel-title:contains("T&P"):not(:has(a)):not(:first)').each(function() {
+		$('span.panel-title:contains("T&P"):not(:has(a))').each(function() {
 			var currentTable = $(this).text();
 			$(this)
 				.css('display', 'contents')
@@ -547,7 +523,7 @@ ul.pagination.ng-scope {
         <sys_created_on>2019-08-26 21:22:04</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>2ccbf885db233b00b86770c08c9619fa</sys_id>
-        <sys_mod_count>826</sys_mod_count>
+        <sys_mod_count>829</sys_mod_count>
         <sys_name>[ccr-db] readonly page</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -555,7 +531,7 @@ ul.pagination.ng-scope {
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_widget_2ccbf885db233b00b86770c08c9619fa</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-10-23 20:17:08</sys_updated_on>
+        <sys_updated_on>2019-10-29 20:32:47</sys_updated_on>
         <template><![CDATA[<div ng-if="c.data.admin">
   <widget id="widget-form"></widget>
 </div>
@@ -580,82 +556,6 @@ ul.pagination.ng-scope {
     </div>
   </div>
 </div>
-
-<!--
-<div ng-if="c.data.tableName=='x_naci_otr_ccr_dat_project'" 
-     class="panel panel-default">
-  <div class="panel-heading">
-    <span class="panel-title d-flex">
-      Project Notes
-      <a ng-if="c.data.admin"
-         class="ml-auto btn btn-sm btn-primary"
-         style="color: white; width: 80px;"
-         href="ccr-db?id=_ccr_db_table_add&table=x_naci_otr_ccr_dat_project_notes&sys_id=-1&project_id={{c.data.sys_id}}&view=Create">
-        Add
-      </a>
-    </span>
-  </div>
-  <div class="panel-body">
-    <div class="table-responsive">
-      <table class="table table-bordered table-hover table-condensed table-striped mb-2">
-        <thead class="bg-primary text-white">
-          <tr>
-            <th ng-click="sort('Date')">
-              Note
-              <span class="glyphicon sort-icon" 
-                    ng-show="sortKey==col"
-                    ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
-            </th>
-            <th ng-click="sort('Note')">
-              Date
-              <span class="glyphicon sort-icon" 
-                    ng-show="sortKey==col"
-                    ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
-            </th>
-            <th style="width: 120px;">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr dir-paginate="note in c.data.notes | orderBy:['date']:sortKey:reverse | itemsPerPage:pageSize">
-            <td>{{ note.note }}</td>
-            <td style="width: 165px;">
-              {{ note.date }}
-            </td>
-            <td>
-              <a
-                 href="?id=_ccr_db_view_record&table=x_naci_otr_ccr_dat_project_notes&sys_id={{ note.note_id }}&view=Create">
-                <button class="btn btn-sm btn-primary">
-                  View
-                </button>
-              </a>
-              <button ng-if="c.data.admin"
-                      class="btn btn-default btn-sm" 
-                      ng-show="c.data.admin == true"
-                      ng-click="c.deleteRecord('x_naci_otr_ccr_dat_project_notes', note.note_id)">
-                Delete
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="d-flex">
-      <span class="mr-auto">Total: {{ c.data.notes.length }}</span>
-      <div class="ml-auto">
-        <label class="">Results per Page:</label>
-        <select class="from-control" 
-                ng-init="pageSize = pagination[0]" 
-                ng-options="num for num in pagination"
-                ng-model="pageSize">
-        </select>
-      </div>
-      <div class="ml-5">
-        <dir-pagination-controls></dir-pagination-controls>
-      </div>
-    </div>
-  </div>
-</div>
--->
 
 <div ng-repeat="table in c.data.tables">
   <sp-widget widget="table"></sp-widget>

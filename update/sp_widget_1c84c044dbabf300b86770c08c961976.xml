@@ -13,6 +13,7 @@
 	$timeout(removeButtons);
 	$timeout(returnButton);
 
+	// save prompt
 	$scope.$on("sp.form.record.updated", function(ev, params) {
 		if (flag) {
 			flag = false;
@@ -26,7 +27,6 @@
 			});
 		}
 	});
-
 
 	if (c.data.table == 'x_naci_otr_ccr_dat_contact') {
 		// ned search link and hide user_id field
@@ -89,21 +89,21 @@
 		});
 	}
 
+	// automatically set tp reference
 	var tpTables = [
 		'x_naci_otr_ccr_dat_tp_status',
 		'x_naci_otr_ccr_dat_tp_outcome',
 		'x_naci_otr_ccr_dat_tp_indication'
 	];
-
 	if (tpTables.indexOf(c.data.table) > -1) {
 		$scope.$on('spModel.fields.rendered', function(event) {
 			c.g_form = event.targetScope.getGlideForm();
 			c.g_form.setValue('technologies_product', c.data.tp_id);
 			c.g_form.setReadOnly('technologies_product', true);
-			// c.g_form.setVisible('technologies_product', false);
 		});
 	}
 
+	// ned modal
 	function openModal() {
 		$('#error').addClass('d-none').removeClass('d-block')
 		$uibModal.open({
@@ -252,7 +252,7 @@
         <sys_created_on>2019-08-23 14:46:44</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>1c84c044dbabf300b86770c08c961976</sys_id>
-        <sys_mod_count>431</sys_mod_count>
+        <sys_mod_count>464</sys_mod_count>
         <sys_name>[ccr-db] table add</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -260,7 +260,7 @@
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_widget_1c84c044dbabf300b86770c08c961976</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-10-24 18:33:24</sys_updated_on>
+        <sys_updated_on>2019-10-29 20:32:14</sys_updated_on>
         <template><![CDATA[<div id="table-form">
   <widget id="widget-form">
   </widget>
