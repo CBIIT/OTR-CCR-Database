@@ -81,7 +81,26 @@
 					message: c.g_form.getValue('name') 
 					+ ' of ' + c.g_form.getDisplayValue('organization')
 					+ ' already exists'
-				})
+				}).then(
+					function() {
+						fields = c.g_form.getFieldNames()
+						for (var i in fields) {
+							c.g_form.clearValue(fields[i]);
+						}
+					},
+					function() {
+						fields = c.g_form.getFieldNames()
+						for (var i in fields) {
+							c.g_form.clearValue(fields[i]);
+						}
+					},
+					function() {
+						fields = c.g_form.getFieldNames()
+						for (var i in fields) {
+							c.g_form.clearValue(fields[i]);
+						}
+					}
+				)
 			}
 		})
 	}
@@ -261,7 +280,7 @@
         <sys_created_on>2019-08-23 14:46:44</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>1c84c044dbabf300b86770c08c961976</sys_id>
-        <sys_mod_count>492</sys_mod_count>
+        <sys_mod_count>505</sys_mod_count>
         <sys_name>[ccr-db] table add</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -269,7 +288,7 @@
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_widget_1c84c044dbabf300b86770c08c961976</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-10-30 16:43:08</sys_updated_on>
+        <sys_updated_on>2019-10-30 20:02:02</sys_updated_on>
         <template><![CDATA[<div id="table-form">
   <widget id="widget-form">
   </widget>
