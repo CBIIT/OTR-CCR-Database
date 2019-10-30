@@ -21,10 +21,17 @@
 				title: 'Success',
 				message: 'Data has been saved'
 			})
-				.then(function() {
-				removeButtons();
-				returnButton();
-			});
+				.then(
+				function() { 		// OK
+					removeButtons();
+					returnButton();
+				}, function() { // Cancel
+					removeButtons();
+					returnButton();
+				}, function() { // Backdrop
+					removeButtons();
+					returnButton();
+				});
 		}
 	});
 
@@ -178,19 +185,21 @@
 			.css('width', '100px')
 			.addClass('btn btn-primary')
 			.insertAfter($('button:contains("Save ")'))
+		
+		// change text to prevent duplicates
+		$('button:contains("Save ")')
+								 .text('hide')
 	}
 
 	// add return button
 	function returnButton() {
-		//	$scope.$on('spModel.fields.rendered', function(event) {
 		$('<button>')
 			.text('Return')
 			.click(function() {window.history.back()})
 			.css('float', 'left')
 			.css('width', '100px')
 			.addClass('btn btn-default')
-			.insertBefore($('button:contains("Save "):first'))
-		//	});
+			.insertBefore($('button:contains("Save"):first'))
 	}
 
 	// add NED search button
@@ -252,7 +261,7 @@
         <sys_created_on>2019-08-23 14:46:44</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>1c84c044dbabf300b86770c08c961976</sys_id>
-        <sys_mod_count>464</sys_mod_count>
+        <sys_mod_count>492</sys_mod_count>
         <sys_name>[ccr-db] table add</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -260,7 +269,7 @@
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_widget_1c84c044dbabf300b86770c08c961976</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-10-29 20:32:14</sys_updated_on>
+        <sys_updated_on>2019-10-30 16:43:08</sys_updated_on>
         <template><![CDATA[<div id="table-form">
   <widget id="widget-form">
   </widget>
