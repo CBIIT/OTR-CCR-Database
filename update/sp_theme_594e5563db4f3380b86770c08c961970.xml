@@ -129,13 +129,17 @@ color: $nci-red;&#13;
   font-size: 12px;&#13;
 }&#13;
 &#13;
+input.form-control {&#13;
+  height: 36px;&#13;
+}&#13;
+&#13;
 /** hide navbars */&#13;
 div.navbar-inverse, div._bg-blu {&#13;
 	display: none;&#13;
 }</css_variables>
         <footer display_value="NCI2 Footer">e2cd7e84db71d38054d8ff621f9619fd</footer>
         <footer_fixed>false</footer_fixed>
-        <header display_value="NCI Header">9e4e6d73dbe1938054d8ff621f9619c6</header>
+        <header display_value="[ccr-db] header">8f81be8cdb85c41054d8ff621f9619c9</header>
         <name>[ccr-db] nci theme</name>
         <navbar_fixed>false</navbar_fixed>
         <sys_class_name>sp_theme</sys_class_name>
@@ -143,7 +147,7 @@ div.navbar-inverse, div._bg-blu {&#13;
         <sys_created_on>2019-08-09 21:46:16</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>594e5563db4f3380b86770c08c961970</sys_id>
-        <sys_mod_count>13</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>[ccr-db] nci theme</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -151,6 +155,6 @@ div.navbar-inverse, div._bg-blu {&#13;
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_theme_594e5563db4f3380b86770c08c961970</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-10-23 20:48:30</sys_updated_on>
+        <sys_updated_on>2019-11-06 16:58:08</sys_updated_on>
     </sp_theme>
 </record_update>

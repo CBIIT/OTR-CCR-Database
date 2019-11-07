@@ -466,22 +466,16 @@ ul.pagination.ng-scope {
 				]
 			}, 
 			x_naci_otr_ccr_dat_technologies_products: {
-				"x_naci_otr_ccr_dat_partnerships": [
-					"type",
-					"project",
-					"technology_product",
-					"contact_primary",
-					"source_of_information"
-				],
-				"x_naci_otr_ccr_dat_project": [
-					"title",
-					"project_status",
-					"contact_primary",
-					"technologies_products"
-				],
 				"x_naci_otr_ccr_dat_tp_indication": [
 					"technologies_product",
 					"tp_site"
+				],
+				"x_naci_otr_ccr_dat_tp_status": [
+					"technologies_product",
+					"tp_indication",
+					"status",
+					"source_information",
+					"date_entered"
 				],
 				"x_naci_otr_ccr_dat_tp_outcome": [
 					"outcome_name",
@@ -494,12 +488,18 @@ ul.pagination.ng-scope {
 					"source_of_information"
 					//"comments"
 				],
-				"x_naci_otr_ccr_dat_tp_status": [
-					"technologies_product",
-					"tp_indication",
-					"status",
-					"source_information",
-					"date_entered"
+				"x_naci_otr_ccr_dat_project": [
+					"title",
+					"project_status",
+					"contact_primary",
+					"technologies_products"
+				],
+				"x_naci_otr_ccr_dat_partnerships": [
+					"type",
+					"project",
+					"technology_product",
+					"contact_primary",
+					"source_of_information"
 				]
 			}
 		};
@@ -544,7 +544,7 @@ ul.pagination.ng-scope {
         <sys_created_on>2019-08-26 21:22:04</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>2ccbf885db233b00b86770c08c9619fa</sys_id>
-        <sys_mod_count>869</sys_mod_count>
+        <sys_mod_count>870</sys_mod_count>
         <sys_name>[ccr-db] readonly page</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -552,7 +552,7 @@ ul.pagination.ng-scope {
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_widget_2ccbf885db233b00b86770c08c9619fa</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-10-30 19:42:51</sys_updated_on>
+        <sys_updated_on>2019-10-31 19:49:50</sys_updated_on>
         <template><![CDATA[<div ng-if="c.data.admin">
   <widget id="widget-form"></widget>
 </div>

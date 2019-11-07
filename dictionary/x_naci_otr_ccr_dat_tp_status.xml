@@ -14,7 +14,7 @@
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" label="Technologies &amp; Products" mandatory="true" max_length="32" name="technologies_product" reference="x_naci_otr_ccr_dat_technologies_products" type="reference"/>
-        <element attributes="edge_encryption_enabled=true" label="T&amp;P Indication" max_length="32" name="tp_indication" reference="x_naci_otr_ccr_dat_tp_indication" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="T&amp;P Indication" max_length="32" name="tp_indication" reference="x_naci_otr_ccr_dat_tp_indication" reference_qual="javascript:&quot;technologies_product=&quot; + current.technologies_product" type="reference" use_reference_qualifier="advanced"/>
         <index name="index">
             <element name="tp_indication"/>
         </index>

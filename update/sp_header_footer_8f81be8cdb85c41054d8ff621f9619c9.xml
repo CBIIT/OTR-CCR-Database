@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_header_footer">
+    <sp_header_footer action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function ($rootScope, $scope, snRecordWatcher, spUtil, $location, $uibModal, cabrillo, $timeout, $window, $http) {
+	var c = this;
+	$scope.userID = $scope.user.sys_id;
+	if (cabrillo.isNative())
+		$scope.isViewNative = true;
+
+	$scope.openPopUp = function() {
+		var url = "$chat_support.do?queueID=" + $scope.data.connect_support_queue_id;
+		var popup = window.open (url, "popup", "width=900, height=600");
+	};
+
+	$scope.openLogin = function () {
+		$scope.modalInstance = $uibModal.open({
+			templateUrl: 'modalLogin',
+			scope: $scope
+		});
+	};
+
+	$rootScope.$on('sp.avatar_changed', function() {
+		$scope.userID = "";
+		$timeout(function(){
+			$scope.userID = $scope.user.sys_id;
+		});
+	});
+
+	$rootScope.$on('nci.chat.inactive', function() {
+		$scope.chatClosed = true;
+	});
+
+	$scope.isHomepage = function() {
+		if (!$scope.page.id)
+			return true;
+
+		if ($scope.page.id == $scope.portal.homepage_dv)
+			return true;
+
+		return false;
+	};
+
+	c.openChat = function (queueID) {
+		if (!$scope.user.logged_in) {
+			$location.url($scope.data.itrust_login);
+			return;
+		}
+		if (!$scope.chatClosed) {
+			$window.open('/$chat_support.do?queueID='+ queueID, '_blank', 'location=no,toolbar=no,menubar=no,scrollbars=yes,width=760,height=600');
+		}
+	}
+
+	$scope.closeAlert = function(index) {
+		$scope.data.alerts.splice(index, 1);
+	};
+
+	//Make callto check if chat is open and broadcast on non-home pages
+	$http.get($scope.data.queue_url).then(function (response) {		
+		if (response.data.result) {
+			var resp = response.data.result;
+			if (resp.hasOwnProperty('not_available')) {
+				$scope.chatClosed = true;
+				$rootScope.chatClosed = true;
+				$rootScope.$broadcast('nci.chat.inactive', true );
+			}
+		}
+	})
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.alerts-wrapper {&#13;
+  background: $nci-red;&#13;
+  color: #fff;&#13;
+}&#13;
+.nci-alert {&#13;
+  margin-bottom: 0;&#13;
+}&#13;
+.nci-alert .alert-dismissable .close, .alert-dismissible .close {&#13;
+  color: #fff;&#13;
+  opacity: 0.7;&#13;
+  transition: all linear 0.1s;&#13;
+&#13;
+}&#13;
+&#13;
+#sp-nav-bar {&#13;
+  display: block !important; /*Overrides a Bootstrap Important */&#13;
+}&#13;
+.nci-alert .close:hover, .close:focus {&#13;
+  color: #fff;&#13;
+  text-decoration: none;&#13;
+  cursor: pointer;&#13;
+  opacity: 1;&#13;
+&#13;
+}&#13;
+&#13;
+.navbar-nav &gt; li &gt; a.nci-nav-btn {&#13;
+  margin: 0 5px;&#13;
+  padding: 18px 10px;&#13;
+}&#13;
+&#13;
+.al-link {&#13;
+  text-decoration: underline;&#13;
+}&#13;
+&#13;
+._mt-25 {&#13;
+  margin-top: 25px;&#13;
+}&#13;
+&#13;
+._nav-wrapper {&#13;
+  position: relative;&#13;
+  z-index: 100;&#13;
+  background: #fff;&#13;
+}&#13;
+&#13;
+@media screen and (min-width: 768px) and (max-width: 991px) {&#13;
+  .util-nav {&#13;
+    display: block&#13;
+  }&#13;
+}&#13;
+&#13;
+@media screen  and (max-width: 991px) {&#13;
+  .med-shift-left {&#13;
+    float: left !important;&#13;
+  }&#13;
+}&#13;
+&#13;
+.md-click-catcher  {&#13;
+  background: #383942 !important;&#13;
+  opacity: 0.7;&#13;
+&#13;
+}&#13;
+&#13;
+&#13;
+.nci-logo {&#13;
+  height: 92px;&#13;
+  margin: 6px 0;&#13;
+}&#13;
+&#13;
+@media screen and (max-width: 600px) {&#13;
+  .nci-logo {&#13;
+    height: 50px;&#13;
+    margin: 6px 0;&#13;
+  }&#13;
+}&#13;
+.navbar-nav &gt; li &gt; a {&#13;
+  padding-top: 15px;&#13;
+  padding-bottom: 15px;&#13;
+}&#13;
+&#13;
+.search-in-nav {&#13;
+  margin: 10px 130px -6px 25px&#13;
+}&#13;
+.navbar {&#13;
+  transition: 250ms opacity ease-in-out;&#13;
+  -webkit-transition: 250ms opacity ease-in-out;&#13;
+  border: 0;&#13;
+  border-bottom: 0;&#13;
+}&#13;
+&#13;
+.navbar-fade {&#13;
+  opacity: 0.4;&#13;
+}&#13;
+&#13;
+.navbar-inverse .navbar-nav &gt; li &gt; a:hover, &#13;
+.navbar-inverse .navbar-nav &gt; li &gt; a:focus {&#13;
+  background-color: rgba(158,158,158,0.2);&#13;
+}&#13;
+&#13;
+.navbar-inverse .navbar-toggle {&#13;
+  border-color: rgba(255, 255, 255, 0.25);&#13;
+}&#13;
+&#13;
+header[role="banner"],&#13;
+.nav &gt; li &gt; a {&#13;
+  max-height: 60px;&#13;
+}&#13;
+&#13;
+@media screen and (max-width: 768px){&#13;
+  .nav &gt; li &gt; a {&#13;
+    padding-right: 0.5rem;&#13;
+    padding-left: 0.5rem;&#13;
+  }&#13;
+}&#13;
+&#13;
+.navbar-brand {&#13;
+  max-height: 60px;&#13;
+  padding: 0;&#13;
+  padding-bottom: 0.5rem;&#13;
+}&#13;
+&#13;
+.navbar-brand img, .navbar-brand span {&#13;
+  margin-left: $sp-logo-margin-x;&#13;
+  margin-right: $sp-logo-margin-x;&#13;
+  margin-top: $sp-logo-margin-y;&#13;
+  margin-bottom: $sp-logo-margin-y;&#13;
+  display: block;&#13;
+  max-height: $sp-logo-max-height;&#13;
+  max-width: $sp-logo-max-width;&#13;
+  position: relative;&#13;
+  top: 50%;&#13;
+  -webkit-transform: translateY(-50%);&#13;
+  -ms-transform: translateY(-50%);&#13;
+  transform: translateY(-50%);&#13;
+}&#13;
+.breadcrumb-container {&#13;
+  background-color: $panel-bg;&#13;
+}&#13;
+&#13;
+/* for mobile app */&#13;
+.navbar-inverse.is-native {&#13;
+  background-color: #405060;&#13;
+}&#13;
+&#13;
+nav{&#13;
+  margin-bottom: 0px;&#13;
+  border-radius: 0px;&#13;
+}&#13;
+&#13;
+.navbar-collapse{&#13;
+  padding-right: 0px;&#13;
+}&#13;
+&#13;
+.navbar-nav {&#13;
+  margin: 0px;&#13;
+}&#13;
+&#13;
+// PRB711244: Dropdown menu is scrollable when too many items&#13;
+.scrollable-dropdown {&#13;
+  max-height: 80vh;&#13;
+  overflow: auto;&#13;
+  height: auto;&#13;
+}&#13;
+&#13;
+.is-native {&#13;
+  .scrollable-dropdown {&#13;
+    max-height: 100vh;&#13;
+    overflow: scroll;&#13;
+    height: auto;&#13;
+  }&#13;
+}&#13;
+&#13;
+&#13;
+/* PRB923910: Fix for Service Portal - Header Poorly Aligned in Safari */&#13;
+&#13;
+/*Commented Out - TODO test in Safari&#13;
+@media screen and (min-width: 768px) {&#13;
+.navbar-collapse {&#13;
+display: flex !important;&#13;
+}&#13;
+}&#13;
+*/&#13;
+/*&#13;
+.md-button.md-default-theme:not([disabled]).md-focused, .md-button:not([disabled]).md-focused, .md-button.md-default-theme:not([disabled]):hover, .md-button:not([disabled]):hover {&#13;
+color: $nci-red;&#13;
+} */</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function(scope, element) {
+	$(document).keyup(function(event) {
+		if (event.which == 9) { //tab key handler + arrow keys
+			if ($(event.target).parents(".dropdown-menu").length == 0) { //if we are NOT inside a dropdown...
+				//close the dropdowns
+				$(".dropdown").removeClass("open");
+				$("[data-toggle='dropdown']").attr("aria-expanded", "false");
+			}
+		}
+	});
+	
+	$(element).on('click.nav','.navbar-collapse.in',function(e) {
+		var target = $(e.target);
+		if (target.is('a')) {
+			if (target.hasClass('sp-menu-has-items'))
+				return; // menu item has a submenu, so just toggle it
+			
+			// collapse mobile nav if clicked an anchor
+			$(this).removeClass('in').addClass('collapse');
+			return;
+		}
+
+		if (target.parent().hasClass("toggle-dropdown")) {
+			// collapse mobile nav if parent has toggle-dropdown class
+			$(this).removeClass('in').addClass('collapse');
+			return;
+		}
+
+		// if neither target nor parent is an anchor, do nothing
+		if (!target.parent().is('a'))
+			return;
+
+		// collapse mobile nav if target is part of a submenu
+		if (target.parents("ul.dropdown-menu").length > 0)
+			$(this).removeClass('in').addClass('collapse');
+	});
+}]]></link>
+        <name>[ccr-db] header</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[data.defaultIDP = getDefaultIDP();
+
+function getDefaultIDP() {
+	var idp = gs.getProperty('glide.authenticate.sso.redirect.idp');
+	if (!idp) {
+		var grIDP = new GlideRecord('saml2_update1_properties');
+		grIDP.addActiveQuery();
+		grIDP.query('default', true);
+		if (grIDP.next())
+			idp = grIDP.getUniqueValue();
+	}
+	return idp;
+}
+
+// Defines the support queue ID that will be linked to by the Live Chat link in header
+data.connect_support_queue_id = $sp.getValue('sp_chat_queue');
+data.queue_url = '/api/now/connect/support/queues' + '/' + data.connect_support_queue_id;	
+
+data.login_page = $sp.getValue('login_page');
+data.profileBtnMsg = gs.getMessage("Press space to access user profile or logout");
+var menu = $sp.getValue("sp_rectangle_menu");
+var util = '93aa79fbdbe1938054d8ff621f96192a';
+data.menu = $sp.getWidgetFromInstance(menu);
+data.util_menu = $sp.getWidgetFromInstance(util);
+if (data.menu && data.menu.data) {
+	data.menu.data.replace = true;
+	// Hide login if menu already has link to login
+	data.hasLogin = false;
+	if (data.menu.data.menu.items) {
+		for(var i in data.menu.data.menu.items) {
+			var item = data.menu.data.menu.items[i];
+			if (item.type == 'page' && item.sp_page == data.login_page)
+				data.hasLogin = true;
+		}
+	}
+}
+
+var widgetOptions = {
+	"title": "Search here for services, articles, and your past tickets.",
+	"size": "md",
+	"color": "danger"
+}
+//data.loginWidget = $sp.getWidgetFromInstance('login-modal');
+data.itrust_login = gs.getProperty('nci_sp.itrust.url');
+
+data.typeAheadSearch = $sp.getWidget('nci-typeahead-search', widgetOptions);
+
+data.submit_ticket = gs.getProperty('nci_sp.submitTicket.id');]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_header_footer</sys_class_name>
+        <sys_created_by>chop2@nih.gov</sys_created_by>
+        <sys_created_on>2019-11-06 16:56:58</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>8f81be8cdb85c41054d8ff621f9619c9</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>[ccr-db] header</sys_name>
+        <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+        <sys_update_name>sp_header_footer_8f81be8cdb85c41054d8ff621f9619c9</sys_update_name>
+        <sys_updated_by>chop2@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-11-06 17:10:45</sys_updated_on>
+        <template><![CDATA[<div class="_nav-wrapper">
+
+  <div class="navbar-default">
+    <div class="container navbar-default">
+      <div class="row util-nav" layout-gt-sm="row" layout-align="start center">
+        <div class="col-md-4">
+          <a class="" ng-if="::portal.logo" href="?id={{::portal.homepage_dv}}" aria-label="${Go to homepage}">
+            <img ng-src="{{::portal.logo}}" title="NCI" role="presentation" alt="${Portal Logo}" class="nci-logo" />
+          </a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sp-nav-bar1" ng-if="user.logged_in"> <!--Since un-authenticated user only has one available uitility link -->
+            <span class="sr-only">${Toggle navigation}</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <ul ng-if="::(!user.logged_in && page.id != portal.login_page_dv && !data.hasLogin)" class="nav navbar-nav pull-right visible-xs-block visible-sm-block">
+            <li><a ng-href="{{data.itrust_login}}">${Login}<i class="fa fa-sign-in" aria-hidden="true"></i></a> </li>
+
+          </ul>
+        </div>
+
+
+
+        <!--  <div class="pull-right"> -->
+        <div class="col-md-8">
+          <ul ng-if="::(!user.logged_in && page.id != portal.login_page_dv && !data.hasLogin)" class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+            <li><li><a ng-href="nav_to.do?uri=ccr-db&glide_sso_id={{c.data.defaultIDP}}"
+                       class="nav-link">
+            Login              </a> </li> </li>
+          </ul>
+        <div sp-navbar-toggle="" class="collapse navbar-collapse scrollable-dropdown" id="sp-nav-bar1">
+          <div class="clearfix pull-right med-shift-left">
+
+
+
+            <!--  <div class="pull-right"> -->
+            <sp-widget widget="::data.util_menu" class="pull-right"></sp-widget>
+            <!--  </div> -->
+          </div> <!--/top column -->
+
+
+        </div><!--/collapse -->
+        <div class="_mb-20 hidden-xs" ng-if="page.id !='nci_home'">
+          <sp-widget widget="data.typeAheadSearch" /> 
+        </div>
+      </div><!--/col -->
+      <div class="col-xs-12 visible-xs-block _mb-20" ng-if="page.id !='nci_home'">
+        <sp-widget widget="data.typeAheadSearch" /> 
+      </div>
+    </div><!--/row -->
+
+  </div><!--/container -->
+</div><!--/navbar  -->
+<div class="navbar-inverse">
+  <div>
+
+  </div>
+  <nav class="container" ng-class="::{'navbar':!isViewNative, 'is-native': isViewNative}"
+       role="navigation">
+
+    <!--    <div ng-show="::!isViewNative" class="navbar-header">
+<a class="navbar-brand" ng-if="::!portal.logo" href="?id={{::portal.homepage_dv}}"><span>{{::portal.title}}</span></a>
+
+
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sp-nav-bar">
+<span class="sr-only">${Toggle navigation}</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div> -->
+
+    <!--<div sp-navbar-toggle="" class="collapse navbar-collapse navbar-left scrollable-dropdown" id="sp-nav-bar"> -->
+
+
+    <!-- Include The Menu -->
+    <sp-widget widget="::data.menu"></sp-widget>
+
+    <!--Former placement of Avatar -->
+    <!--  </div> -->
+    <div class="navbar-right">
+
+      <ul class="nav navbar-nav hidden-xs">
+        <li>
+          <md-button href="?id=nci_new_ticket&sys_id={{data.submit_ticket}}" class="nci-nav-btn" aria-label="Live Chat">
+            <!-- <md-icon md-font-icon="fa fa-question"></md-icon> --> ${Submit a Ticket}
+            <md-icon md-svg-src="nci_submit.svg" aria-label="submit"></md-icon>
+          </md-button>
+        </li>
+        <li> 
+          <md-button ng-disabled="chatClosed" ng-click="c.openChat(data.connect_support_queue_id)" class="nci-nav-btn" href="#" aria-label="Live Chat">
+            ${Live Chat} 
+            <md-icon ng-if="!chatClosed" md-svg-src="nci_chat-active.svg" aria-label="chat "></md-icon>
+            <md-icon ng-if="chatClosed" md-svg-src="nci_chat-inactive.svg" aria-label="chat "></md-icon>
+            <md-tooltip ng-if="chatClosed">Chat support is currently unavailable</md-tooltip>
+          </md-button>
+        </li>
+      </ul>
+
+      <!-- <button class="btn btn-primary">
+Click Me
+</button> -->
+    </div>
+  </nav>
+</div>
+
+</div>]]></template>
+    </sp_header_footer>
+</record_update>
