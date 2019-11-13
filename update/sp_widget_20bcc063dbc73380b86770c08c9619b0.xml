@@ -7,7 +7,8 @@
 	c.query = '';
 	// remove tables from nav if not admin
 	// if (!c.data.admin) {
-		c.data.tables = removeTables(c.data.tables);
+		c.data.links = removeTables(c.data.tables);
+		c.data.adminLinks = adminLinks(c.data.tables);
 	// } 
 	
 	setActivePage();
@@ -16,7 +17,7 @@
 	c.search = function() {
 		$location.url('?id=ccr_db_search&query=' + c.query);
 	}
-	
+
 	function setActivePage() {
 		var params = $location.search();
 		if (params.id === 'ccr_db_home')
@@ -24,18 +25,19 @@
 		else
 			c.activePage = params.table;
 	}
-	
+
 	// remove these tables from navigation menu
 	function removeTables(tableRecords) {
 		var remove = [
 			'x_naci_otr_ccr_dat_outcome_type',
-			'x_naci_otr_ccr_dat_tp_outcome_subtype',
-			'x_naci_otr_ccr_dat_tp_site_type_look_up',
 			'x_naci_otr_ccr_dat_tp_indication',
 			'x_naci_otr_ccr_dat_project_notes',
 			'x_naci_otr_ccr_dat_tp_outcome',
-			'x_naci_otr_ccr_dat_tp_status'
+			'x_naci_otr_ccr_dat_tp_status',
+			'x_naci_otr_ccr_dat_tp_outcome_subtype',
+			'x_naci_otr_ccr_dat_tp_site_type_look_up'
 		];
+
 		var filtered = [];
 		for (var table in tableRecords) {
 			if (remove.indexOf(tableRecords[table].name) == -1) {
@@ -44,6 +46,22 @@
 		}
 		return filtered;
 	}
+	
+	function adminLinks(tableRecords) {
+		var adminTables = [
+			'x_naci_otr_ccr_dat_tp_outcome_subtype',
+			'x_naci_otr_ccr_dat_tp_site_type_look_up'
+		];
+		
+		var filtered = [];
+		for (var table in tableRecords) {
+			if (adminTables.indexOf(tableRecords[table].name) > -1) {
+				filtered.push(tableRecords[table]);
+			}
+		}
+		return filtered;
+	}
+	
 }]]></client_script>
         <controller_as>c</controller_as>
         <css>.panel-heading {
@@ -93,7 +111,7 @@
         <sys_created_on>2019-08-09 15:49:53</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>20bcc063dbc73380b86770c08c9619b0</sys_id>
-        <sys_mod_count>145</sys_mod_count>
+        <sys_mod_count>169</sys_mod_count>
         <sys_name>[ccr-db] table nav</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -101,7 +119,7 @@
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_widget_20bcc063dbc73380b86770c08c9619b0</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-10-09 18:20:49</sys_updated_on>
+        <sys_updated_on>2019-11-13 17:28:59</sys_updated_on>
         <template><![CDATA[<form class="input-group" ng-submit="c.search()">
   <input class="form-control" 
          ng-model="c.query"
@@ -132,7 +150,7 @@
     </a>
     <a class="list-group-item"
        ng-class="{active: c.activePage == table.name}"       
-       ng-repeat="table in c.data.tables | orderBy:'sys_name'"
+       ng-repeat="table in c.data.links | orderBy:'sys_name'"
        href="?id=ccr_db_table_view&table={{table.name}}">
       <i class="fa fa-chevron-right"></i>
       <span class="m-l-sm">
@@ -141,6 +159,33 @@
     </a>
   </div>  
 </div>
-]]></template>
+
+<div ng-if="c.data.admin"
+     class="panel my-4">
+  <div class="panel-heading">
+    <h1 class="h4 panel-title">
+      Admin 
+    </h1>
+  </div>
+  <div class="list-group">
+    <a class="list-group-item"
+       ng-class="{active: c.activePage == 'ccr_db_choice'}"       
+       href="?id=ccr_db_choice">
+      <i class="fa fa-chevron-right"></i>
+      <span class="m-l-sm">
+        Choice
+      </span>
+    </a>
+    <a class="list-group-item"
+       ng-class="{active: c.activePage == table.name}"       
+       ng-repeat="table in c.data.adminLinks | orderBy:'sys_name'"
+       href="?id=ccr_db_table_view&table={{table.name}}">
+      <i class="fa fa-chevron-right"></i>
+      <span class="m-l-sm">
+        {{ table.label }}
+      </span>
+    </a>
+  </div>  
+</div>]]></template>
     </sp_widget>
 </record_update>

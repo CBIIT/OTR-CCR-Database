@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $timeout, $uibModal, spUtil) {
+	/* widget controller */
+	var c = this;
+
+	function addInstruction() {
+		$('div.panel-heading.form-inline').each(function() {
+			if ($(this).find('p').length == 0) {
+				$(this)				
+					.append(
+					$('<p>')
+					.text('Click on rows to view, edit, or delete record.')
+					.addClass('ml-auto')
+					.css('color', 'steelblue')
+					.css('font-weight', 'bold')
+				)
+			}
+		});
+	}
+
+	function openModal() {
+		c.modal = $uibModal.open({
+			template: $('#record-modal').prop('innerHTML'),
+			scope: $scope,
+			windowClass: 'record-modal',
+			size: 'lg',
+			controller: function($scope) {
+				$scope.$on('spModel.fields.rendered', function(event) {
+					$scope.form = event.targetScope.getGlideForm();
+					$('.record-modal span.panel-title').text('')
+					$('.record-modal .panel-footer button:not(:last)').hide();
+					$('.record-modal .panel-footer button:last').appendTo(
+						$('.record-modal .modal-footer')
+					)
+				});
+			}
+		});
+	}
+
+	$scope.$on('data_table.click', function(ev, params) {
+		//console.log('data table clicked', ev, params);
+		//console.log(params.sys_id, params.table); 
+		spUtil.get('widget-form', {
+			sys_id: params.sys_id,
+			table: params.table,
+			view: 'Create'
+		}).then(function(widget) {
+			c.record = widget;
+			$scope.deleteRecord = function() {
+				spModal.confirm("Delete this Record?").then(function(confirmed) {
+					if (!confirmed) return;
+					$http.delete(
+						'/api/x_naci_otr_ccr_dat/data/record', 
+						{ params: {id: params.sys_id, table: params.table} }
+					).then(function(response) {
+						var status = response.data.result;
+						if (status) {
+							$scope.server.refresh();
+							closeModal();
+						}
+					})
+				})
+			}
+			openModal();
+		});
+	});
+
+
+	$timeout(function() {
+		addInstruction();
+		// add button
+		$('span.panel-title:contains("Project Status"):not(:has(a))')
+			.css('display', 'contents')
+			.append(
+			$('<a>')
+			.text('Add')
+			.addClass('btn btn-sm btn-primary')
+			.attr('href', 
+						'?id=_ccr_db_table_add' +
+						'&table=x_naci_otr_ccr_dat_lookup_project_status&sys_id=-1' + 
+						'&view=Create')
+			.css('color', 'white')
+			.css('width', '100px')
+			.css('float', 'right')
+		);
+
+		$('span.panel-title:contains("Choice List: Status"):last():not(:has(a))')
+			.css('display', 'contents')
+			.append(
+			$('<a>')
+			.text('Add')
+			.addClass('btn btn-sm btn-primary')
+			.attr('href', 
+						'?id=_ccr_db_table_add' + 
+						'&table=x_naci_otr_ccr_dat_lookup_status&sys_id=-1' + 
+						'&view=Create')
+			.css('color', 'white')
+			.css('width', '100px')
+			.css('float', 'right')
+		);
+	}, 1000);
+
+}
+
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>ccr_db_choice</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>[ccr-db] choice</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	var admin = gs.getUser().isMemberOf('CCR_Database_Admin');
+	
+	var options = [
+		{
+			"title": "Choice List: Project Status",
+			"table": "x_naci_otr_ccr_dat_lookup_project_status",
+			"fields": "label",
+			"size": "10"
+		},
+		{
+			"title": "Choice List: Status",
+			"table": "x_naci_otr_ccr_dat_lookup_status",
+			"fields": "label",
+			"size": "10"
+		}
+	];
+	
+	
+	data.choices = [];
+	options.forEach(function(option) {
+		data.choices.push($sp.getWidget("widget-data-table", option));
+	});
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>chop2@nih.gov</sys_created_by>
+        <sys_created_on>2019-11-13 15:51:36</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>79b56e9adb89001054d8ff621f96192a</sys_id>
+        <sys_mod_count>50</sys_mod_count>
+        <sys_name>[ccr-db] choice</sys_name>
+        <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
+        <sys_update_name>sp_widget_79b56e9adb89001054d8ff621f96192a</sys_update_name>
+        <sys_updated_by>chop2@nih.gov</sys_updated_by>
+        <sys_updated_on>2019-11-13 18:35:21</sys_updated_on>
+        <template><![CDATA[<div ng-repeat="choice in c.data.choices">
+  <sp-widget widget="choice"></sp-widget>
+</div>
+
+<div id="record-modal" class="d-none" ng-non-bindable>
+  <div class="modal-body" id="modal-body">
+    <sp-widget widget="c.record"></sp-widget>
+  </div>
+  <div class="modal-footer d-flex">
+    <button type="button" class="btn btn-danger ml-auto" ng-if="c.data.admin" ng-click="deleteRecord()">Delete</button>
+    <button type="button" class="btn btn-default ml-2" ng-click="$close()">Cancel</button>
+  </div>  
+</div>]]></template>
+    </sp_widget>
+</record_update>

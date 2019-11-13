@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function($scope, spModal, $location, $http, $timeout, $uibModal, spUtil) {
+        <client_script><![CDATA[function($rootScope, $scope, spModal, $location, $http, $timeout, $uibModal, spUtil) {
 	$.fn.tooltip = angular.noop;
 
 	/* widget controller */
 	var c = this;
-
 	var sessionId = c.data.session;
 	var flag = true;
+	
+	$scope.showChoice = false;
 
 	$timeout(removeButtons);
 	$timeout(returnButton);
@@ -35,6 +36,35 @@
 		}
 	});
 
+	// choice tables
+	$scope.$on('data_table.click', function(ev, params) {
+		//console.log('data table clicked', ev, params);
+		//console.log(params.sys_id, params.table); 
+		spUtil.get('widget-form', {
+			sys_id: params.sys_id,
+			table: params.table,
+			view: 'Create'
+		}).then(function(widget) {
+			c.record = widget;
+			$scope.deleteRecord = function() {
+				spModal.confirm("Delete this Record?").then(function(confirmed) {
+					if (!confirmed) return;
+					$http.delete(
+						'/api/x_naci_otr_ccr_dat/data/record', 
+						{ params: {id: params.sys_id, table: params.table} }
+					).then(function(response) {
+						var status = response.data.result;
+						if (status) {
+							$scope.server.refresh();
+							closeModal();
+						}
+					})
+				})
+			}
+			openModal();
+		});
+	});
+
 	if (c.data.table == 'x_naci_otr_ccr_dat_contact') {
 		// ned search link and hide user_id field
 		$scope.$on('spModel.fields.rendered', function(event) {
@@ -48,7 +78,58 @@
 								 .hide())
 			}
 		});
-
+	} else if (c.data.table == 'x_naci_otr_ccr_dat_project') {
+		$scope.showChoice = true;
+		console.log('widget', c.data.options)
+		$scope.$on('spModel.fields.rendered', function(event) {
+			c.g_form = event.targetScope.getGlideForm();
+			addInstruction();
+			$('span.panel-title:contains("Project Status"):not(:has(a))')
+				.css('display', 'contents')
+				.append(
+				$('<a>')
+				.text('Add')
+				.addClass('btn btn-sm btn-primary')
+				.attr('href', 
+							'?id=_ccr_db_table_add&table=sys_choice&sys_id=-1' + 
+							'&name=' + c.data.table +
+							'&element=project_status')
+				.css('color', 'white')
+				.css('width', '100px')
+				.css('float', 'right')
+			)
+		});
+	} else if (c.data.table == 'x_naci_otr_ccr_dat_tp_status') {
+		$scope.showChoice = true;
+		$scope.$on('spModel.fields.rendered', function(event) {
+			c.g_form = event.targetScope.getGlideForm();
+			addInstruction();
+			$('span.panel-title:contains("Choice List: Status"):last():not(:has(a))')
+				.css('display', 'contents')
+				.append(
+				$('<a>')
+				.text('Add')
+				.addClass('btn btn-sm btn-primary')
+				.attr('href', 
+							'?id=_ccr_db_table_add&table=sys_choice&sys_id=-1' + 
+							'&name=' + c.data.table +
+							'&element=status')
+				.css('color', 'white')
+				.css('width', '100px')
+				.css('float', 'right')
+			)
+		});
+	} else if (c.data.table == 'sys_choice') {
+		$scope.$on('spModel.fields.rendered', function(event) {
+			c.g_form = event.targetScope.getGlideForm();
+			c.g_form.setValue('name', c.data.name);
+			c.g_form.setValue('element', c.data.element);
+			var fields = c.g_form.getFieldNames();
+			fields.forEach(function(field) {
+				c.g_form.setVisible(field, field == 'value');
+			});
+	
+		});
 	}
 
 	// custom save with validation
@@ -130,7 +211,7 @@
 	}
 
 	// ned modal
-	function openModal() {
+	function openNedModal() {
 		$('#error').addClass('d-none').removeClass('d-block')
 		$uibModal.open({
 			template: $('#ned-modal').prop('innerHTML'),
@@ -189,6 +270,41 @@
 		})		
 	}
 
+	// record modal
+	function openModal() {
+		c.modal = $uibModal.open({
+			template: $('#record-modal').prop('innerHTML'),
+			scope: $scope,
+			windowClass: 'record-modal',
+			size: 'lg',
+			controller: function($scope) {
+				$scope.$on('spModel.fields.rendered', function(event) {
+					$scope.form = event.targetScope.getGlideForm();
+					$('.record-modal span.panel-title').text('')
+					$('.record-modal .panel-footer button:not(:last)').hide();
+					$('.record-modal .panel-footer button:last').appendTo(
+						$('.record-modal .modal-footer')
+					)
+				});
+			}
+		});
+	}
+
+	function addInstruction() {
+		$('div.panel-heading.form-inline').each(function() {
+			if ($(this).find('p').length == 0) {
+				$(this)				
+					.append(
+					$('<p>')
+					.text('Click on rows to view, edit, or delete record.')
+					.addClass('ml-auto')
+					.css('color', 'steelblue')
+					.css('font-weight', 'bold')
+				)
+			}
+		});
+	}
+
 	// hide "insert" buttons
 	function removeButtons() {
 		flag = true;
@@ -204,10 +320,10 @@
 			.css('width', '100px')
 			.addClass('btn btn-primary')
 			.insertAfter($('button:contains("Save ")'))
-		
+
 		// change text to prevent duplicates
 		$('button:contains("Save ")')
-								 .text('hide')
+			.text('hide')
 	}
 
 	// add return button
@@ -226,7 +342,7 @@
 		$('<button>')
 			.addClass('btn btn-link ml-4 p-0')
 			.text('Add From NED Directory')
-			.click(openModal)
+			.click(openNedModal)
 			.appendTo(
 			$('label.field-label.ng-binding.ng-scope:first')
 		);
@@ -252,35 +368,47 @@
 	var sys_id = $sp.getParameter('sys_id');
 	data.table = tableName;
 	data.sys_id = sys_id;
+	data.session = gs.getSessionID();
 
 	// associative sys ids 
 	data.project_id = $sp.getParameter('project_id');
 	data.tp_id = $sp.getParameter('tp_id');
-	
-	data.session = gs.getSessionID();
-	
-	
-	/*
-	data.formOptions = {
-		"title": "Adding Record",
-		"widget": "widget-form",
-		"widgetInput": {
-			"sys_id": "-1",
-			"table": tableName,
-			"view": "Create"
+
+	// choice table
+	data.name = $sp.getParameter('name');
+	data.element = $sp.getParameter('element');
+
+	data.options = null;
+
+	if (tableName == 'x_naci_otr_ccr_dat_project') {
+		data.options= {
+			"title": "Choice List: Project Status",
+			"table": "sys_choice",
+			"fields": "label",
+			"size": "10",
+			"filter": "name=x_naci_otr_ccr_dat_project"
 		}
-		,
-		"buttons": [],
-	};
-		*/
-})();]]></script>
+	} else {
+		data.options= {
+			"title": "Choice List: Status",
+			"table": "sys_choice",
+			"fields": "label",
+			"size": "10",
+			"filter": "name=x_naci_otr_ccr_dat_tp_status"
+		}
+	} 
+
+
+})();
+
+]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>chop2@nih.gov</sys_created_by>
         <sys_created_on>2019-08-23 14:46:44</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>1c84c044dbabf300b86770c08c961976</sys_id>
-        <sys_mod_count>505</sys_mod_count>
+        <sys_mod_count>671</sys_mod_count>
         <sys_name>[ccr-db] table add</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -288,10 +416,25 @@
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_widget_1c84c044dbabf300b86770c08c961976</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-10-30 20:02:02</sys_updated_on>
+        <sys_updated_on>2019-11-12 21:58:34</sys_updated_on>
         <template><![CDATA[<div id="table-form">
   <widget id="widget-form">
   </widget>
+</div>
+
+<div ng-if="showChoice">
+  <widget id="widget-data-table" 
+          options='data.options'></widget>
+</div>
+
+<div id="record-modal" class="d-none" ng-non-bindable>
+  <div class="modal-body" id="modal-body">
+    <sp-widget widget="c.record"></sp-widget>
+  </div>
+  <div class="modal-footer d-flex">
+    <!--    <button type="button" class="btn btn-danger ml-auto" ng-click="deleteRecord()">Delete</button> -->
+    <button type="button" class="btn btn-default ml-2" ng-click="$close()">Cancel</button>
+  </div>  
 </div>
 
 <div id="ned-modal" class="d-none" ng-non-bindable>
