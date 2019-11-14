@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="[Lookup] Status" max_length="40" name="x_naci_otr_ccr_dat_lookup_status" type="collection">
-        <element label="Label" max_length="200" name="label" type="string"/>
+    <element label="[Lookup] T&amp;P Status Type" max_length="40" name="x_naci_otr_ccr_dat_lookup_status" type="collection">
+        <element display="true" label="Label" max_length="200" name="label" type="string"/>
     </element>
 </database>

@@ -2,6 +2,7 @@
     <element label="Project Notes" max_length="40" name="x_naci_otr_ccr_dat_project_notes" type="collection">
         <element label="Notes" mandatory="true" max_length="5000" name="notes" type="string"/>
         <element label="Project" max_length="32" name="project_id" read_only="true" reference="x_naci_otr_ccr_dat_project" type="reference"/>
+        <element display="true" label="Title" mandatory="true" max_length="140" name="title" type="string"/>
         <index name="index">
             <element name="project_id"/>
         </index>

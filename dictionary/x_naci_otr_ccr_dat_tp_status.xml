@@ -3,16 +3,7 @@
         <element label="Comments" max_length="1000" name="comments" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Date Entered" max_length="40" name="date_entered" type="glide_date"/>
         <element label="Source of  Information" max_length="200" name="source_information" type="string"/>
-        <element attributes="edge_encryption_enabled=true" choice="1" label="Status" mandatory="true" max_length="40" name="status" type="choice">
-            <choice>
-                <element inactive_on_update="false" label="Approved" value="Approved"/>
-                <element inactive_on_update="false" label="Phase I" value="Phase I"/>
-                <element inactive_on_update="false" label="Phase II" value="Phase II"/>
-                <element inactive_on_update="false" label="Phase III" value="Phase III"/>
-                <element inactive_on_update="false" label="Preclinical" value="Preclinical"/>
-                <element inactive_on_update="false" label="Regulatory Review" value="Regulatory Review"/>
-            </choice>
-        </element>
+        <element display="true" label="Status" max_length="32" name="status" reference="x_naci_otr_ccr_dat_lookup_status" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="Technologies &amp; Products" mandatory="true" max_length="32" name="technologies_product" reference="x_naci_otr_ccr_dat_technologies_products" type="reference"/>
         <element attributes="edge_encryption_enabled=true" label="T&amp;P Indication" max_length="32" name="tp_indication" reference="x_naci_otr_ccr_dat_tp_indication" reference_qual="javascript:&quot;technologies_product=&quot; + current.technologies_product" type="reference" use_reference_qualifier="advanced"/>
         <index name="index">
@@ -20,6 +11,9 @@
         </index>
         <index name="index2">
             <element name="technologies_product"/>
+        </index>
+        <index name="index3">
+            <element name="status"/>
         </index>
     </element>
 </database>

@@ -1,72 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="" section_id="894e9b3cdbd04c5054d8ff621f9619ce" sys_domain="global" table="x_naci_otr_ccr_dat_project_notes" version="3" view="create">
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>notes</element>
+            <element>title</element>
             <position>0</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-10-02 21:22:06</sys_created_on>
-            <sys_id>259e1f7cdbd04c5054d8ff621f961944</sys_id>
+            <sys_created_on>2019-11-14 16:48:57</sys_created_on>
+            <sys_id>3b6c73eedbc5801054d8ff621f9619a1</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_project_notes" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">894e9b3cdbd04c5054d8ff621f9619ce</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-10-02 21:22:06</sys_updated_on>
+            <sys_updated_on>2019-11-14 16:48:57</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>notes</element>
+            <position>1</position>
+            <sys_created_by>chop2@nih.gov</sys_created_by>
+            <sys_created_on>2019-11-14 16:48:57</sys_created_on>
+            <sys_id>bf6c73eedbc5801054d8ff621f9619a1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_project_notes" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">894e9b3cdbd04c5054d8ff621f9619ce</sys_ui_section>
+            <sys_updated_by>chop2@nih.gov</sys_updated_by>
+            <sys_updated_on>2019-11-14 16:48:57</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.begin_split</element>
-            <position>1</position>
+            <position>2</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-10-02 21:22:06</sys_created_on>
-            <sys_id>a99e1f7cdbd04c5054d8ff621f961944</sys_id>
+            <sys_created_on>2019-11-14 16:48:57</sys_created_on>
+            <sys_id>376c73eedbc5801054d8ff621f9619a2</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_project_notes" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">894e9b3cdbd04c5054d8ff621f9619ce</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-10-02 21:22:06</sys_updated_on>
+            <sys_updated_on>2019-11-14 16:48:57</sys_updated_on>
             <sys_user/>
             <type>.begin_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>sys_updated_on</element>
-            <position>2</position>
+            <element>sys_created_on</element>
+            <position>3</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-10-02 21:22:06</sys_created_on>
-            <sys_id>219e1f7cdbd04c5054d8ff621f961945</sys_id>
+            <sys_created_on>2019-11-14 16:48:57</sys_created_on>
+            <sys_id>bb6c73eedbc5801054d8ff621f9619a2</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_project_notes" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">894e9b3cdbd04c5054d8ff621f9619ce</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-10-02 21:22:06</sys_updated_on>
+            <sys_updated_on>2019-11-14 16:48:57</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>3</position>
+            <position>4</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-10-02 21:22:06</sys_created_on>
-            <sys_id>a59e1f7cdbd04c5054d8ff621f961945</sys_id>
+            <sys_created_on>2019-11-14 16:48:57</sys_created_on>
+            <sys_id>336c73eedbc5801054d8ff621f9619a3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_project_notes" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">894e9b3cdbd04c5054d8ff621f9619ce</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-10-02 21:22:06</sys_updated_on>
+            <sys_updated_on>2019-11-14 16:48:57</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>project_id</element>
-            <position>4</position>
+            <position>5</position>
             <sys_created_by>chop2@nih.gov</sys_created_by>
-            <sys_created_on>2019-10-02 21:22:06</sys_created_on>
-            <sys_id>2d9e1f7cdbd04c5054d8ff621f961945</sys_id>
+            <sys_created_on>2019-11-14 16:48:57</sys_created_on>
+            <sys_id>b76c73eedbc5801054d8ff621f9619a3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_naci_otr_ccr_dat_project_notes" sys_domain="global" view="1cb532579f2013001e0abde8132e70e4">894e9b3cdbd04c5054d8ff621f9619ce</sys_ui_section>
             <sys_updated_by>chop2@nih.gov</sys_updated_by>
-            <sys_updated_on>2019-10-02 21:22:06</sys_updated_on>
+            <sys_updated_on>2019-11-14 16:48:57</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

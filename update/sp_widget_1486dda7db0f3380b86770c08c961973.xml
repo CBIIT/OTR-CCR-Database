@@ -216,9 +216,9 @@ table {
 			'technology_product_name',
 			'tp_status',
 			'tp_indication',
-			'organization',
+			//'organization',
 			'technology_type',
-			'regulatory_pathway',
+			//'regulatory_pathway',
 			'contact_primary',
 			'contact_secondary'
 		]
@@ -260,7 +260,7 @@ table {
         <sys_created_on>2019-08-09 21:12:21</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>1486dda7db0f3380b86770c08c961973</sys_id>
-        <sys_mod_count>897</sys_mod_count>
+        <sys_mod_count>901</sys_mod_count>
         <sys_name>[ccr-db] table view</sys_name>
         <sys_package display_value="OTR-CCR Database" source="x_naci_otr_ccr_dat">b3675f1cdbd32340b86770c08c961913</sys_package>
         <sys_policy/>
@@ -268,7 +268,7 @@ table {
         <sys_scope display_value="OTR-CCR Database">b3675f1cdbd32340b86770c08c961913</sys_scope>
         <sys_update_name>sp_widget_1486dda7db0f3380b86770c08c961973</sys_update_name>
         <sys_updated_by>chop2@nih.gov</sys_updated_by>
-        <sys_updated_on>2019-11-08 21:01:11</sys_updated_on>
+        <sys_updated_on>2019-11-14 16:52:31</sys_updated_on>
         <template><![CDATA[<div id="container" class="panel p-3 text-black">
   <h1>{{ c.data.label }}</h1>
 
@@ -362,6 +362,7 @@ ng-click="changeSize(num)">
 </div>
 
 <div ng-if="c.debug" class="mb-5">
+  <pre>{{ c.data.columns | json }}</pre> 
   <pre>{{ c.data.records | json }}</pre> 
 </div>
 
